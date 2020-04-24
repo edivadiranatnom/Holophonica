@@ -12,7 +12,10 @@ new Vue({
   el: "#app",
   vuetify: new Vuetify(),
   data: () => ({
-    dialog: false,
+    dialog: true,
+    icons: {
+      iconfont: 'md',
+    },
     drawer: null,
     items: [
       { icon: "contacts", text: "Contacts" },
