@@ -16,23 +16,21 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 <style scoped>
-  .logo{
-    height: 35px;
-    width: auto;
-  }
-  .home {
-    cursor: pointer;
-  }
+.logo {
+  height: 35px;
+  width: auto;
+}
+.home {
+  cursor: pointer;
+}
 
-  .home:hover {
-    color: #E9E;
-  }
-  .bg-blue {
-    /*background-color: #3f51b5!important;*/
-  }
+.home:hover {
+  color: #e9e;
+}
+.bg-blue {
+  /*background-color: #3f51b5!important;*/
+}
 </style>
