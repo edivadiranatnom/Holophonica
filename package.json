@@ -12,6 +12,8 @@
     "error-ex": "git+https://github.com/Qix-/node-error-ex.git",
     "material-design-icons-iconfont": "^5.0.1",
     "vue": "^2.6.11",
+    "vue-fullpage.js": "^0.1.5",
+    "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.1.6",
     "vuetify": "^2.2.22"
   },

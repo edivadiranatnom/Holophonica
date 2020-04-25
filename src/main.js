@@ -4,9 +4,12 @@ import router from "./router";
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
+import "fullpage.js/vendors/scrolloverflow"; // Optional. When using scrollOverflow:true
+import VueFullPage from "vue-fullpage.js";
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify);
+Vue.use(VueFullPage);
 
 new Vue({
   el: "#app",
@@ -14,7 +17,7 @@ new Vue({
   data: () => ({
     dialog: true,
     icons: {
-      iconfont: 'md',
+      iconfont: "md"
     },
     drawer: null,
     items: [

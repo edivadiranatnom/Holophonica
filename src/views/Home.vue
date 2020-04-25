@@ -1,84 +1,77 @@
 <template>
-  <v-app id="inspire">
-    <v-app-bar right app flat>
-      <v-toolbar-title>Sample Packs</v-toolbar-title>
-      <v-toolbar-item></v-toolbar-item>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+  <v-app>
+    <!-- <v-toolbar dense flat>
+      <v-toolbar-items class="pa-2" v-for="el in navItems" :key="el">
+        <router-link :to="el.url">{{ el.text }}</router-link>
+      </v-toolbar-items>
+    </v-toolbar>-->
+    <v-app-bar app dense flat hide-on-scroll>
+      <v-toolbar-items class="pa-2" v-for="el in navItems" :key="el">
+        <router-link :to="el.url">{{ el.text }}</router-link>
+      </v-toolbar-items>
     </v-app-bar>
-
-    <v-navigation-drawer right v-model="drawer" app clipped>
-      <v-list dense>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Sample Packs</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-settings</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Tutorials</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-content>
-      <v-container class="fill-height" fluid>
-        <v-row align="center" justify="center">
-          <v-col class="shrink">
-            <Hello-World></Hello-World>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-content>
-
-    <v-footer app>
-      <v-btn icon color="pink" href="#">
-        <v-icon dark color="pink">mdi-instagram</v-icon>
-      </v-btn>
-      <v-btn icon color="blue" href="#">
-        <v-icon dark color="blue">mdi-facebook</v-icon>
-      </v-btn>
-      <v-btn icon color="orange" href="#">
-        <v-icon dark color="orange">mdi-soundcloud</v-icon>
-      </v-btn>
-      <v-btn icon color="orange" href="#">
-        <v-icon dark color="orange">mdi-patreon</v-icon>
-      </v-btn>
-    </v-footer>
+    <div>
+      <full-page ref="fullpage" :options="options">
+        <div id="first" class="section">
+          <p class="site-title">Holophonica</p>
+        </div>
+        <div class="section">Second section ...</div>
+        <v-footer class="pa-2">
+          <v-btn icon v-for="el in socialIcons" :key="el" :href="el.url">
+            <v-icon :color="el.color" dark>{{ el.icon }}</v-icon>
+          </v-btn>
+        </v-footer>
+      </full-page>
+    </div>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld.vue";
-
 export default {
   name: "Home",
-  components: {
-    HelloWorld
-  },
+  components: {},
   props: {
     source: String
   },
   data: () => ({
-    drawer: null,
-    items: [
-      { title: "Home", icon: "dashboard" },
-      { title: "About", icon: "question_answer" }
-    ]
+    socialIcons: [
+      { color: "pink", icon: "mdi-instagram", url: "" },
+      { color: "blue", icon: "mdi-facebook", url: "" },
+      { color: "orange", icon: "mdi-soundcloud", url: "" },
+      { color: "orange", icon: "mdi-patreon", url: "" }
+    ],
+    navItems: [
+      { text: "Sample Packs", url: "/packs" },
+      { text: "Services", url: "/" },
+      { text: "Tutorials", url: "/" },
+      { text: "About", url: "/about" }
+    ],
+    options: {
+      autoScrolling: false
+    }
   }),
-  created() {
-    // this.$vuetify.theme.dark = true;
-  }
+  computed: {},
+  methods: {},
+  created() {}
 };
 </script>
 
 <style lang="scss">
+#first {
+  background-image: url("../assets/1234.jpg");
+  background-size: cover;
+}
+
+.site-title {
+  font-size: 1.5em;
+  position: relative;
+  top: 45%;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+}
+
 .v-toolbar__content {
   float: right;
 }
@@ -87,22 +80,21 @@ export default {
   background-color: transparent !important;
 }
 
-.v-application--wrap {
-  background-image: url("../assets/1234.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.pa-2 a {
+  font-size: 1.2em;
+  color: white !important;
+  text-decoration: none;
 }
 
 .v-footer {
+  border: 5px;
+  border-style: solid;
+  border-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent !important;
   height: 8%;
-}
-
-.v-app-bar-nav-icon {
-  color: white !important;
+  position: absolute;
 }
 </style>

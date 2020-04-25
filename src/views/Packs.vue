@@ -1,6 +1,6 @@
 <template>
   <div class="packs">
-    <h1>Sticazzi</h1>
+    <h1>This is the sample packs page</h1>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
