@@ -1,13 +1,24 @@
 <template>
-  <v-footer padless absolute class="pa-2">
-    <v-row align="end" justify="center">
-      <v-col class="text-center" cols="12">
-        <p class="display-1 font-weight-thin mb-4">Visit us:</p>
-      </v-col>
-    </v-row>
-    <v-btn icon v-for="el in socialIcons" :key="el" :href="el.url">
-      <v-icon :color="el.color" dark>{{ el.icon }}</v-icon>
-    </v-btn>
+  <v-footer absolute class="pa-2">
+    <v-card class="lighten-1 white--text text-center">
+      <v-card-title>
+        <v-btn
+          icon
+          v-for="el in socialIcons"
+          :key="el"
+          :href="el.url"
+          class="mx-4 white--text text-center"
+          dark
+        >
+          <v-icon size="24px" :color="el.color" dark>{{ el.icon }}</v-icon>
+        </v-btn>
+      </v-card-title>
+      <v-divider></v-divider>
+      <v-card-text class="white--text">
+        {{ new Date().getFullYear() }} —
+        Holophonica
+      </v-card-text>
+    </v-card>
   </v-footer>
 </template>
 
@@ -24,8 +35,8 @@ export default {
         },
         { color: "blue", icon: "mdi-facebook", url: "" },
         { color: "orange", icon: "mdi-soundcloud", url: "" },
-        { color: "orange", icon: "mdi-patreon", url: "" },
-        { color: "green", icon: "mdi-soundbetter", url: "" }
+        { color: "purple", icon: "mdi-twitch", url: "" },
+        { color: "#002647", icon: "mdi-patreon", url: "" }
       ]
     };
   }
@@ -34,13 +45,17 @@ export default {
 
 <style lang="scss">
 .v-footer {
-  border: 1px;
-  border-style: solid;
-  border-color: white;
-  display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent !important;
   position: absolute;
+}
+
+.v-footer .lighten-1 {
+  background-color: #121212 !important;
+  width: 100%;
+}
+.v-footer .lighten-1 .v-card__title {
+  display: block !important;
 }
 </style>
