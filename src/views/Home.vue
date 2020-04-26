@@ -9,10 +9,21 @@
     <div>
       <full-page ref="fullpage" :options="options">
         <div id="cover" class="section">
-          <p class="site-title">Holophonica</p>
+          <v-parallax alt src="../assets/1234.jpg">
+            <v-row align="end" justify="center">
+              <v-col class="text-center" cols="12">
+                <h1 class="display-1 font-weight-thin mb-4">Holophonica</h1>
+              </v-col>
+            </v-row>
+          </v-parallax>
         </div>
         <div id="samples" class="section">
           <v-container fluid>
+            <v-row align="start" justify="center">
+              <v-col class="text-start" cols="12">
+                <h1 class="display-1 mb-4">Sample Packs</h1>
+              </v-col>
+            </v-row>
             <v-row no-gutters>
               <v-col cols="12" lg="6" md="6" sm="6">
                 <v-card class="pa-2" outlined tile>
@@ -21,22 +32,16 @@
               </v-col>
               <v-col cols="12" lg="6" md="6" sm="6">
                 <v-card class="pa-2" outlined tile>
-                  <v-carousel
-                    cycle
-                    height="400"
-                    hide-delimiter-background
-                    show-arrows-on-hover
-                  >
-                    <v-carousel-item v-for="(slide, i) in slides" :key="i">
-                      <v-sheet :color="colors[i]" height="100%">
-                        <v-row
-                          class="fill-height"
-                          align="center"
-                          justify="center"
-                        >
-                          <div class="display-3">{{ slide }} Slide</div>
+                  <v-carousel cycle height="400" hide-delimiters show-arrows-on-hover>
+                    <v-carousel-item v-for="(pack, i) in packs" :key="i">
+                      <v-card :color="colors[i]" height="100%">
+                        <v-row class="fill-height" align="center" justify="center">
+                          <div class="display-3">{{ pack.name }} Pack</div>
+                          <v-avatar class="ma-3" size="125" tile>
+                            <v-img :src="pack.artwork"></v-img>
+                          </v-avatar>
                         </v-row>
-                      </v-sheet>
+                      </v-card>
                     </v-carousel-item>
                   </v-carousel>
                 </v-card>
@@ -54,43 +59,56 @@
         </div>
       </full-page>
     </div>
-
+    <!-- Newsletter Modal -->
     <v-row justify="center">
-      <v-dialog v-model="dialog" persistent max-width="600px">
+      <v-dialog v-model="dialog" overlay-opacity="0.5" persistent max-width="600px">
         <v-card>
           <v-card-title>
-            <span class="headline">User Profile</span>
+            <span class="headline">Newsletter</span>
           </v-card-title>
           <v-card-text>
             <v-container>
+              <medium>
+                Subscribe to our newsletter to receive the latest news on our
+                sample packs, tutorials etc.
+              </medium>
               <v-row>
-                <v-col cols="12">
+                <v-col cols="12" sm="6" md="4">
+                  <v-text-field label="First Name*" required></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="4">
+                  <v-text-field label="Last Name*" required></v-text-field>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="8">
                   <v-text-field label="Email*" required></v-text-field>
                 </v-col>
               </v-row>
+              <small>*required field</small>
             </v-container>
-            <small>*indicates required field</small>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" text @click="dialog = false"
-              >Close</v-btn
-            >
-            <v-btn color="blue darken-1" text @click="dialog = false"
-              >Send</v-btn
-            >
+            <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
+            <v-btn color="blue darken-1" text @click="dialog = false">Subscribe</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
+      <NewsletterModal />
     </v-row>
   </v-app>
 </template>
 
 <script>
 import LoremIpsum from "../components/LoremIpsum.vue";
+import NewsletterModal from "../components/NewsletterModal.vue";
 export default {
   name: "Home",
-  components: { LoremIpsum },
+  components: {
+    LoremIpsum,
+    NewsletterModal
+  },
   props: {
     source: String
   },
@@ -98,10 +116,15 @@ export default {
     alignments: ["start"],
     dialog: true,
     socialIcons: [
-      { color: "pink", icon: "mdi-instagram", url: "" },
+      {
+        color: "pink",
+        icon: "mdi-instagram",
+        url: "https://www.instagram.com/holophonica/"
+      },
       { color: "blue", icon: "mdi-facebook", url: "" },
       { color: "orange", icon: "mdi-soundcloud", url: "" },
-      { color: "orange", icon: "mdi-patreon", url: "" }
+      { color: "orange", icon: "mdi-patreon", url: "" },
+      { color: "green", icon: "mdi-soundbetter", url: "" }
     ],
     navItems: [
       { text: "Sample Packs", url: "/packs" },
@@ -119,7 +142,13 @@ export default {
       "red lighten-1",
       "deep-purple accent-4"
     ],
-    slides: ["First", "Second", "Third", "Fourth", "Fifth"]
+    packs: [
+      { name: "First", artwork: "../assets/logo.png" },
+      { name: "Second", artwork: "" },
+      { name: "Third", artwork: "" },
+      { name: "Fourth", artwork: "" },
+      { name: "Fifth", artwork: "" }
+    ]
   }),
   computed: {},
   methods: {},
@@ -138,15 +167,25 @@ export default {
   margin: 11%;
 }
 
-#cover {
-  background-image: url("../assets/1234.jpg");
-  background-size: cover;
+#cover h1 {
+  color: linear-gradient(
+    to right,
+    rgb(194, 255, 182),
+    rgb(255, 163, 182),
+    rgb(221, 169, 255),
+    rgb(162, 209, 255)
+  );
 }
 
-#samples {
+#samples .container {
   margin: auto;
   width: 80%;
-  text-align: center;
+}
+
+#samples .container .col-sm-6 {
+  border: 5px;
+  border-style: solid;
+  border-color: white;
 }
 
 .pa-2 v-card {
@@ -171,10 +210,18 @@ export default {
   background-color: transparent !important;
 }
 
+.v-parallax {
+  height: 100% !important;
+}
+
 .pa-2 a {
   font-size: 1.2em;
   color: white !important;
   text-decoration: none;
+}
+
+.section {
+  border: solid 5px white;
 }
 
 .v-footer {
