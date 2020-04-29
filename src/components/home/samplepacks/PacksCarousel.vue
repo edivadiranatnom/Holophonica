@@ -1,16 +1,16 @@
 <template>
   <v-carousel cycle height="400" hide-delimiters show-arrows-on-hover>
-    <v-carousel-item v-for="el in packs" :key="el">
-      <v-card :color="el.color" height="50%">
+    <v-carousel-item v-for="pack in packs" :key="pack">
+      <v-card :color="pack.color" height="50%">
         <v-img
-          :src="require('@/assets/' + el.url)"
+          :src="require('@/assets/' + pack.url)"
           class="white--text align-end"
           height="200px"
         >
-          <v-card-title>{{ el.name }} sample pack</v-card-title>
+          <v-card-title>{{ pack.name }} sample pack</v-card-title>
         </v-img>
 
-        <v-card-subtitle class="pb-0">{{ el.genre }}</v-card-subtitle>
+        <v-card-subtitle class="pb-0">{{ pack.genre }}</v-card-subtitle>
 
         <v-card-text class="text--primary">
           <div>Whitehaven Beach</div>

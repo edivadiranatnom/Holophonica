@@ -43,7 +43,24 @@
             </v-row>
           </v-container>
         </div>
-        <div id="third" class="section">
+        <div id="tutorials" class="section">
+          <v-container fluid>
+            <v-row align="start" justify="center">
+              <Test />
+            </v-row>
+          </v-container>
+        </div>
+        <div id="services" class="section">
+          <v-container fluid>
+            <!-- Header Text -->
+            <v-row align="start" justify="center">
+              <Productions />
+              <Mixing />
+              <Mastering />
+            </v-row>
+          </v-container>
+        </div>
+        <div id="last" class="section">
           <Footer />
         </div>
       </full-page>
@@ -56,8 +73,12 @@
 <script>
 import LoremIpsum from "../components/LoremIpsum.vue";
 import NewsletterModal from "../components/home/NewsletterModal.vue";
-import PacksCarousel from "../components/home/PacksCarousel.vue";
+import PacksCarousel from "../components/home/samplepacks/PacksCarousel.vue";
+import Productions from "../components/home/services/Productions.vue";
+import Mixing from "../components/home/services/Mixing.vue";
+import Mastering from "../components/home/services/Mastering.vue";
 import Footer from "../components/home/Footer.vue";
+import Test from "../components/home/Test.vue";
 
 export default {
   name: "Home",
@@ -65,6 +86,10 @@ export default {
     LoremIpsum,
     NewsletterModal,
     PacksCarousel,
+    Productions,
+    Mixing,
+    Mastering,
+    Test,
     Footer
   },
   props: {
@@ -102,17 +127,10 @@ export default {
 #cover h1 {
   position: absolute;
   bottom: 0;
-  color: linear-gradient(
-    to right,
-    rgb(194, 255, 182),
-    rgb(255, 163, 182),
-    rgb(221, 169, 255),
-    rgb(162, 209, 255)
-  );
 }
 
 #cover {
-  background-image: url("../assets/1234.jpg");
+  background-image: url("../assets/marmo.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -152,10 +170,6 @@ export default {
   background-color: transparent !important;
 }
 
-.v-parallax {
-  height: 100% !important;
-}
-
 .pa-2 a {
   font-size: 1.2em;
   color: white !important;
@@ -164,5 +178,43 @@ export default {
 
 .section {
   border: solid 5px white;
+}
+
+div.v-toolbar__items.pa-2 a:after,
+div.v-toolbar__items.pa-2 a:before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+div.v-toolbar__items.pa-2 a:hover:after,
+div.v-toolbar__items.pa-2 a:hover:before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 75%;
+}
+
+div.v-toolbar__items.pa-2 a:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 75%;
+}
+
+#services .col {
+  border: solid 1px white;
+  height: 100vh;
+  width: 100%;
+}
+
+#services .container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 </style>

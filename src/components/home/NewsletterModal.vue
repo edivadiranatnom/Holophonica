@@ -2,46 +2,49 @@
   <v-row justify="center">
     <v-dialog
       v-model="dialog"
-      overlay-opacity="0.75"
+      overlay-opacity="0.95"
       persistent
       max-width="600px"
     >
-      <v-card>
-        <v-card-title>
-          <span class="headline">Newsletter</span>
-        </v-card-title>
-        <v-card-text>
-          <v-container>
-            <medium>
-              Subscribe to our newsletter to receive the latest news on our
-              sample packs, tutorials etc.
-            </medium>
-            <v-row>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field label="First Name*" required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field label="Last Name*" required></v-text-field>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="8">
-                <v-text-field label="Email*" required></v-text-field>
-              </v-col>
-            </v-row>
-            <small>*required field</small>
-          </v-container>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog = false"
-            >Close</v-btn
-          >
-          <v-btn color="blue darken-1" text @click="dialog = false"
-            >Subscribe</v-btn
-          >
-        </v-card-actions>
-      </v-card>
+      <v-btn id="upperCloseDialog" icon @click="dialog = false">
+        <v-icon class="mdi-36px">mdi-close</v-icon>
+      </v-btn>
+      <div id="dialogContainer">
+        <v-card>
+          <v-card-title>
+            <span class="headline">Newsletter</span>
+          </v-card-title>
+          <v-card-text>
+            <v-container>
+              <medium
+                >Subscribe to our newsletter to receive the latest news.</medium
+              >
+              <v-row>
+                <v-col cols="12" sm="8" md="12">
+                  <v-text-field label="First Name*" required></v-text-field>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" sm="8" md="12">
+                  <v-text-field label="Last Name*" required></v-text-field>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" sm="8" md="12">
+                  <v-text-field label="Email*" required></v-text-field>
+                </v-col>
+              </v-row>
+              <small>*required field</small>
+            </v-container>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="blue darken-1" text @click="dialog = false"
+              >Subscribe</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </div>
     </v-dialog>
   </v-row>
 </template>
@@ -57,6 +60,28 @@ export default {
 
 <style lang="scss">
 .v-dialog {
-  opacity: 0.97;
+  height: 100% !important;
+  opacity: 1;
+  box-shadow: none !important;
+}
+
+#dialogContainer {
+}
+
+#upperCloseDialog {
+  float: right;
+  z-index: 10;
+}
+
+.v-dialog:not(.v-dialog--fullscreen) {
+  max-height: 60% !important;
+}
+
+.v-card.v-sheet {
+  box-shadow: none;
+}
+
+.theme--dark.v-sheet {
+  background-color: transparent !important;
 }
 </style>
