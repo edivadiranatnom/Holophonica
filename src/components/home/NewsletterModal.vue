@@ -65,9 +65,6 @@ export default {
   box-shadow: none !important;
 }
 
-#dialogContainer {
-}
-
 #upperCloseDialog {
   float: right;
   z-index: 10;

@@ -30,11 +30,10 @@ export default {
 <style lang="scss">
 .slideshow {
   position: absolute;
-  z-index: 1;
-  top: 10%;
+  top: 0;
   left: 0;
-  width: 99.4vw;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 
   .slider {
@@ -62,21 +61,17 @@ export default {
         min-width: 100%;
         min-height: 100%;
         position: absolute;
-        top: 50%;
-        left: 50%;
         transform: translate(-50%, -50%);
       }
     }
   }
 
   .slick-dots {
-    // position: absolute;
     z-index: 100;
     width: 15%;
     height: auto;
     bottom: auto;
     top: 45%;
-    // right: 0;
     transform: translateY(-50%);
     left: auto;
     color: #fff;
@@ -123,7 +118,7 @@ export default {
   &.slideshow-right {
     left: 0;
     z-index: 1;
-    width: 50vw;
+    width: 40vw;
     pointer-events: none;
 
     .slider {
@@ -139,18 +134,17 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-  font-size: 80px;
+  font-size: 20px;
   width: 100vw;
   text-align: center;
   color: #fff;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 100;
-  background-color: black;
-  width: 60%;
+  width: 80%;
   pointer-events: none;
   text-transform: uppercase;
   letter-spacing: 20px;
-  line-height: 0.8;
+  line-height: 1;
 
   @media (max-width: 767px) {
     font-size: 40px;

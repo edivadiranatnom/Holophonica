@@ -20,9 +20,18 @@
           </v-container>
         </div>
         <div id="services" class="section">
-          <v-container fluid>
-            <v-row align="start" justify="center">
-              <ServicesCarousel />
+          <v-container fluid fill-height>
+            <v-row no-gutters>
+              <v-col cols="12" lg="6" md="6" sm="6">
+                <v-card class="pa-2" outlined tile>
+                  <LoremIpsum />
+                </v-card>
+              </v-col>
+              <v-col cols="12" lg="6" md="6" sm="6">
+                <v-card class="pa-2" outlined tile>
+                  <ServicesCarousel />
+                </v-card>
+              </v-col>
             </v-row>
           </v-container>
         </div>
@@ -48,8 +57,8 @@
                 </v-card>
               </v-col>
             </v-row>
-            <Footer />
           </v-container>
+          <Footer />
         </div>
       </full-page>
     </div>
@@ -68,11 +77,11 @@ import ServicesCarousel from "../components/home/ServicesCarousel.vue";
 export default {
   name: "Home",
   components: {
-    LoremIpsum,
-    NewsletterModal,
-    PacksCarousel,
-    ServicesCarousel,
-    Footer
+    LoremIpsum: LoremIpsum,
+    NewsletterModal: NewsletterModal,
+    PacksCarousel: PacksCarousel,
+    ServicesCarousel: ServicesCarousel,
+    Footer: Footer
   },
   props: {
     source: String
@@ -82,7 +91,6 @@ export default {
     navItems: [
       { text: "Sample Packs", url: "/packs" },
       { text: "Services", url: "/" },
-      // { text: "Tutorials", url: "/" },
       { text: "About", url: "/about" }
     ],
     options: {
@@ -125,7 +133,7 @@ export default {
 
 #samples .container {
   margin: auto;
-  width: 60%;
+  width: 80%;
 }
 
 #samples .container .row.no-gutters {
@@ -205,9 +213,16 @@ div.v-toolbar__items.pa-2 a:hover:before {
 #services .container {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  height: 100%;
 }
 
-#services .v-container {
-  padding: 15px;
+.services-container {
+  max-width: 90% !important;
+}
+
+#services div.row.no-gutters {
+  margin-right: 5%;
+  margin-left: 5%;
+  height: 60%;
 }
 </style>

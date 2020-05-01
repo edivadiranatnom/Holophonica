@@ -1,16 +1,17 @@
 $(document).ready(function () {
+
     var $slider = $('.slideshow .slider'),
         maxItems = $('.item', $slider).length,
         dragging = false,
         tracking,
         rightTracking;
 
-    $sliderRight = $('.slideshow').clone().addClass('slideshow-right').appendTo($('.split-slideshow'));
+    var $sliderRight = $('.slideshow').clone().addClass('slideshow-right').appendTo($('.split-slideshow'));
 
-    rightItems = $('.item', $sliderRight).toArray();
-    reverseItems = rightItems.reverse();
+    var rightItems = $('.item', $sliderRight).toArray();
+    var reverseItems = rightItems.reverse();
     $('.slider', $sliderRight).html('');
-    for (i = 0; i < maxItems; i++) {
+    for (var i = 0; i < maxItems; i++) {
         $(reverseItems[i]).appendTo($('.slider', $sliderRight));
     }
 
@@ -22,6 +23,8 @@ $(document).ready(function () {
         infinite: true,
         dots: true,
         speed: 1000,
+        autoplay: true,
+        autoplaySpeed: 5000,
         cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
     }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 
@@ -50,9 +53,9 @@ $(document).ready(function () {
         rightTracking = parseInt(rightTracking.split(',')[5]);
     }).on('mousemove touchmove', function () {
         if (dragging) {
-            newTracking = $('.slideshow-left .slick-track').css('transform');
+            var newTracking = $('.slideshow-left .slick-track').css('transform');
             newTracking = parseInt(newTracking.split(',')[5]);
-            diffTracking = newTracking - tracking;
+            var diffTracking = newTracking - tracking;
             $('.slideshow-right .slick-track').css({ 'transform': 'matrix(1, 0, 0, 1, 0, ' + (rightTracking - diffTracking) + ')' });
         }
     }).on('mouseleave touchend mouseup', function () {
