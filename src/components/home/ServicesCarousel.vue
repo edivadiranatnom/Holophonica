@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "Test",
+  name: "ServicesCarousel",
   created() {}
 };
 </script>
@@ -31,15 +31,15 @@ export default {
 .slideshow {
   position: absolute;
   z-index: 1;
-  top: 0;
+  top: 10%;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 99.4vw;
+  height: 80%;
   overflow: hidden;
 
   .slider {
-    width: 100vw;
-    height: 100vw;
+    width: 99.4vw;
+    height: 80%;
     z-index: 2;
 
     * {
@@ -47,8 +47,8 @@ export default {
     }
 
     .item {
-      height: 100vh;
-      width: 100vw;
+      height: 99.4vh;
+      width: 80%;
       position: relative;
       overflow: hidden;
       border: none;
@@ -59,8 +59,8 @@ export default {
       }
 
       img {
-        min-width: 101%;
-        min-height: 101%;
+        min-width: 100%;
+        min-height: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -70,13 +70,13 @@ export default {
   }
 
   .slick-dots {
-    position: absolute;
+    // position: absolute;
     z-index: 100;
-    width: 40px;
+    width: 15%;
     height: auto;
     bottom: auto;
-    top: 50%;
-    right: 0;
+    top: 45%;
+    // right: 0;
     transform: translateY(-50%);
     left: auto;
     color: #fff;
@@ -86,19 +86,18 @@ export default {
       display: block;
       width: 100%;
       height: auto;
+      content: "sound";
 
       & button {
-        position: relative;
-        width: 20px;
-        height: 15px;
+        height: 40px;
         text-align: center;
 
         &:before {
           content: "";
           background: #fff;
           color: #fff;
-          height: 2px;
-          width: 20px;
+          height: 5px;
+          width: 20%;
           border-radius: 0;
           position: absolute;
           top: 50%;
@@ -113,7 +112,7 @@ export default {
       &.slick-active {
         button {
           &:before {
-            width: 40px;
+            width: 25%;
             opacity: 1;
           }
         }

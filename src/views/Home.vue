@@ -19,6 +19,13 @@
             </v-row>
           </v-container>
         </div>
+        <div id="services" class="section">
+          <v-container fluid>
+            <v-row align="start" justify="center">
+              <ServicesCarousel />
+            </v-row>
+          </v-container>
+        </div>
         <div id="samples" class="section">
           <v-container fluid>
             <!-- Header Text -->
@@ -41,27 +48,8 @@
                 </v-card>
               </v-col>
             </v-row>
+            <Footer />
           </v-container>
-        </div>
-        <div id="tutorials" class="section">
-          <v-container fluid>
-            <v-row align="start" justify="center">
-              <Test />
-            </v-row>
-          </v-container>
-        </div>
-        <div id="services" class="section">
-          <v-container fluid>
-            <!-- Header Text -->
-            <v-row align="start" justify="center">
-              <Productions />
-              <Mixing />
-              <Mastering />
-            </v-row>
-          </v-container>
-        </div>
-        <div id="last" class="section">
-          <Footer />
         </div>
       </full-page>
     </div>
@@ -74,11 +62,8 @@
 import LoremIpsum from "../components/LoremIpsum.vue";
 import NewsletterModal from "../components/home/NewsletterModal.vue";
 import PacksCarousel from "../components/home/samplepacks/PacksCarousel.vue";
-import Productions from "../components/home/services/Productions.vue";
-import Mixing from "../components/home/services/Mixing.vue";
-import Mastering from "../components/home/services/Mastering.vue";
 import Footer from "../components/home/Footer.vue";
-import Test from "../components/home/Test.vue";
+import ServicesCarousel from "../components/home/ServicesCarousel.vue";
 
 export default {
   name: "Home",
@@ -86,10 +71,7 @@ export default {
     LoremIpsum,
     NewsletterModal,
     PacksCarousel,
-    Productions,
-    Mixing,
-    Mastering,
-    Test,
+    ServicesCarousel,
     Footer
   },
   props: {
@@ -100,7 +82,7 @@ export default {
     navItems: [
       { text: "Sample Packs", url: "/packs" },
       { text: "Services", url: "/" },
-      { text: "Tutorials", url: "/" },
+      // { text: "Tutorials", url: "/" },
       { text: "About", url: "/about" }
     ],
     options: {
@@ -137,6 +119,10 @@ export default {
   background-position: center;
 }
 
+#upperRow {
+  height: 10%;
+}
+
 #samples .container {
   margin: auto;
   width: 60%;
@@ -166,8 +152,11 @@ export default {
   float: right;
 }
 
-.v-app-bar {
-  background-color: transparent !important;
+.v-toolbar__items {
+}
+
+.v-sheet.v-sheet--tile.theme--dark.v-toolbar.v-toolbar--dense.v-toolbar--flat.v-app-bar.v-app-bar--fixed {
+  background-color: black !important;
 }
 
 .pa-2 a {
@@ -176,8 +165,8 @@ export default {
   text-decoration: none;
 }
 
-.section {
-  border: solid 5px white;
+#services {
+  border-bottom: solid 1px white;
 }
 
 div.v-toolbar__items.pa-2 a:after,
@@ -198,13 +187,13 @@ div.v-toolbar__items.pa-2 a:hover:before {
   backface-visibility: hidden;
   border-color: #fff;
   transition: width 350ms ease-in-out;
-  width: 75%;
+  width: 100%;
 }
 
 div.v-toolbar__items.pa-2 a:hover:before {
   bottom: auto;
   top: 0;
-  width: 75%;
+  width: 100%;
 }
 
 #services .col {
@@ -216,5 +205,9 @@ div.v-toolbar__items.pa-2 a:hover:before {
 #services .container {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+
+#services .v-container {
+  padding: 15px;
 }
 </style>
