@@ -16,9 +16,7 @@
           </v-card-title>
           <v-card-text>
             <v-container>
-              <medium
-                >Subscribe to our newsletter to receive the latest news.</medium
-              >
+              Subscribe to our newsletter to receive the latest news.
               <v-row>
                 <v-col cols="12" sm="8" md="12">
                   <v-text-field label="First Name*" required></v-text-field>

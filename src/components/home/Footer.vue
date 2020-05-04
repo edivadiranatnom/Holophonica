@@ -4,8 +4,8 @@
       <v-card-title>
         <v-btn
           icon
-          v-for="el in socialIcons"
-          :key="el"
+          v-for="(el, i) in socialIcons"
+          :key="i"
           :href="el.url"
           class="mx-4 white--text text-center socialIcon"
           dark

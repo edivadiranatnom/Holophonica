@@ -1,6 +1,6 @@
 <template>
   <v-carousel cycle height="400" hide-delimiters show-arrows-on-hover>
-    <v-carousel-item v-for="pack in packs" :key="pack">
+    <v-carousel-item v-for="(pack, i) in packs" :key="i">
       <v-card :color="pack.color" height="50%">
         <v-img
           :src="require('@/assets/' + pack.url)"
