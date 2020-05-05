@@ -66,55 +66,6 @@ export default {
     }
   }
 
-  .slick-dots {
-    z-index: 100;
-    width: 15%;
-    height: auto;
-    bottom: auto;
-    top: 45%;
-    transform: translateY(-50%);
-    left: auto;
-    color: #fff;
-    display: block;
-
-    li {
-      display: block;
-      width: 100%;
-      height: auto;
-      content: "sound";
-
-      & button {
-        height: 40px;
-        text-align: center;
-
-        &:before {
-          content: "";
-          background: #fff;
-          color: #fff;
-          height: 5px;
-          width: 20%;
-          border-radius: 0;
-          position: absolute;
-          top: 50%;
-          right: 0;
-          left: auto;
-          transform: translateY(-50%);
-          transition: all 0.3s ease-in-out;
-          opacity: 0.6;
-        }
-      }
-
-      &.slick-active {
-        button {
-          &:before {
-            width: 25%;
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
-
   &.slideshow-right {
     left: 0;
     z-index: 1;

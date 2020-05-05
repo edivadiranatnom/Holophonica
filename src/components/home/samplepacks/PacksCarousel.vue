@@ -2,11 +2,7 @@
   <v-carousel cycle height="400" hide-delimiters show-arrows-on-hover>
     <v-carousel-item v-for="(pack, i) in packs" :key="i">
       <v-card :color="pack.color" height="50%">
-        <v-img
-          :src="require('@/assets/' + pack.url)"
-          class="white--text align-end"
-          height="200px"
-        >
+        <v-img :src="require('@/assets/' + pack.url)" class="white--text align-end" height="200px">
           <v-card-title>{{ pack.name }} sample pack</v-card-title>
         </v-img>
 
@@ -14,8 +10,6 @@
 
         <v-card-text class="text--primary">
           <div>Whitehaven Beach</div>
-
-          <div>Whitsunday Island, Whitsunday Islands</div>
         </v-card-text>
 
         <v-card-actions>

@@ -1,11 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app dense flat hide-on-scroll>
-      <v-toolbar-items class="pa-2" v-for="(el, i) in navItems" :key="i">
-        <v-divider class="mx-4" vertical></v-divider>
-        <router-link :to="el.url">{{ el.text }}</router-link>
-      </v-toolbar-items>
-    </v-app-bar>
+    <Navbar />
     <div>
       <full-page ref="fullpage" :options="options">
         <div id="cover" class="section">
@@ -14,6 +9,17 @@
               <v-col cols="12">
                 <v-row justify="center">
                   <h1 class="display-1 font-weight-thin mb-4">Holophonica</h1>
+                  <v-btn
+                    id="down"
+                    class="align-self-end"
+                    small
+                    fab
+                    retain-focus-on-click
+                    icon
+                    @click="$vuetify.goTo('#services')"
+                  >
+                    <v-icon>mdi-chevron-double-down</v-icon>
+                  </v-btn>
                 </v-row>
               </v-col>
             </v-row>
@@ -68,15 +74,17 @@
 </template>
 
 <script>
+import Navbar from "../components/home/Navbar.vue";
 import LoremIpsum from "../components/LoremIpsum.vue";
 import NewsletterModal from "../components/home/NewsletterModal.vue";
 import PacksCarousel from "../components/home/samplepacks/PacksCarousel.vue";
-import Footer from "../components/home/Footer.vue";
+import Footer from "../components/Footer.vue";
 import ServicesCarousel from "../components/home/ServicesCarousel.vue";
 
 export default {
   name: "Home",
   components: {
+    Navbar: Navbar,
     LoremIpsum: LoremIpsum,
     NewsletterModal: NewsletterModal,
     PacksCarousel: PacksCarousel,
@@ -88,11 +96,6 @@ export default {
   },
   data: () => ({
     alignments: ["start"],
-    navItems: [
-      { text: "Sample Packs", url: "/packs" },
-      { text: "Services", url: "/" },
-      { text: "About", url: "/about" }
-    ],
     options: {
       autoScrolling: false
     }
@@ -116,11 +119,16 @@ export default {
 
 #cover h1 {
   position: absolute;
-  bottom: 0;
+  bottom: 8%;
+}
+
+#down {
+  position: absolute;
+  bottom: 2%;
 }
 
 #cover {
-  background-image: url("../assets/marmo.jpg");
+  background-image: url("../assets/black.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -156,17 +164,6 @@ export default {
   text-align: center;
 }
 
-.v-toolbar__content {
-  float: right;
-}
-
-// .v-toolbar__items {
-// }
-
-.v-sheet.v-sheet--tile.theme--dark.v-toolbar.v-toolbar--dense.v-toolbar--flat.v-app-bar.v-app-bar--fixed {
-  background-color: black !important;
-}
-
 .pa-2 a {
   font-size: 1.2em;
   color: white !important;
@@ -175,33 +172,6 @@ export default {
 
 #services {
   border-bottom: solid 1px white;
-}
-
-div.v-toolbar__items.pa-2 a:after,
-div.v-toolbar__items.pa-2 a:before {
-  backface-visibility: hidden;
-  border: 1px solid rgba(#fff, 0);
-  bottom: 0px;
-  content: " ";
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  transition: all 280ms ease-in-out;
-  width: 0;
-}
-
-div.v-toolbar__items.pa-2 a:hover:after,
-div.v-toolbar__items.pa-2 a:hover:before {
-  backface-visibility: hidden;
-  border-color: #fff;
-  transition: width 350ms ease-in-out;
-  width: 100%;
-}
-
-div.v-toolbar__items.pa-2 a:hover:before {
-  bottom: auto;
-  top: 0;
-  width: 100%;
 }
 
 #services .col {

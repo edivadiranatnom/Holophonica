@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import Navbar from "../components/about/Navbar.vue";
+import Navbar from "../components/services/Navbar.vue";
 import Footer from "../components/Footer.vue";
 
 export default {
-  name: "About",
+  name: "Services",
   components: {
     Navbar: Navbar,
     Footer: Footer
