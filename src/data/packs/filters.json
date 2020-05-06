@@ -1,0 +1,36 @@
+[
+    {
+        "action": "genre",
+        "name": "Genres",
+        "items": [
+            {
+                "name": "Pop"
+            },
+            {
+                "name": "Post EDM"
+            },
+            {
+                "name": "Techno"
+            },
+            {
+                "name": "Trap"
+            }
+        ]
+    },
+    {
+        "action": "artist",
+        "name": "Artists",
+        "active": false,
+        "items": [
+            {
+                "name": "Falling Down"
+            },
+            {
+                "name": "Frank The Traveller"
+            },
+            {
+                "name": "Surt"
+            }
+        ]
+    }
+]

@@ -119,12 +119,12 @@ export default {
 
 #cover h1 {
   position: absolute;
-  bottom: 8%;
+  bottom: 12%;
 }
 
 #down {
   position: absolute;
-  bottom: 2%;
+  bottom: 7%;
 }
 
 #cover {

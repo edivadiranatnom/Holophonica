@@ -50,6 +50,9 @@ export default {
   background-color: transparent !important;
   position: absolute;
 }
+.pa-2 {
+  padding: 0 !important;
+}
 
 .v-footer .lighten-1 {
   background-color: #121212 !important;

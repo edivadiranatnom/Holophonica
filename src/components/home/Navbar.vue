@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app dense flat hide-on-scroll>
+  <v-app-bar dense flat hide-on-scroll>
     <v-toolbar-items class="pa-2" v-for="(el, i) in navItems" :key="i">
       <v-divider class="mx-4" vertical></v-divider>
       <router-link :to="el.url">{{ el.text }}</router-link>
