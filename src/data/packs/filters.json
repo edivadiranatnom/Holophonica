@@ -20,7 +20,6 @@
     {
         "action": "artist",
         "name": "Artists",
-        "active": false,
         "items": [
             {
                 "name": "Falling Down"

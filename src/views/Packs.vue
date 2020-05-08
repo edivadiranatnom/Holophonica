@@ -2,20 +2,28 @@
   <v-app>
     <Navbar />
     <v-container fluid fill-height>
-      <v-row>
-        <v-col cols="0" sm="3" offset-sm="0">
+      <v-row style="padding: 2%">
+        <v-col cols="12" lg="12" md="12" sm="12">
+          <p class="display-1">Sample Packs</p>
+          <p class="subtitle-1">
+            In this section you can find our sample packs and filter them.
+          </p>
+        </v-col>
+      </v-row>
+      <v-row style="padding: 2%">
+        <v-col cols="0" sm="3" xs="1">
           <Filters />
         </v-col>
-        <v-col cols="12" sm="9">
+        <v-col cols="12" sm="9" offset-xs="1" id="samplePacks">
           <v-card>
             <v-container fluid>
-              <v-row id="samplePacks">
+              <v-row>
                 <v-col
-                  v-for="(pack, i) in packs"
+                  v-for="(pack, i) in visibility"
                   :key="i"
                   class="d-flex child-flex"
                   cols="12"
-                  lg="4"
+                  lg="3"
                   md="4"
                   sm="6"
                 >
@@ -34,6 +42,7 @@
                       <v-card-subtitle class="pb-0">{{
                         pack.artist
                       }}</v-card-subtitle>
+                      <v-card-text class="pb-0">{{ pack.genre }}</v-card-text>
                       <v-card-actions>
                         <v-btn
                           color="orange"
@@ -49,10 +58,11 @@
             </v-container>
           </v-card>
         </v-col>
+        <v-col cols="1" lg="2" sm="0" offset-sm="0"></v-col>
       </v-row>
       <v-row>
         <v-col cols="0" lg="3" md="3" sm="3"></v-col>
-        <v-col cols="12" lg="9" md="9" sm="9">
+        <v-col cols="12" lg="6" md="9" sm="9">
           <v-expand-transition>
             <iframe
               width="100%"
@@ -64,6 +74,7 @@
             ></iframe>
           </v-expand-transition>
         </v-col>
+        <v-col cols="0" lg="3" md="0" sm="0"></v-col>
       </v-row>
       <v-row>
         <Footer />
@@ -86,18 +97,67 @@ export default {
     Footer: Footer
   },
   data: () => ({
-    packs: packs,
     iframeURL: "",
-    expand: false
+    expand: false,
+    currentTag: "",
+    selectedTags: { artists: [], genres: [] }
   }),
   methods: {
     souncloudPrev(src, expand) {
       this.iframeURL = src;
-      this.epand = !expand;
+      this.expand = !expand;
+    },
+    setFilterValue(value) {
+      this.currentTag = value;
     }
   },
   created() {
     this.$vuetify.theme.dark = true;
+    this.$eventHub.$on("filterByGenre", this.setFilterValue);
+    this.$eventHub.$on("filterByArtist", this.setFilterValue);
+  },
+  beforeDestroy() {
+    this.$eventHub.$off("filterByGenre", () => {});
+    this.$eventHub.$off("filterByArtist", () => {});
+  },
+  computed: {
+    visibility: function() {
+      let filteredPacks = packs;
+      if (this.currentTag.category == "artist") {
+        filteredPacks = packs.filter(pack => {
+          return this.selectedTags.artists.includes(pack.artist);
+        });
+      } else if (this.currentTag.category == "genre") {
+        filteredPacks = packs.filter(pack => {
+          return this.selectedTags.genres.includes(pack.genre);
+        });
+      } else if (
+        this.selectedTags.artists.length === 0 &&
+        this.selectedTags.genres.length === 0
+      ) {
+        return packs;
+      }
+      return filteredPacks;
+    }
+  },
+  watch: {
+    currentTag: function() {
+      if (this.currentTag.state) {
+        if (this.currentTag.category == "artist")
+          this.selectedTags.artists.push(this.currentTag.name);
+        if (this.currentTag.category == "genre")
+          this.selectedTags.genres.push(this.currentTag.name);
+      } else {
+        if (this.currentTag.category == "genre")
+          this.selectedTags.genres = this.selectedTags.genres.filter(item => {
+            return item != this.currentTag.name;
+          });
+        if (this.currentTag.category == "artist")
+          this.selectedTags.artists = this.selectedTags.artists.filter(item => {
+            return item != this.currentTag.name;
+          });
+      }
+    }
   }
 };
 </script>
@@ -112,12 +172,9 @@ export default {
 }
 
 .v-card__title,
-.v-card__subtitle {
+.v-card__subtitle,
+.v-card__text {
   color: black !important;
-}
-
-#samplePacks {
-  margin-top: 5%;
 }
 
 .v-footer {

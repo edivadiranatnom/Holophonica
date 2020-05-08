@@ -1,10 +1,10 @@
 <template>
-  <v-navigation-drawer permanent>
+  <v-navigation-drawer permanent hide-overlay>
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title class="title">Filters</v-list-item-title>
         <v-list-item-subtitle
-          >Select the packs your prefer.</v-list-item-subtitle
+          >Select the packs you prefer.</v-list-item-subtitle
         >
       </v-list-item-content>
     </v-list-item>
@@ -26,9 +26,11 @@
         <v-list-item v-for="subItem in item.items" :key="subItem.name" dense>
           <v-list-item-content dense>
             <v-checkbox
-              v-model="checkbox"
+              v-model="selected"
               color="white"
+              :value="subItem.name"
               :label="subItem.name"
+              @change="emitMyFilter(subItem.name)"
             ></v-checkbox>
           </v-list-item-content>
         </v-list-item>
@@ -42,11 +44,30 @@ import filters from "../../data/packs/filters.json";
 export default {
   name: "Filters",
   data: () => ({
-    filters: filters
+    filters: filters,
+    selected: []
   }),
   methods: {
-    myFilter() {
-      return 0;
+    emitMyFilter(value) {
+      let event = {};
+      let genres = this.filters[0].items.map(item => {
+        return item.name;
+      });
+      let artists = this.filters[1].items.map(item => {
+        return item.name;
+      });
+      if (genres.includes(value)) {
+        event["type"] = "filterByGenre";
+        event["category"] = "genre";
+      } else if (artists.includes(value)) {
+        event["type"] = "filterByArtist";
+        event["category"] = "artist";
+      }
+      this.$eventHub.$emit(event.type, {
+        name: value,
+        state: this.selected.includes(value) ? true : false,
+        category: event.category
+      });
     }
   }
 };
@@ -55,10 +76,6 @@ export default {
 <style lang="scss">
 .v-navigation-drawer {
   background-color: transparent !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  margin-top: 15%;
-  width: 100% !important;
 }
 .v-navigation-drawer__border {
   visibility: hidden;

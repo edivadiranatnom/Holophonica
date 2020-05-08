@@ -44,10 +44,10 @@ export default {
 </script>
 
 <style lang="scss">
-.v-footer {
+footer.v-footer.pa-2 {
   align-items: center;
   justify-content: center;
-  background-color: transparent !important;
+  background-color: #121212 !important;
   position: absolute;
 }
 .pa-2 {
@@ -55,7 +55,6 @@ export default {
 }
 
 .v-footer .lighten-1 {
-  background-color: #121212 !important;
   width: 100%;
 }
 .v-footer .lighten-1 .v-card__title {

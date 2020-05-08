@@ -2,9 +2,21 @@
   <v-app>
     <Navbar />
     <div id="cover">
-      <v-container fluid>
-        <v-row dense>
-          <v-col></v-col>
+      <v-container fluid fill-height>
+        <v-row style="padding: 2%">
+          <v-col cols="12" lg="12" md="12" sm="12">
+            <p class="display-1">Studio Services</p>
+            <p class="subtitle-1">
+              In this section you can check our studio services and the relative
+              cost.
+            </p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <!-- Giga Sliderone con Effettone -->
+        </v-row>
+        <v-row>
+          <Footer />
         </v-row>
       </v-container>
       <Footer />
@@ -28,12 +40,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-#cover {
-  background-image: url("../assets/black.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-</style>
+<style lang="scss"></style>
