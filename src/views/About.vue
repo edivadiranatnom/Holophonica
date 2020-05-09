@@ -1,10 +1,13 @@
 <template>
   <v-app>
     <Navbar />
-    <div id="cover">
-      <v-container fluid>
-        <v-row dense>
-          <v-col></v-col>
+    <div>
+      <v-container fluid fill-height>
+        <v-row dense style="min-heigth: 50%; border: solid 1px white">
+          <v-col cols="12" sm="12" md="12"></v-col>
+        </v-row>
+        <v-row dense style="heigth: 50%">
+          <v-col cols="12" sm="12" md="12"></v-col>
         </v-row>
       </v-container>
       <Footer />
@@ -13,7 +16,7 @@
 </template>
 
 <script>
-import Navbar from "../components/about/Navbar.vue";
+import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 
 export default {
@@ -28,12 +31,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-#cover {
-  background-image: url("../assets/black.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-</style>
+<style lang="scss"></style>

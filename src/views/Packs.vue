@@ -2,7 +2,9 @@
   <v-app>
     <Navbar />
     <v-container fluid fill-height>
-      <v-row style="padding: 2%">
+      <v-row
+        style="margin-left: 1%; margin-right: 1%; border-bottom: solid 1px white"
+      >
         <v-col cols="12" lg="12" md="12" sm="12">
           <p class="display-1">Sample Packs</p>
           <p class="subtitle-1">
@@ -10,11 +12,20 @@
           </p>
         </v-col>
       </v-row>
-      <v-row style="padding: 2%">
+      <v-row
+        style="margin-left: 1%; margin-right: 1%; border-bottom: solid 1px white"
+      >
         <v-col cols="0" sm="3" xs="1">
           <Filters />
         </v-col>
-        <v-col cols="12" sm="9" offset-xs="1" id="samplePacks">
+        <v-col
+          cols="12"
+          sm="9"
+          offset-xs="1"
+          id="samplePacks"
+          fill-heigth
+          style="min-heigth: 100%"
+        >
           <v-card>
             <v-container fluid>
               <v-row>
@@ -27,11 +38,12 @@
                   md="4"
                   sm="6"
                 >
-                  <v-card flat tile class="d-flex">
+                  <v-card flat class="d-flex">
                     <v-img
                       :src="require('@/assets/' + pack.img)"
                       aspect-ratio="1"
                       class="grey lighten-2"
+                      style="border-radius: 2%"
                     >
                       <v-card-title>
                         <h5 class="font-weight-thin">{{ pack.name }}</h5>
@@ -39,9 +51,9 @@
                       <v-card-subtitle class="pb-0"
                         >Vol. {{ pack.vol }}</v-card-subtitle
                       >
-                      <v-card-subtitle class="pb-0">{{
-                        pack.artist
-                      }}</v-card-subtitle>
+                      <v-card-subtitle class="pb-0">
+                        {{ pack.artist }}
+                      </v-card-subtitle>
                       <v-card-text class="pb-0">{{ pack.genre }}</v-card-text>
                       <v-card-actions>
                         <v-btn
@@ -60,8 +72,14 @@
         </v-col>
         <v-col cols="1" lg="2" sm="0" offset-sm="0"></v-col>
       </v-row>
-      <v-row>
-        <v-col cols="0" lg="3" md="3" sm="3"></v-col>
+      <v-row style="margin: 2% 2% 0 2%">
+        <v-col cols="0" lg="3" md="3" sm="3">
+          <p class="display-1">Player</p>
+          <p class="subtitle-1">
+            Click on the listen button of a sample pack and a Soundcloud player
+            will let you navigate the snippets of our sample packs.
+          </p>
+        </v-col>
         <v-col cols="12" lg="6" md="9" sm="9">
           <v-expand-transition>
             <iframe
@@ -84,7 +102,7 @@
 </template>
 
 <script>
-import Navbar from "../components/packs/Navbar.vue";
+import Navbar from "../components/Navbar.vue";
 import Filters from "../components/packs/Filters.vue";
 import Footer from "../components/Footer.vue";
 import packs from "../data/packs/packs.json";

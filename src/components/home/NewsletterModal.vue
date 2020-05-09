@@ -32,6 +32,26 @@
                   <v-text-field label="Email*" required></v-text-field>
                 </v-col>
               </v-row>
+              <v-row>
+                <v-col cols="12" sm="8" md="12">
+                  <v-checkbox
+                    v-model="agreement"
+                    :rules="[rules.required]"
+                    color="deep-purple"
+                  >
+                    <template v-slot:label>
+                      I agree to the&nbsp;
+                      <a href="#" @click.stop.prevent="dialog = true"
+                        >Terms of Service</a
+                      >
+                      &nbsp;and&nbsp;
+                      <a href="#" @click.stop.prevent="dialog = true"
+                        >Privacy Policy</a
+                      >*
+                    </template>
+                  </v-checkbox>
+                </v-col>
+              </v-row>
               <small>*required field</small>
             </v-container>
           </v-card-text>
@@ -51,7 +71,11 @@
 export default {
   name: "NewsletterModal",
   data: () => ({
-    dialog: true
+    dialog: true,
+    agreement: false,
+    rules: {
+      required: v => !!v || "This field is required"
+    }
   })
 };
 </script>
@@ -69,7 +93,7 @@ export default {
 }
 
 .v-dialog:not(.v-dialog--fullscreen) {
-  max-height: 60% !important;
+  max-height: 65% !important;
 }
 
 .v-card.v-sheet {

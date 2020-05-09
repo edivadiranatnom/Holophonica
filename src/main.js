@@ -6,9 +6,9 @@ import "vuetify/dist/vuetify.min.css";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
 import "fullpage.js/vendors/scrolloverflow"; // Optional. When using scrollOverflow:true
 import VueFullPage from "vue-fullpage.js";
-import axios from "axios";
+import Vuelidate from "vuelidate";
 
-Vue.prototype.axios = axios;
+Vue.use(Vuelidate);
 
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();

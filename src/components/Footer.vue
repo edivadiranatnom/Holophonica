@@ -7,6 +7,7 @@
           v-for="(el, i) in socialIcons"
           :key="i"
           :href="el.url"
+          target="_blank"
           class="mx-4 white--text text-center socialIcon"
           dark
         >
@@ -49,6 +50,8 @@ footer.v-footer.pa-2 {
   justify-content: center;
   background-color: #121212 !important;
   position: absolute;
+  bottom: unset !important;
+  width: 100%;
 }
 .pa-2 {
   padding: 0 !important;

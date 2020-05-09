@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import Navbar from "../components/home/Navbar.vue";
+import Navbar from "../components/Navbar.vue";
 import LoremIpsum from "../components/LoremIpsum.vue";
 import NewsletterModal from "../components/home/NewsletterModal.vue";
 import PacksCarousel from "../components/home/samplepacks/PacksCarousel.vue";
@@ -97,7 +97,8 @@ export default {
   data: () => ({
     alignments: ["start"],
     options: {
-      autoScrolling: false
+      autoScrolling: false,
+      fitToSection: false
     }
   }),
   computed: {},
