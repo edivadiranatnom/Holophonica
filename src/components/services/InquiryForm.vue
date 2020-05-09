@@ -2,7 +2,6 @@
   <v-form ref="form">
     <v-text-field
       v-model="name"
-      :counter="10"
       :rules="nameRules"
       label="Name"
       required

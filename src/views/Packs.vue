@@ -51,15 +51,15 @@
                       <v-card-subtitle class="pb-0"
                         >Vol. {{ pack.vol }}</v-card-subtitle
                       >
-                      <v-card-subtitle class="pb-0">
-                        {{ pack.artist }}
-                      </v-card-subtitle>
+                      <v-card-subtitle class="pb-0">{{
+                        pack.artist
+                      }}</v-card-subtitle>
                       <v-card-text class="pb-0">{{ pack.genre }}</v-card-text>
                       <v-card-actions>
                         <v-btn
                           color="orange"
                           text
-                          @click="souncloudPrev(pack.soundcloud, false)"
+                          @click="souncloudPrev(pack.soundcloud)"
                           >Listen</v-btn
                         >
                       </v-card-actions>
@@ -80,11 +80,11 @@
             will let you navigate the snippets of our sample packs.
           </p>
         </v-col>
-        <v-col cols="12" lg="6" md="9" sm="9">
+        <v-col cols="12" lg="9" md="9" sm="9">
           <v-expand-transition>
             <iframe
               width="100%"
-              height="300"
+              height="175"
               scrolling="no"
               frameborder="no"
               allow="autoplay"
@@ -121,9 +121,8 @@ export default {
     selectedTags: { artists: [], genres: [] }
   }),
   methods: {
-    souncloudPrev(src, expand) {
+    souncloudPrev(src) {
       this.iframeURL = src;
-      this.expand = !expand;
     },
     setFilterValue(value) {
       this.currentTag = value;

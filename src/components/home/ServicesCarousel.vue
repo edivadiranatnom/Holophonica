@@ -30,15 +30,16 @@ export default {
 <style lang="scss">
 .slideshow {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 
   .slider {
-    width: 99.4vw;
-    height: 80%;
+    width: 100vw;
+    height: 100vw;
     z-index: 2;
 
     * {
@@ -46,22 +47,75 @@ export default {
     }
 
     .item {
-      height: 99.4vh;
-      width: 80%;
+      height: 100vh;
+      width: 100vw;
       position: relative;
       overflow: hidden;
       border: none;
-      color: black;
 
       .text {
         display: none;
       }
 
       img {
-        min-width: 100%;
-        min-height: 100%;
+        min-width: 101%;
+        min-height: 101%;
         position: absolute;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    z-index: 100;
+    width: 40px;
+    height: auto;
+    bottom: auto;
+    top: 40%;
+    right: 0;
+    transform: translateY(-50%);
+    left: auto;
+    color: #fff;
+    display: block;
+
+    li {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      & button {
+        position: relative;
+        width: 20px;
+        height: 15px;
+        text-align: center;
+
+        &:before {
+          content: "";
+          background: #fff;
+          color: #fff;
+          height: 2px;
+          width: 20px;
+          border-radius: 0;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          left: auto;
+          transform: translateY(-50%);
+          transition: all 0.3s ease-in-out;
+          opacity: 0.6;
+        }
+      }
+
+      &.slick-active {
+        button {
+          &:before {
+            width: 40px;
+            opacity: 1;
+          }
+        }
       }
     }
   }
@@ -69,7 +123,7 @@ export default {
   &.slideshow-right {
     left: 0;
     z-index: 1;
-    width: 40vw;
+    width: 50vw;
     pointer-events: none;
 
     .slider {
@@ -85,34 +139,24 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-  font-size: 20px;
+  font-size: 80px;
   width: 100vw;
   text-align: center;
   color: #fff;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 100;
-  width: 80%;
   pointer-events: none;
   text-transform: uppercase;
   letter-spacing: 20px;
-  line-height: 1;
+  line-height: 0.8;
 
   @media (max-width: 767px) {
-    font-size: 40px;
+    font-size: 20px;
+    letter-spacing: 10px;
   }
-}
-
-.the-most {
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  width: 50vw;
-  max-width: 200px;
-  padding: 10px;
-
-  img {
-    max-width: 100%;
+  @media (min-width: 767px) and (max-width: 1024px) {
+    font-size: 40px;
+    letter-spacing: 10px;
   }
 }
 </style>

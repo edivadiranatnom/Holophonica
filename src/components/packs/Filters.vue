@@ -16,15 +16,14 @@
         v-for="item in filters"
         :key="item.title"
         v-model="item.active"
-        :prepend-icon="item.action"
         no-action
       >
         <template v-slot:activator>
           <v-list-item-title v-text="item.name"></v-list-item-title>
         </template>
 
-        <v-list-item v-for="subItem in item.items" :key="subItem.name" dense>
-          <v-list-item-content dense>
+        <v-list-item v-for="subItem in item.items" :key="subItem.name">
+          <v-list-item-content>
             <v-checkbox
               v-model="selected"
               color="white"
@@ -80,6 +79,11 @@ export default {
 .v-navigation-drawer__border {
   visibility: hidden;
 }
+
+.v-navigation-drawer.v-navigation-drawer--open {
+  width: unset !important;
+}
+
 .v-list-item__icon {
   margin: 0 !important;
 }
@@ -99,5 +103,13 @@ export default {
 .v-application .primary--text {
   color: white !important;
   caret-color: white !important;
+}
+
+.v-application--is-ltr
+  .v-list-group--no-action
+  > .v-list-group__items
+  > .v-list-item {
+  padding-left: 30px !important;
+  height: 40px;
 }
 </style>

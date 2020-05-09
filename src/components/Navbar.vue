@@ -23,21 +23,21 @@ export default {
       this.navItems[0].url = "/packs";
       this.navItems[1].text = "Services";
       this.navItems[1].url = "/services";
-      this.navItems[2].text = "About";
+      this.navItems[2].text = "About us";
       this.navItems[2].url = "/about";
     } else if (this.$route.path == "/packs") {
       this.navItems[0].text = "Home";
       this.navItems[0].url = "/";
       this.navItems[1].text = "Services";
       this.navItems[1].url = "/services";
-      this.navItems[2].text = "About";
+      this.navItems[2].text = "About us";
       this.navItems[2].url = "/about";
     } else if (this.$route.path == "/services") {
       this.navItems[0].text = "Home";
       this.navItems[0].url = "/";
       this.navItems[1].text = "Packs";
       this.navItems[1].url = "/packs";
-      this.navItems[2].text = "About";
+      this.navItems[2].text = "About us";
       this.navItems[2].url = "/about";
     } else if (this.$route.path == "/about") {
       this.navItems[0].text = "Home";

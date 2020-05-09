@@ -43,25 +43,24 @@
     <v-row style="border-top: 1px solid white; padding: 2%">
       <v-col
         cols="12"
-        lg="6"
-        md="6"
+        lg="4"
+        md="4"
         sm="12"
-        style="border-right: 1px solid white"
-      >
-        <v-container fluid fill-height>
-          <p class="subtitle-1">
-            In this section you can check our studio services and the relative
-            cost.
-          </p>
-        </v-container>
-      </v-col>
-      <v-col cols="12" lg="6" md="6" sm="12">
-        <v-container fluid style="width: 75%">
-          <p class="display-1">Contact us</p>
+        style="border-right: solid 1px white"
+      ></v-col>
+      <v-col cols="12" lg="4" md="4" sm="12">
+        <v-container fluid>
           <p class="subtitle-1">Send us an email with your request</p>
           <InquiryForm />
         </v-container>
       </v-col>
+      <v-col
+        cols="12"
+        lg="4"
+        md="4"
+        sm="12"
+        style="border-left: solid 1px white"
+      ></v-col>
     </v-row>
     <v-row fill-width>
       <Footer />

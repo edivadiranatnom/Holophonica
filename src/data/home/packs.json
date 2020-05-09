@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Ear Candies",
+        "vol": "1",
+        "artist": "Frank The Traveler",
+        "img": "placeholder.png",
+        "genre": "Pop",
+        "description": "Ear Candies"
+    },
+    {
+        "name": "Hypnotic Techno",
+        "vol": "1",
+        "artist": "Surt",
+        "img": "placeholder.png",
+        "genre": "Techno",
+        "description": "Hypnotic Techno"
+    },
+    {
+        "name": "Post EDM",
+        "vol": "1",
+        "artist": "Falling Down",
+        "img": "placeholder.png",
+        "genre": "Post EDM",
+        "description": "Post EDM"
+    }
+]

@@ -2,7 +2,7 @@
   <v-row justify="center">
     <v-dialog
       v-model="dialog"
-      overlay-opacity="0.95"
+      overlay-opacity="0.8"
       persistent
       max-width="600px"
     >
@@ -32,26 +32,7 @@
                   <v-text-field label="Email*" required></v-text-field>
                 </v-col>
               </v-row>
-              <v-row>
-                <v-col cols="12" sm="8" md="12">
-                  <v-checkbox
-                    v-model="agreement"
-                    :rules="[rules.required]"
-                    color="deep-purple"
-                  >
-                    <template v-slot:label>
-                      I agree to the&nbsp;
-                      <a href="#" @click.stop.prevent="dialog = true"
-                        >Terms of Service</a
-                      >
-                      &nbsp;and&nbsp;
-                      <a href="#" @click.stop.prevent="dialog = true"
-                        >Privacy Policy</a
-                      >*
-                    </template>
-                  </v-checkbox>
-                </v-col>
-              </v-row>
+
               <small>*required field</small>
             </v-container>
           </v-card-text>

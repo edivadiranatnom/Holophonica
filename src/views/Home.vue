@@ -26,17 +26,10 @@
           </v-container>
         </div>
         <div id="services" class="section">
-          <v-container fluid fill-height>
+          <v-container fluid fill-heigth>
             <v-row no-gutters>
-              <v-col cols="12" lg="6" md="6" sm="6">
-                <v-card class="pa-2" outlined tile>
-                  <LoremIpsum />
-                </v-card>
-              </v-col>
-              <v-col cols="12" lg="6" md="6" sm="6">
-                <v-card class="pa-2" outlined tile>
-                  <ServicesCarousel />
-                </v-card>
+              <v-col cols="12" lg="12" md="12" sm="12">
+                <ServicesCarousel style="min-heigth: 100%" />
               </v-col>
             </v-row>
           </v-container>
@@ -51,9 +44,12 @@
             </v-row>
             <!-- Text about our sample packs -->
             <v-row no-gutters>
-              <v-col cols="12" lg="6" md="6" sm="6">
+              <v-col cols="12" lg="6" md="6" sm="6" fill-heigth>
                 <v-card class="pa-2" outlined tile>
-                  <LoremIpsum />
+                  <v-row align="center" justify="center">
+                    <p class="display-1">{{ serviceText }}</p>
+                  </v-row>
+                  <p></p>
                 </v-card>
               </v-col>
               <!-- Carousel showing the latest five sample packs -->
@@ -75,17 +71,16 @@
 
 <script>
 import Navbar from "../components/Navbar.vue";
-import LoremIpsum from "../components/LoremIpsum.vue";
 import NewsletterModal from "../components/home/NewsletterModal.vue";
 import PacksCarousel from "../components/home/samplepacks/PacksCarousel.vue";
 import Footer from "../components/Footer.vue";
 import ServicesCarousel from "../components/home/ServicesCarousel.vue";
+import packs from "../data/home/packs.json";
 
 export default {
   name: "Home",
   components: {
     Navbar: Navbar,
-    LoremIpsum: LoremIpsum,
     NewsletterModal: NewsletterModal,
     PacksCarousel: PacksCarousel,
     ServicesCarousel: ServicesCarousel,
@@ -98,13 +93,30 @@ export default {
     alignments: ["start"],
     options: {
       autoScrolling: false,
-      fitToSection: false
-    }
+      fitToSection: false,
+      licenseKey: ""
+    },
+    slide: "",
+    serviceText: ""
   }),
   computed: {},
-  methods: {},
+  methods: {
+    updateSlide(slide) {
+      console.log("slide: " + slide.name);
+      this.slide = slide.name;
+    }
+  },
   created() {
     this.$vuetify.theme.dark = true;
+    this.$eventHub.$on("slideChanged", this.updateSlide);
+  },
+  beforeDestroy() {
+    this.$eventHub.$off("slideChanged", () => {});
+  },
+  watch: {
+    slide: function(slide) {
+      this.serviceText = packs[slide].description;
+    }
   }
 };
 </script>
@@ -112,10 +124,6 @@ export default {
 <style lang="scss">
 .container--fluid .pa-2.v-card {
   height: 100%;
-}
-
-.lorem {
-  margin: 11%;
 }
 
 #cover h1 {
@@ -171,29 +179,13 @@ export default {
   text-decoration: none;
 }
 
-#services {
-  border-bottom: solid 1px white;
-}
-
-#services .col {
-  border: solid 1px white;
-  height: 100vh;
-  width: 100%;
-}
-
-#services .container {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  height: 100%;
-}
-
-.services-container {
-  max-width: 90% !important;
-}
-
-#services div.row.no-gutters {
-  margin-right: 5%;
-  margin-left: 5%;
-  height: 60%;
+@media (max-width: 767px) {
+  #samples .container .row.no-gutters div.col-12:nth-child(1) {
+    visibility: hidden;
+    height: 0;
+  }
+  #samples .container .row.no-gutters div.col-12:nth-child(2) {
+    height: 350px;
+  }
 }
 </style>
