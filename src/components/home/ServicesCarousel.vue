@@ -1,6 +1,6 @@
 <template>
   <div class="split-slideshow">
-    <div class="slideshow">
+    <div class="slideshow" style="padding: 2%">
       <div class="slider">
         <div class="item">
           <img src="../../assets/production.jpg" />

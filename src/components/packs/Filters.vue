@@ -68,6 +68,15 @@ export default {
         category: event.category
       });
     }
+  },
+  created() {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      for (let i = 0; i < filters.length; i++) filters[i].active = false;
+    }
   }
 };
 </script>

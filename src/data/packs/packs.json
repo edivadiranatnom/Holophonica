@@ -7,7 +7,8 @@
         "soundcloud": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/860237912&color=%230c0d0c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
         "visible": true,
         "genre": "Pop",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     },
     {
         "name": "Ear Candies",
@@ -17,7 +18,8 @@
         "soundcloud": "",
         "visible": true,
         "genre": "Trap",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     },
     {
         "name": "Ear Candies",
@@ -27,7 +29,8 @@
         "soundcloud": "",
         "visible": true,
         "genre": "Pop",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     },
     {
         "name": "Hypnotic Techno",
@@ -37,7 +40,8 @@
         "soundcloud": "",
         "visible": true,
         "genre": "Techno",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     },
     {
         "name": "Hypnotic Techno",
@@ -47,7 +51,8 @@
         "soundcloud": "",
         "visible": true,
         "genre": "Techno",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     },
     {
         "name": "Hypnotic Techno",
@@ -57,7 +62,8 @@
         "soundcloud": "",
         "visible": true,
         "genre": "Techno",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     },
     {
         "name": "Post EDM",
@@ -67,7 +73,8 @@
         "soundcloud": "",
         "visible": true,
         "genre": "Post EDM",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     },
     {
         "name": "Post EDM",
@@ -77,7 +84,8 @@
         "soundcloud": "",
         "visible": true,
         "genre": "Post EDM",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     },
     {
         "name": "Post EDM",
@@ -87,6 +95,7 @@
         "soundcloud": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/806760052&color=%230c0d0c&inverse=false&auto_play=false&show_user=true&show_artwork=false",
         "visible": true,
         "genre": "Post EDM",
-        "description": ""
+        "description": "",
+        "file": "../audio/soundlogo.mp3"
     }
 ]

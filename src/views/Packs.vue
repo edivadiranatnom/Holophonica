@@ -38,32 +38,29 @@
                   md="4"
                   sm="6"
                 >
-                  <v-card flat class="d-flex">
-                    <v-img
-                      :src="require('@/assets/' + pack.img)"
-                      aspect-ratio="1"
-                      class="grey lighten-2"
-                      style="border-radius: 2%"
-                    >
-                      <v-card-title>
-                        <h5 class="font-weight-thin">{{ pack.name }}</h5>
-                      </v-card-title>
-                      <v-card-subtitle class="pb-0"
-                        >Vol. {{ pack.vol }}</v-card-subtitle
-                      >
-                      <v-card-subtitle class="pb-0">{{
-                        pack.artist
-                      }}</v-card-subtitle>
-                      <v-card-text class="pb-0">{{ pack.genre }}</v-card-text>
-                      <v-card-actions>
-                        <v-btn
-                          color="orange"
-                          text
-                          @click="souncloudPrev(pack.soundcloud)"
-                          >Listen</v-btn
-                        >
-                      </v-card-actions>
-                    </v-img>
+                  <v-card flat class="d-flex flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="border-radius: 2%;">
+                        <img
+                          :src="require('@/assets/' + pack.img)"
+                          alt="Avatar"
+                          style="width:100%;height:100%; border-radius: 2%;"
+                          class="grey lighten-2"
+                        />
+                      </div>
+                      <div class="flip-card-back" style="border-radius: 2%">
+                        <v-card-subtitle class="pb-0">
+                          <h2 class="font-weight-thin">
+                            {{ pack.name }} Vol. {{ pack.vol }}
+                          </h2>
+                        </v-card-subtitle>
+                        <v-card-subtitle class="pb-0">{{
+                          pack.artist
+                        }}</v-card-subtitle>
+                        <v-card-text class="pb-0">{{ pack.genre }}</v-card-text>
+                        <Player :file="audiofile" />
+                      </div>
+                    </div>
                   </v-card>
                 </v-col>
               </v-row>
@@ -71,28 +68,6 @@
           </v-card>
         </v-col>
         <v-col cols="1" lg="2" sm="0" offset-sm="0"></v-col>
-      </v-row>
-      <v-row style="margin: 2% 2% 0 2%">
-        <v-col cols="0" lg="3" md="3" sm="3">
-          <p class="display-1">Player</p>
-          <p class="subtitle-1">
-            Click on the listen button of a sample pack and a Soundcloud player
-            will let you navigate the snippets of our sample packs.
-          </p>
-        </v-col>
-        <v-col cols="12" lg="9" md="9" sm="9">
-          <v-expand-transition>
-            <iframe
-              width="100%"
-              height="175"
-              scrolling="no"
-              frameborder="no"
-              allow="autoplay"
-              :src="iframeURL"
-            ></iframe>
-          </v-expand-transition>
-        </v-col>
-        <v-col cols="0" lg="3" md="0" sm="0"></v-col>
       </v-row>
       <v-row>
         <Footer />
@@ -104,6 +79,7 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import Filters from "../components/packs/Filters.vue";
+import Player from "../components/packs/Player.vue";
 import Footer from "../components/Footer.vue";
 import packs from "../data/packs/packs.json";
 
@@ -112,18 +88,16 @@ export default {
   components: {
     Navbar: Navbar,
     Filters: Filters,
+    Player: Player,
     Footer: Footer
   },
   data: () => ({
-    iframeURL: "",
-    expand: false,
     currentTag: "",
-    selectedTags: { artists: [], genres: [] }
+    selectedTags: { artists: [], genres: [] },
+    audiofile: require("@/data/audio/soundlogo.mp3"),
+    packs: packs
   }),
   methods: {
-    souncloudPrev(src) {
-      this.iframeURL = src;
-    },
     setFilterValue(value) {
       this.currentTag = value;
     }
@@ -196,5 +170,51 @@ export default {
 
 .v-footer {
   bottom: unset !important;
+}
+
+.flip-card {
+  background-color: transparent;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.flip-card:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: grey;
+  color: white;
+  transform: rotateX(180deg);
 }
 </style>

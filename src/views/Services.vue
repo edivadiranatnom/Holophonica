@@ -28,14 +28,12 @@
               v-for="(item, i) in items"
               :key="i"
               :src="item.src"
-            >
-              <p class="display-1">{{ item.service }}</p>
-            </v-carousel-item>
+            ></v-carousel-item>
           </v-carousel>
         </v-container>
       </v-col>
       <v-col cols="12" lg="6" md="6" sm="12">
-        <v-container fluid fill-height>
+        <v-container fluid fill-height justify-center align-start>
           <p class="display-1">{{ serviceText }}</p>
         </v-container>
       </v-col>

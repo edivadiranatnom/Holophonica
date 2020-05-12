@@ -15,7 +15,8 @@
             {
                 "name": "Trap"
             }
-        ]
+        ],
+        "active": true
     },
     {
         "action": "artist",
@@ -30,6 +31,7 @@
             {
                 "name": "Surt"
             }
-        ]
+        ],
+        "active": true
     }
 ]
