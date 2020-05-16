@@ -86,7 +86,7 @@ export default {
     ServicesCarousel: ServicesCarousel,
     Footer: Footer
   },
-  props: { 
+  props: {
     source: String
   },
   data: () => ({

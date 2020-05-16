@@ -66,7 +66,7 @@ export default {
 
   methods: {
     submit() {
-      axios.post("http://localhost:3000", {
+      axios.post("http://localhost:3000/mail", {
         name: this.name,
         email: this.email,
         text: this.text

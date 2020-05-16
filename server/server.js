@@ -5,6 +5,15 @@ const nodemailer = require("nodemailer");
 
 const app = express();
 
+app.use(cors({ origin: "http://localhost:8080" }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const db = require("./db/models");
+db.sequelize.sync();
+
+// require("./db/routes/newsletterRoutes")(app);
+
 const transporter = nodemailer.createTransport({
     service: "mailgun",
     auth: {
@@ -13,28 +22,26 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-app.use(cors());
-app.use(bodyParser.json());
-
-app.post("/", function (req, res) {
+// MAILER
+app.post("/mail", function (req, res) {
     console.log(req.body.name, req.body.email, req.body.text);
 
     const mailOptions = {
-        from: 'holophonica.studios@gmail.com',
-        to: req.body.email + ', itsgoja@gmail.com, francescoimpellizzeri1993@gmail.com',
-        subject: 'Stica',
-        text: 'Ciao ' + req.body.name + ' ' + req.body.text
+        from: "holophonica.studios@gmail.com",
+        to: req.body.email,
+        subject: "Stica",
+        text: "Ciao " + req.body.name + " " + req.body.text
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
         } else {
-            console.log('Email sent: ' + info.response);
+            console.log("Email sent: " + info.response);
         }
     });
 });
 
+require("./db/routes/packsRoutes")(app);
 
-
-app.listen(3000, () => console.log('Server started...'))
+app.listen(3000, () => console.log("Server started..."));
