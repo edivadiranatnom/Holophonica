@@ -122,7 +122,6 @@ export default {
           this.submitted = true;
         })
         .catch(e => {
-          console.log("porcoddì");
           console.log(e);
         });
     },
