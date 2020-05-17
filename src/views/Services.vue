@@ -41,12 +41,12 @@
     <v-row style="border-top: 1px solid white; padding: 2%">
       <v-col
         cols="12"
-        lg="4"
-        md="4"
+        lg="3"
+        md="2"
         sm="12"
         style="border-right: solid 1px white"
       ></v-col>
-      <v-col cols="12" lg="4" md="4" sm="12">
+      <v-col cols="12" lg="6" md="8" sm="12">
         <v-container fluid>
           <p class="subtitle-1">Send us an email with your request</p>
           <InquiryForm />
@@ -54,8 +54,8 @@
       </v-col>
       <v-col
         cols="12"
-        lg="4"
-        md="4"
+        lg="3"
+        md="2"
         sm="12"
         style="border-left: solid 1px white"
       ></v-col>

@@ -27,14 +27,14 @@ const transporter = nodemailer.createTransport({
 });
 
 // MAILER
-app.post("/mail", function (req) {
+app.post("/inquire", function (req) {
     console.log(req.body.name, req.body.email, req.body.text);
 
     const mailOptions = {
-        from: "holophonica.studios@gmail.com",
-        to: req.body.email,
-        subject: "Stica",
-        text: "Ciao " + req.body.name + " " + req.body.text
+        from: req.body.email,
+        to: "holophonica.studios@gmail.com",
+        subject: req.body.service + " Inquiry",
+        html: "<h3>" + req.body.name + " is asking for a " + req.body.service + " service </h3>" + "<h5>" + req.body.text + "</h5>"
     };
 
     transporter.sendMail(mailOptions, function (error, info) {

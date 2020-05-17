@@ -18,7 +18,7 @@
       v-model="select"
       :items="items"
       :rules="[v => !!v || 'Item is required']"
-      label="Item"
+      label="Service"
       required
     ></v-select>
     <v-container fluid>
@@ -34,9 +34,7 @@
       ></v-textarea>
     </v-container>
 
-    <v-btn class="mr-4" @click="submit">
-      <v-icon left>mdi-send</v-icon>Submit
-    </v-btn>
+    <v-btn class="mr-4" @click="submit">Submit</v-btn>
     <v-snackbar v-model="snackbar">
       Your inquiry has been succesfully sent to the team!
       <v-btn color="pink" text @click="snackbar = false">Close</v-btn>
@@ -45,8 +43,7 @@
 </template>
 
 <script>
-const axios = require("axios");
-
+import inquiryService from "../../services/inquiryService";
 export default {
   name: "InquiryForm",
   data: () => ({
@@ -66,14 +63,23 @@ export default {
 
   methods: {
     submit() {
-      axios.post("http://localhost:3000/mail", {
+      let data = {
         name: this.name,
         email: this.email,
+        service: this.select,
         text: this.text
-      });
+      };
       this.$refs.form.validate();
-      this.snackbar = true;
-      // this.$refs.form.reset();
+      inquiryService
+        .inquire(data)
+        .then(response => {
+          this.snackbar = true;
+          this.$refs.form.reset();
+          console.log(response.data);
+        })
+        .catch(e => {
+          console.log(e);
+        });
     }
   }
 };
