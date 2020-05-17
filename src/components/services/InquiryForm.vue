@@ -70,16 +70,27 @@ export default {
         text: this.text
       };
       this.$refs.form.validate();
-      inquiryService
-        .inquire(data)
-        .then(response => {
-          this.snackbar = true;
-          this.$refs.form.reset();
-          console.log(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
+      if (
+        data.name != "" &&
+        data.service != null &&
+        data.email != "" &&
+        /.+@.+/.test(data.email) &&
+        data.text != ""
+      ) {
+        inquiryService
+          .inquire(data)
+          .then(response => {
+            this.snackbar = true;
+            this.name = "";
+            this.email = "";
+            this.select = null;
+            this.text = "";
+            console.log(response.statusCode);
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      }
     }
   }
 };
