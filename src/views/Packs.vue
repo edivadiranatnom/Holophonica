@@ -18,7 +18,14 @@
               </v-list-item-content>
             </v-list-item>
             <v-divider></v-divider>
-            <v-list>
+            <v-list flat>
+              <v-checkbox
+                v-model="all"
+                value="all"
+                label="All"
+                @click="allVisible"
+                style="padding-left:12%"
+              ></v-checkbox>
               <v-list-group
                 v-for="item in filters"
                 :key="item.action"
@@ -31,9 +38,14 @@
                   <v-list-item-title v-text="item.name"></v-list-item-title>
                 </template>
 
-                <v-list-item v-for="subItem in item.items" :key="subItem.name">
+                <v-list-item v-for="subItem in item.items" :key="subItem.name" inactive>
                   <v-list-item-content>
-                    <v-checkbox v-model="selected" :value="subItem.name" :label="subItem.name"></v-checkbox>
+                    <v-checkbox
+                      v-model="selected"
+                      :value="subItem.name"
+                      :label="subItem.name"
+                      @click="exclusiveCheck(subItem.name)"
+                    ></v-checkbox>
                   </v-list-item-content>
                 </v-list-item>
               </v-list-group>
@@ -105,9 +117,23 @@ export default {
     audiofile: require("@/data/audio/soundlogo.mp3"),
     packs: packs,
     filters: filters,
-    selected: []
+    selected: [],
+    all: true
   }),
-  methods: {},
+  methods: {
+    allVisible() {
+      if (this.selected.length === 0) {
+        this.all = true;
+      } else {
+        this.selected = [];
+        this.all = true;
+      }
+    },
+    exclusiveCheck(value) {
+      this.selected = [];
+      this.selected.push(value);
+    }
+  },
   created() {
     this.$vuetify.theme.dark = true;
     if (
@@ -121,17 +147,23 @@ export default {
   computed: {
     visibility: function() {
       return packs.filter(pack => {
-        return this.selected.length === 0
-          ? packs
-          : this.selected.includes(pack.artist) ||
-              this.selected.includes(pack.genre);
+        if (this.selected.length === 0) {
+          this.all = true;
+          return packs;
+        } else {
+          this.all = false;
+          return (
+            this.selected.includes(pack.artist) ||
+            this.selected.includes(pack.genre)
+          );
+        }
       });
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #cover {
   background-image: url("../assets/black.jpg");
   background-size: cover;
@@ -234,6 +266,18 @@ export default {
   > .v-list-item {
   padding-left: 30px !important;
   height: 40px;
+}
+
+.v-label.theme--dark:hover:active {
+  color: white;
+}
+
+.v-input--selection-controls__input {
+  visibility: collapse !important;
+}
+
+.v-ripple__container {
+  visibility: hidden !important;
 }
 
 #samplePacks {
