@@ -1,7 +1,12 @@
 const multer = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '../../data/')
+        let ext = file.originalname.split('.')[1];
+        if (ext == "mp3" || ext == "wav") {
+            cb(null, './data/audio')
+        } else {
+            cb(null, './data/artworks')
+        }
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname)

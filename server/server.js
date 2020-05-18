@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 var Mailchimp = require('mailchimp-api-v3')
-const multer = require('multer');
 var cors = require("cors");
 const nodemailer = require("nodemailer");
 
@@ -12,16 +11,6 @@ var mailchimp = new Mailchimp('6c64f888b6a56a882eef8b34df7b44a5-us18');
 app.use(cors({ origin: "http://localhost:8080" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, '../../data/')
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now())
-    }
-})
-var upload = multer({ storage: storage })
 
 const db = require("./db/models");
 // db.sequelize.sync();
