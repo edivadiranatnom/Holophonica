@@ -1,12 +1,6 @@
 <template>
   <v-row justify="center">
-    <v-dialog
-      v-model="dialog"
-      ref="form"
-      overlay-opacity="0.8"
-      persistent
-      max-width="600px"
-    >
+    <v-dialog v-model="dialog" ref="form" overlay-opacity="0.8" persistent max-width="600px">
       <v-container fluid v-if="preSubscription" id="dialogContainer">
         <v-btn id="upperCloseDialog" icon @click="dialog = !dialog">
           <v-icon class="mdi-36px">mdi-close</v-icon>
@@ -52,9 +46,13 @@
             <small>*required field</small>
           </v-container>
           <v-spacer></v-spacer>
-          <v-btn ref="subscribe" color="blue darken-1" text @click="validate"
-            >Subscribe</v-btn
-          >
+          <v-btn
+            ref="subscribe"
+            color="blue darken-1"
+            :disabled="disabled"
+            text
+            @click="validate"
+          >Subscribe</v-btn>
         </v-form>
       </v-container>
       <v-container v-else fluid style="top: 10%">
@@ -75,9 +73,7 @@
           <v-col cols="6">
             <v-row>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="dialog = !dialog"
-                >Close</v-btn
-              >
+              <v-btn color="blue darken-1" text @click="dialog = !dialog">Close</v-btn>
             </v-row>
           </v-col>
           <v-col cols="3"></v-col>
@@ -95,6 +91,7 @@ export default {
   data: () => ({
     dialog: true,
     valid: true,
+    disabled: false,
     preSubscription: true,
     agreement: false,
     subscriber: {
@@ -109,7 +106,9 @@ export default {
       ],
       emailRules: [
         v => !!v || "E-mail is required",
-        v => /.+@.+/.test(v) || "E-mail must be valid"
+        v =>
+          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(v) ||
+          "E-mail must be valid"
       ]
     }
   }),
@@ -124,7 +123,7 @@ export default {
         data.firstname != "" &&
         data.lastname != "" &&
         data.mail != "" &&
-        /.+@.+/.test(data.mail)
+        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(data.mail)
       ) {
         newsletterService
           .subscribe(data)
