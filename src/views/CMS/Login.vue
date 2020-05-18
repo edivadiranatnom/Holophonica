@@ -12,10 +12,16 @@
               </v-toolbar>
               <v-card-text>
                 <v-form>
-                  <v-text-field label="Login" name="login" prepend-icon="person" type="text"></v-text-field>
+                  <v-text-field
+                    v-model="user"
+                    label="User"
+                    name="login"
+                    prepend-icon="person"
+                    type="text"
+                  ></v-text-field>
 
                   <v-text-field
-                    id="password"
+                    v-model="pwd"
                     label="Password"
                     name="password"
                     prepend-icon="lock"
@@ -42,14 +48,18 @@ export default {
     source: String
   },
   data: () => ({
-    drawer: null
+    drawer: null,
+    user: "",
+    pwd: ""
   }),
   created() {
     this.$vuetify.theme.dark = true;
   },
   methods: {
-    login() {
-      this.$router.push("/admin/addpack");
+    login: function() {
+      let user = this.user;
+      let pwd = this.pwd;
+      console.log(user, pwd);
     }
   }
 };
