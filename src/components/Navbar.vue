@@ -1,9 +1,17 @@
 <template>
-  <v-app-bar dense flat>
-    <v-toolbar-items class="pa-2" v-for="(el, i) in navItems" :key="i">
-      <v-divider class="mx-4" vertical></v-divider>
-      <router-link :to="el.url">{{ el.text }}</router-link>
-    </v-toolbar-items>
+  <v-app-bar app flat src="https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg">
+    <v-col cols="4" lg="4" md="4" sm="4">
+      <v-container fluid fill-heigth>
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      </v-container>
+    </v-col>
+    <v-col cols="12" lg="8" md="8" sm="12">
+      <v-container fluid fill-heigth>
+        <v-toolbar-items class="toolbarItem pa-2" v-for="(el, i) in navItems" :key="i">
+          <router-link :to="el.url">{{ el.text }}</router-link>
+        </v-toolbar-items>
+      </v-container>
+    </v-col>
   </v-app-bar>
 </template>
 
@@ -19,25 +27,25 @@ export default {
   }),
   created() {
     if (this.$route.path == "/") {
-      this.navItems[0].text = "Packs";
-      this.navItems[0].url = "/packs";
+      this.navItems[2].text = "Packs";
+      this.navItems[2].url = "/packs";
       this.navItems[1].text = "Services";
       this.navItems[1].url = "/services";
-      this.navItems[2].text = "About us";
-      this.navItems[2].url = "/about";
+      this.navItems[0].text = "About";
+      this.navItems[0].url = "/about";
     } else if (this.$route.path == "/packs") {
       this.navItems[0].text = "Home";
       this.navItems[0].url = "/";
       this.navItems[1].text = "Services";
       this.navItems[1].url = "/services";
-      this.navItems[2].text = "About us";
+      this.navItems[2].text = "About";
       this.navItems[2].url = "/about";
     } else if (this.$route.path == "/services") {
       this.navItems[0].text = "Home";
       this.navItems[0].url = "/";
       this.navItems[1].text = "Packs";
       this.navItems[1].url = "/packs";
-      this.navItems[2].text = "About us";
+      this.navItems[2].text = "About";
       this.navItems[2].url = "/about";
     } else if (this.$route.path == "/about") {
       this.navItems[0].text = "Home";
@@ -52,38 +60,25 @@ export default {
 </script>
 
 <style lang="scss">
-.v-toolbar__content {
-  float: right;
+.toolbarItem {
+  float: right !important;
+}
+.v-toolbar__items.toolbarItem.pa-2 a {
+  // font-size: 2vw;
 }
 
-.v-sheet.v-sheet--tile.theme--dark.v-toolbar.v-toolbar--dense.v-toolbar--flat.v-app-bar.v-app-bar--fixed {
-  background-color: black !important;
-}
-
-div.v-toolbar__items.pa-2 a:after,
-div.v-toolbar__items.pa-2 a:before {
-  backface-visibility: hidden;
-  border: 1px solid rgba(#fff, 0);
-  bottom: 0px;
-  content: " ";
+#holo {
+  z-index: 0;
+  width: 60vh;
+  background-image: url("https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg");
+  background-size: cover;
   display: block;
-  margin: 0 auto;
-  position: relative;
-  transition: all 280ms ease-in-out;
-  width: 0;
-}
-
-div.v-toolbar__items.pa-2 a:hover:after,
-div.v-toolbar__items.pa-2 a:hover:before {
-  backface-visibility: hidden;
-  border-color: #fff;
-  transition: width 350ms ease-in-out;
-  width: 100%;
-}
-
-div.v-toolbar__items.pa-2 a:hover:before {
-  bottom: auto;
-  top: 0;
-  width: 100%;
+  width: 2000px;
+  height: 150px;
+  -webkit-filter: blur(7.5px);
+  -moz-filter: blur(7.5px);
+  -o-filter: blur(7.5px);
+  -ms-filter: blur(7.5px);
+  filter: blur(7.5px);
 }
 </style>

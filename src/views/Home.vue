@@ -4,60 +4,69 @@
     <div>
       <full-page ref="fullpage" :options="options">
         <div id="cover" class="section">
-          <v-container fluid>
+          <v-container fluid style="height:90%; padding-top:7.5%">
             <v-row>
-              <v-col cols="12">
-                <v-row justify="center">
-                  <h1 class="display-1 font-weight-thin mb-4">Holophonica</h1>
-                  <v-btn
-                    id="down"
-                    class="align-self-end"
-                    small
-                    fab
-                    retain-focus-on-click
-                    icon
-                    @click="$vuetify.goTo('#services')"
-                  >
-                    <v-icon>mdi-chevron-double-down</v-icon>
-                  </v-btn>
-                </v-row>
+              <v-col cols="1" lg="3" md="3" sm="2"></v-col>
+              <v-col cols="10" lg="6" md="6" sm="8" style="text-align:center">
+                <v-img src="../assets/logo.png" ratio="1"></v-img>
+                <div>
+                  <v-img src="../assets/textLogo.png" ratio="1"></v-img>
+                  <div>
+                    <h3 class="display-1 font-weight-thin mb-4">The sound you need.</h3>
+                    <v-btn id="down" fab icon @click="$vuetify.goTo('#services')">
+                      <v-icon>mdi-chevron-double-down</v-icon>
+                    </v-btn>
+                  </div>
+                </div>
               </v-col>
+              <v-col cols="1" lg="3" md="3" sm="2"></v-col>
             </v-row>
           </v-container>
         </div>
         <div id="services" class="section">
-          <v-container fluid fill-heigth>
-            <v-row no-gutters>
-              <v-col cols="12" lg="12" md="12" sm="12">
-                <ServicesCarousel style="min-heigth: 100%" />
+          <v-container fluid fill-heigth style="height:100%">
+            <v-row>
+              <v-col cols="1" lg="3" md="3" sm="2"></v-col>
+              <v-col cols="10" lg="6" md="6" sm="8" style="text-align:center">
+                <h3 class="display-2 font-weight-medium mb-4">STUDIO</h3>
+                <h3 class="font-weight-thin">Lorem ipsum sit amet.</h3>
               </v-col>
+              <v-col cols="1" lg="3" md="3" sm="2"></v-col>
+            </v-row>
+            <v-row style="text-align:center; border: solid 1px white">
+              <v-col cols="2" lg="2" md="2" sm="2"></v-col>
+              <v-col cols="8" lg="8" md="8" sm="8">
+                <v-row>
+                  <v-col cols="5" lg="5" md="5" sm="5" style="background-color:purple">
+                    <h3 class="display-2 font-weight-medium mb-4">STUDIO</h3>
+                    <h3 class="font-weight-thin">Lorem ipsum sit amet.</h3>
+                  </v-col>
+                  <v-col cols="2" lg="2" md="2" sm="2"></v-col>
+                  <v-col cols="5" lg="5" md="5" sm="5" style="background-color:purple">
+                    <h3 class="display-2 font-weight-medium mb-4">STUDIO</h3>
+                    <h3 class="font-weight-thin">Lorem ipsum sit amet.</h3>
+                  </v-col>
+                </v-row>
+              </v-col>
+              <v-col cols="2" lg="2" md="2" sm="2"></v-col>
             </v-row>
           </v-container>
         </div>
         <div id="samples" class="section">
           <v-container fluid>
-            <!-- Header Text -->
-            <v-row align="start" justify="center">
-              <v-col class="text-start" cols="12">
+            <v-row>
+              <v-col cols="0" lg="3" md="3" sm="3"></v-col>
+              <v-col cols="12" lg="6" md="6" sm="6">
                 <h1 class="display-1 mb-4">Our Latest Sample Packs</h1>
               </v-col>
-            </v-row>
-            <!-- Text about our sample packs -->
-            <v-row no-gutters>
-              <v-col cols="12" lg="6" md="6" sm="6" fill-heigth>
-                <v-card class="pa-2" outlined tile>
-                  <v-row align="center" justify="center">
-                    <p class="display-1">{{ serviceText }}</p>
-                  </v-row>
-                  <p></p>
-                </v-card>
-              </v-col>
-              <!-- Carousel showing the latest five sample packs -->
+              <v-col cols="0" lg="3" md="3" sm="3"></v-col>
+              <v-col cols="0" lg="3" md="3" sm="3"></v-col>
               <v-col cols="12" lg="6" md="6" sm="6">
                 <v-card class="pa-2" outlined tile>
                   <PacksCarousel />
                 </v-card>
               </v-col>
+              <v-col cols="0" lg="3" md="3" sm="3"></v-col>
             </v-row>
           </v-container>
           <Footer />
@@ -74,7 +83,6 @@ import Navbar from "../components/Navbar.vue";
 import NewsletterModal from "../components/home/NewsletterModal.vue";
 import PacksCarousel from "../components/home/samplepacks/PacksCarousel.vue";
 import Footer from "../components/Footer.vue";
-import ServicesCarousel from "../components/home/ServicesCarousel.vue";
 import packs from "../data/home/packs.json";
 
 export default {
@@ -83,7 +91,6 @@ export default {
     Navbar: Navbar,
     NewsletterModal: NewsletterModal,
     PacksCarousel: PacksCarousel,
-    ServicesCarousel: ServicesCarousel,
     Footer: Footer
   },
   props: {
@@ -126,28 +133,24 @@ export default {
   height: 100%;
 }
 
-#cover h1 {
-  position: absolute;
-  bottom: 12%;
-}
-
-#down {
-  position: absolute;
-  bottom: 7%;
+.v-btn:not(.v-btn--text):not(.v-btn--outlined):hover::before:after {
+  opacity: 0;
 }
 
 #cover {
-  background-image: url("../assets/black.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: black;
 }
 
 #upperRow {
   height: 10%;
 }
 
+#services {
+  background-color: black !important;
+}
+#samples {
+  background-color: black !important;
+}
 #samples .container {
   margin: auto;
   width: 80%;

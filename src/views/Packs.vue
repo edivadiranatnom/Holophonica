@@ -164,14 +164,6 @@ export default {
 </script>
 
 <style lang="scss">
-#cover {
-  background-image: url("../assets/black.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .v-card__title,
 .v-card__subtitle,
 .v-card__text {
