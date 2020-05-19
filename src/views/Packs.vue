@@ -2,19 +2,27 @@
   <v-app>
     <Navbar />
     <v-container fluid fill-height>
-      <v-row style="margin-left: 1%; margin-right: 1%; border-bottom: solid 1px white">
+      <v-row
+        style="margin-left: 1%; margin-right: 1%; border-bottom: solid 1px white"
+      >
         <v-col cols="12" lg="12" md="12" sm="12">
           <p class="display-1">Sample Packs</p>
-          <p class="subtitle-1">In this section you can find our sample packs and filter them.</p>
+          <p class="subtitle-1">
+            In this section you can find our sample packs and filter them.
+          </p>
         </v-col>
       </v-row>
-      <v-row style="margin-left: 1%; margin-right: 1%; border-bottom: solid 1px white">
+      <v-row
+        style="margin-left: 1%; margin-right: 1%; border-bottom: solid 1px white"
+      >
         <v-col cols="0" sm="3" xs="1">
           <v-navigation-drawer permanent hide-overlay>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="title">Filters</v-list-item-title>
-                <v-list-item-subtitle>Select the packs you prefer.</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  >Select the packs you prefer.</v-list-item-subtitle
+                >
               </v-list-item-content>
             </v-list-item>
             <v-divider></v-divider>
@@ -38,7 +46,11 @@
                   <v-list-item-title v-text="item.name"></v-list-item-title>
                 </template>
 
-                <v-list-item v-for="subItem in item.items" :key="subItem.name" inactive>
+                <v-list-item
+                  v-for="subItem in item.items"
+                  :key="subItem.name"
+                  inactive
+                >
                   <v-list-item-content>
                     <v-checkbox
                       v-model="selected"
@@ -75,12 +87,12 @@
                   </div>
                   <div class="flip-card-back" style="border-radius: 2%">
                     <v-card-subtitle class="pb-0">
-                      <h2 class="font-weight-thin">{{ pack.name }} Vol. {{ pack.vol }}</h2>
+                      <h2 class="font-weight-thin">
+                        {{ pack.name }} Vol. {{ pack.vol }}
+                      </h2>
                     </v-card-subtitle>
                     <v-card-subtitle class="pb-0">
-                      {{
-                      pack.artist
-                      }}
+                      {{ pack.artist }}
                     </v-card-subtitle>
                     <v-card-text class="pb-0">{{ pack.genre }}</v-card-text>
                     <Player :file="audiofile" />

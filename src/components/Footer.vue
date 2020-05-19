@@ -15,7 +15,9 @@
         </v-btn>
       </v-card-title>
       <v-divider></v-divider>
-      <v-card-text class="white--text">{{ new Date().getFullYear() }} — Holophonica</v-card-text>
+      <v-card-text class="white--text"
+        >{{ new Date().getFullYear() }} — Holophonica</v-card-text
+      >
     </v-card>
   </v-footer>
 </template>

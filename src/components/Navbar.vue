@@ -1,16 +1,22 @@
 <template>
-  <v-app-bar app flat src="https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg">
-    <v-col cols="4" lg="4" md="4" sm="4">
-      <v-container fluid fill-heigth>
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      </v-container>
+  <v-app-bar
+    app
+    flat
+    src="https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg"
+  >
+    <v-col cols="1">
+      <a href="/">
+        <v-img min-width="50" width="60" src="../assets/logo.png"></v-img>
+      </a>
     </v-col>
-    <v-col cols="12" lg="8" md="8" sm="12">
-      <v-container fluid fill-heigth>
-        <v-toolbar-items class="toolbarItem pa-2" v-for="(el, i) in navItems" :key="i">
-          <router-link :to="el.url">{{ el.text }}</router-link>
-        </v-toolbar-items>
-      </v-container>
+    <v-col cols="11">
+      <v-toolbar-items
+        class="toolbarItem pa-2"
+        v-for="(el, i) in navItems"
+        :key="i"
+      >
+        <router-link :to="el.url">{{ el.text }}</router-link>
+      </v-toolbar-items>
     </v-col>
   </v-app-bar>
 </template>
@@ -63,8 +69,11 @@ export default {
 .toolbarItem {
   float: right !important;
 }
-.v-toolbar__items.toolbarItem.pa-2 a {
-  // font-size: 2vw;
+
+.pa-2 a {
+  font-size: 1.2em;
+  color: white !important;
+  text-decoration: none;
 }
 
 #holo {
@@ -73,7 +82,7 @@ export default {
   background-image: url("https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg");
   background-size: cover;
   display: block;
-  width: 2000px;
+  width: 100vh;
   height: 150px;
   -webkit-filter: blur(7.5px);
   -moz-filter: blur(7.5px);
