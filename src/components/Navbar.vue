@@ -1,9 +1,5 @@
 <template>
-  <v-app-bar
-    app
-    flat
-    src="https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg"
-  >
+  <v-app-bar color="black" app flat collapse-on-scroll>
     <v-col cols="1">
       <a href="/">
         <v-img min-width="50" width="60" src="../assets/logo.png"></v-img>

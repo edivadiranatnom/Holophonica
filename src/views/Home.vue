@@ -1,13 +1,14 @@
 <template>
   <v-app>
     <Navbar />
-    <div>
+    <v-content>
       <full-page ref="fullpage" :options="options">
         <Cover />
         <Studio />
         <Packs />
       </full-page>
-    </div>
+    </v-content>
+    <Footer />
     <NewsletterModal />
   </v-app>
 </template>
@@ -17,6 +18,7 @@ import Navbar from "../components/Navbar.vue";
 import NewsletterModal from "../components/home/NewsletterModal.vue";
 import Cover from "../components/home/Cover.vue";
 import Studio from "../components/home/Studio.vue";
+import Footer from "../components/Footer.vue";
 import Packs from "../components/home/Packs.vue";
 
 export default {
@@ -26,7 +28,8 @@ export default {
     NewsletterModal: NewsletterModal,
     Cover: Cover,
     Studio: Studio,
-    Packs: Packs
+    Packs: Packs,
+    Footer: Footer
   },
   props: {
     source: String

@@ -1,5 +1,5 @@
 <template>
-  <v-footer absolute class="pa-2">
+  <v-footer absolute app color="black">
     <v-card class="lighten-1 white--text text-center">
       <v-card-title>
         <v-btn
@@ -11,13 +11,11 @@
           class="mx-4 white--text text-center socialIcon"
           dark
         >
-          <v-icon size="24px" color="white">{{ el.icon }}</v-icon>
+          <v-icon large color="white">{{ el.icon }}</v-icon>
         </v-btn>
       </v-card-title>
       <v-divider></v-divider>
-      <v-card-text class="white--text"
-        >{{ new Date().getFullYear() }} — Holophonica</v-card-text
-      >
+      <v-card-text class="white--text">Holophonica</v-card-text>
     </v-card>
   </v-footer>
 </template>
@@ -34,9 +32,11 @@ export default {
           url: "https://www.instagram.com/holophonica/"
         },
         { id: "facebook", icon: "mdi-facebook", url: "" },
-        { id: "soundcloud", icon: "mdi-soundcloud", url: "" },
-        { id: "twitch", icon: "mdi-twitch", url: "" },
-        { id: "patreon", icon: "mdi-patreon", url: "" }
+        {
+          id: "soundcloud",
+          icon: "mdi-soundcloud",
+          url: "https://soundcloud.com/user-580792470"
+        }
       ]
     };
   }

@@ -6,7 +6,7 @@
         <v-col cols="10" lg="6" md="6" sm="8" justify="center">
           <v-img
             class="mx-auto mb-12"
-            min-width="350"
+            min-width="100"
             max-width="700"
             src="../../assets/logo.png"
             ratio="1"
