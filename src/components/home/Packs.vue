@@ -6,7 +6,11 @@
         <v-col v-if="mobile" cols="0" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="$refs.slider.show('prev')">
-              <v-img min-width="50" width="60" src="../../assets/leftArrow.png"></v-img>
+              <v-img
+                min-width="50"
+                width="60"
+                src="../../assets/leftArrow.png"
+              ></v-img>
             </a>
           </v-row>
         </v-col>
@@ -16,7 +20,10 @@
           <div class="samplepackParent">
             <p class="samplepack display-1 text-center mt-4">SAMPLE</p>
           </div>
-          <div class="ml-6 mr-6" style="padding:10%; border: solid white 1px; border-radius: 1%">
+          <div
+            class="ml-6 mr-6"
+            style="padding:10%; border: solid white 1px; border-radius: 1%"
+          >
             <vue-flux
               :options="vfOptions"
               :images="vfImages"
@@ -38,7 +45,11 @@
         <v-col v-if="mobile" cols="0" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="$refs.slider.show('next')">
-              <v-img min-width="50" width="60" src="../../assets/rightArrow.png"></v-img>
+              <v-img
+                min-width="50"
+                width="60"
+                src="../../assets/rightArrow.png"
+              ></v-img>
             </a>
           </v-row>
         </v-col>

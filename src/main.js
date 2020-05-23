@@ -7,19 +7,18 @@ import "material-design-icons-iconfont/dist/material-design-icons.css";
 import "fullpage.js/vendors/scrolloverflow";
 import VueFullPage from "vue-fullpage.js";
 import Vuelidate from "vuelidate";
-import VueCookies from 'vue-cookies'
+import VueCookies from "vue-cookies";
 
 Vue.use(Vuelidate);
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();
 Vue.use(Vuetify);
 Vue.use(VueFullPage);
-Vue.use(VueCookies)
+Vue.use(VueCookies);
 
-Vue.$cookies.config('7d')
-Vue.$cookies.set('theme', 'default');
-Vue.$cookies.set('hover-time', '1s');
-
+Vue.$cookies.config("7d");
+Vue.$cookies.set("theme", "default");
+Vue.$cookies.set("hover-time", "1s");
 
 new Vue({
   el: "#app",

@@ -12,9 +12,15 @@
             ratio="1"
           ></v-img>
           <v-row class="mb-12 mt-12">
-            <v-img class="mb-6" src="../../assets/textLogo.png" ratio="1"></v-img>
+            <v-img
+              class="mb-6"
+              src="../../assets/textLogo.png"
+              ratio="1"
+            ></v-img>
           </v-row>
-          <h3 class="display-1 font-weight-thin mt-8 mb-4 text-center">The sound you need.</h3>
+          <h3 class="display-1 font-weight-thin mt-8 mb-4 text-center">
+            The sound you need.
+          </h3>
           <v-row class="mt-12">
             <a class="mx-auto">
               <v-img
@@ -37,5 +43,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
