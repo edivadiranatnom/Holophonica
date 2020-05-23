@@ -2,47 +2,52 @@
   <v-app>
     <Navbar />
     <div>
-      <v-container fluid fill-height>
-        <v-row style="padding-left: 1%">
-          <v-col cols="12" lg="12" md="12" sm="12">
-            <p class="display-1">About us</p>
-            <p class="subtitle-1"></p>
-          </v-col>
+      <v-container fluid fill-height style="background-color: black !important">
+        <v-row class="mt-12">
+          <LoremIpsum />
+          <LoremIpsum />
         </v-row>
         <v-row>
-          <v-col
-            v-for="(pasteur, item) in pasteurs"
-            :key="item"
-            cols="12"
-            lg="4"
-            md="4"
-            sm="4"
-          >
+          <v-col cols="0" lg="2" md="2" sm="2"></v-col>
+          <v-col cols="12" lg="2" md="2" sm="2">
             <v-row justify="center">
-              <p class="headline">{{ pasteur }}</p>
+              <p class="headline">Francesco</p>
             </v-row>
-            <v-row>
+            <v-row justify="center">
               <v-img
                 src="https://picsum.photos/510/300?random"
+                max-width="200"
                 aspect-ratio="1"
               ></v-img>
             </v-row>
-            <v-row>
-              <LoremIpsum />
+          </v-col>
+          <v-col cols="0" lg="1" md="1" sm="1"></v-col>
+          <v-col cols="12" lg="2" md="2" sm="2">
+            <v-row justify="center">
+              <p class="headline">Mattia</p>
+            </v-row>
+            <v-row justify="center">
+              <v-img
+                src="https://picsum.photos/510/300?random"
+                max-width="200"
+                aspect-ratio="1"
+              ></v-img>
             </v-row>
           </v-col>
-        </v-row>
-        <v-row>
-          <v-col
-            v-for="(pasteur, item) in pasteurs"
-            :key="item"
-            cols="12"
-            lg="4"
-            md="4"
-            sm="4"
-          >
-            <v-row></v-row>
+          <v-col cols="0" lg="1" md="1" sm="1"></v-col>
+          <v-col cols="12" lg="2" md="2" sm="2">
+            <v-row justify="center">
+              <p class="headline">Davide</p>
+            </v-row>
+            <v-row justify="center">
+              <v-img
+                src="https://picsum.photos/510/300?random"
+                max-width="200"
+                aspect-ratio="1"
+              ></v-img>
+            </v-row>
           </v-col>
+          <v-col cols="0" lg="2" md="2" sm="2"></v-col>
         </v-row>
       </v-container>
       <Footer />
@@ -76,13 +81,14 @@ export default {
 .container {
   margin-bottom: 10%;
   padding: 0 5% 0 5%;
+  background-color: black !important;
 }
-.container .row:nth-child(2),
-.container .row:nth-child(3) {
+.container .row:nth-child(1),
+.container .row:nth-child(2) {
   padding: 5%;
 }
 
 .container .row .v-image {
-  border-radius: 50%;
+  border-radius: 5%;
 }
 </style>

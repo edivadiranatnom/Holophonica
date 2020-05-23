@@ -2,11 +2,10 @@
   <div id="packs" class="section">
     <v-container fluid>
       <v-row align="center" justify="center">
-        <v-col cols="0" lg="3" md="3" sm="0"></v-col>
-
-        <v-col v-if="mobile" cols="2" lg="1" md="1" sm="2" align="center">
+        <v-col cols="0" lg="1" md="1" sm="0"></v-col>
+        <v-col v-if="mobile" cols="0" lg="1" md="1" sm="1">
           <v-row justify="center">
-            <a @click="model--" class="mr-12">
+            <a @click="$refs.slider.show('prev')">
               <v-img
                 min-width="50"
                 width="60"
@@ -16,35 +15,28 @@
           </v-row>
         </v-col>
         <v-col v-else></v-col>
-        <v-col cols="8" lg="4" md="4" sm="8" align="center" justify="center">
-          <v-row justify="center" align="center">
-            <h1 class="display-2 font-weight-medium text-uppercase">
-              Sample Pack
-            </h1>
-            <v-carousel
-              v-model="model"
-              cycle
-              hide-delimiters
-              :show-arrows="false"
-              interval="3000"
+        <v-col cols="0" lg="1" md="1" sm="1"></v-col>
+        <v-col cols="12" lg="4" md="4" sm="4">
+          <p class="display-1 text-center">SAMPLE</p>
+          <div style="padding:10%; border: solid white 1px; border-radius: 1%">
+            <vue-flux
+              :options="vfOptions"
+              :images="vfImages"
+              :transitions="vfTransitions"
+              ref="slider"
+              style="margin: auto;"
             >
-              <v-carousel-item v-for="(pack, i) in packs" :key="i">
-                <v-col cols="12">
-                  <v-row>
-                    <v-img
-                      :src="require('@/assets/' + pack.img)"
-                      class="white--text align-end"
-                    ></v-img>
-                  </v-row>
-                </v-col>
-              </v-carousel-item>
-            </v-carousel>
-          </v-row>
+              <template v-slot:preloader>
+                <flux-preloader />
+              </template>
+            </vue-flux>
+          </div>
+          <p class="display-1 text-center mt-4">PACKS</p>
         </v-col>
-
-        <v-col v-if="mobile" cols="2" lg="1" md="1" sm="2">
+        <v-col cols="0" lg="1" md="1" sm="1"></v-col>
+        <v-col v-if="mobile" cols="0" lg="1" md="1" sm="1">
           <v-row justify="center">
-            <a @click="model++" class="ml-12">
+            <a @click="$refs.slider.show('next')">
               <v-img
                 min-width="50"
                 width="60"
@@ -54,7 +46,7 @@
           </v-row>
         </v-col>
         <v-col v-else></v-col>
-        <v-col cols="0" lg="3" md="3" sm="0"></v-col>
+        <v-col cols="0" lg="1" md="1" sm="1"></v-col>
       </v-row>
     </v-container>
   </div>
@@ -62,13 +54,28 @@
 
 <script>
 import packs from "../../data/home/packs.json";
+import { VueFlux, FluxPreloader } from "vue-flux";
 
 export default {
   name: "Packs",
+  components: {
+    VueFlux: VueFlux,
+    FluxPreloader: FluxPreloader
+  },
   data: () => ({
     packs: packs,
     model: 1,
-    mobile: false
+    mobile: false,
+    vfOptions: {
+      autoplay: true,
+      enableGestures: true,
+      aspectRatio: "9:16"
+    },
+    vfImages: [
+      require("@/assets/testimg.jpg"),
+      require("@/assets/testTour.jpg")
+    ],
+    vfTransitions: ["cube", "fade", "fall", "slide", "swipe"]
   }),
   created() {
     if (
@@ -85,5 +92,9 @@ export default {
 <style lang="scss">
 #packs {
   background-color: black !important;
+}
+
+.vue-flux {
+  height: 50vh;
 }
 </style>

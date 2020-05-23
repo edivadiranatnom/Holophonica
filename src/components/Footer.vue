@@ -11,11 +11,25 @@
           class="mx-4 white--text text-center socialIcon"
           dark
         >
-          <v-icon large color="white">{{ el.icon }}</v-icon>
+          <v-icon large>{{ el.icon }}</v-icon>
         </v-btn>
       </v-card-title>
       <v-divider></v-divider>
-      <v-card-text class="white--text">Holophonica</v-card-text>
+      <v-card-text class="title white--text">Holophonica</v-card-text>
+      <v-row justify="center">
+        <p class="caption">
+          <router-link to="Privacy" style="color: white"
+            >Privacy Policy</router-link
+          >
+        </p>
+      </v-row>
+      <v-row justify="center">
+        <p class="caption">
+          <router-link to="Terms" style="color: white"
+            >Terms and Conditions</router-link
+          >
+        </p>
+      </v-row>
     </v-card>
   </v-footer>
 </template>
@@ -60,5 +74,13 @@ footer.v-footer.pa-2 {
 }
 .v-footer .lighten-1 .v-card__title {
   display: block !important;
+}
+
+.v-icon {
+  color: #cfcfcf !important;
+}
+
+.v-icon:hover {
+  color: white !important;
 }
 </style>

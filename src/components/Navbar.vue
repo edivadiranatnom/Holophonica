@@ -1,19 +1,33 @@
 <template>
-  <v-app-bar color="black" app flat collapse-on-scroll>
+  <v-app-bar app flat hide-on-scroll color="transparent">
     <v-col cols="1">
-      <a href="/">
-        <v-img min-width="50" width="60" src="../assets/logo.png"></v-img>
-      </a>
+      <router-link to="/">
+        <v-img
+          id="navbarLogo"
+          min-width="50"
+          width="60"
+          src="../assets/logo.png"
+        ></v-img>
+      </router-link>
     </v-col>
     <v-col cols="11">
+      <v-toolbar-items v-if="renderNavItem" class="toolbarItem pa-2 ml-3 mr-3">
+        <router-link to="/about" style="font-size: 1em">About</router-link>
+      </v-toolbar-items>
+      <v-toolbar-items v-else></v-toolbar-items>
       <v-toolbar-items
-        class="toolbarItem pa-2"
+        class="toolbarItem pa-2 ml-3 mr-3"
         v-for="(el, i) in navItems"
         :key="i"
+        @click="$vuetify.goTo('#' + el.url.split('/')[1])"
       >
-        <router-link :to="el.url">{{ el.text }}</router-link>
+        <!-- <router-link class="routerLink" :to="el.url">{{ el.text }}</router-link> -->
+        {{ el.text }}
       </v-toolbar-items>
     </v-col>
+    <v-container fluid style="background-color:black">
+      <v-divider class="mr-12 ml-12"></v-divider>
+    </v-container>
   </v-app-bar>
 </template>
 
@@ -23,39 +37,43 @@ export default {
   data: () => ({
     navItems: [
       { text: "", url: "" },
-      { text: "", url: "" },
       { text: "", url: "" }
-    ]
+    ],
+    renderNavItem: true
   }),
   created() {
     if (this.$route.path == "/") {
-      this.navItems[2].text = "Packs";
-      this.navItems[2].url = "/packs";
-      this.navItems[1].text = "Services";
-      this.navItems[1].url = "/services";
-      this.navItems[0].text = "About";
-      this.navItems[0].url = "/about";
-    } else if (this.$route.path == "/packs") {
-      this.navItems[0].text = "Home";
-      this.navItems[0].url = "/";
-      this.navItems[1].text = "Services";
-      this.navItems[1].url = "/services";
-      this.navItems[2].text = "About";
-      this.navItems[2].url = "/about";
-    } else if (this.$route.path == "/services") {
-      this.navItems[0].text = "Home";
-      this.navItems[0].url = "/";
-      this.navItems[1].text = "Packs";
-      this.navItems[1].url = "/packs";
-      this.navItems[2].text = "About";
-      this.navItems[2].url = "/about";
-    } else if (this.$route.path == "/about") {
-      this.navItems[0].text = "Home";
-      this.navItems[0].url = "/";
-      this.navItems[1].text = "Packs";
-      this.navItems[1].url = "/packs";
-      this.navItems[2].text = "Services";
-      this.navItems[2].url = "/services";
+      this.renderNavItem = true;
+      this.navItems[0].text = "Packs";
+      this.navItems[0].url = "/packs";
+      this.navItems[1].text = "Studio";
+      this.navItems[1].url = "/studio";
+      // } else if (this.$route.path == "/packs") {
+      //   this.navItems[0].text = "Home";
+      //   this.navItems[0].url = "/";
+      //   this.navItems[1].text = "Studio";
+      //   this.navItems[1].url = "/studio";
+      //   this.navItems[2].text = "About";
+      //   this.navItems[2].url = "/about";
+      // } else if (this.$route.path == "/services") {
+      //   this.navItems[0].text = "Home";
+      //   this.navItems[0].url = "/";
+      //   this.navItems[1].text = "Packs";
+      //   this.navItems[1].url = "/packs";
+      //   this.navItems[2].text = "About";
+      //   this.navItems[2].url = "/about";
+    } else if (
+      this.$route.path == "/about" ||
+      this.$route.path == "/Terms" ||
+      this.$route.path == "/Privacy"
+    ) {
+      this.renderNavItem = false;
+      // this.navItems[0].text = "Home";
+      // this.navItems[0].url = "/";
+      // this.navItems[1].text = "Packs";
+      // this.navItems[1].url = "/packs";
+      // this.navItems[2].text = "Studio";
+      // this.navItems[2].url = "/studio";
     }
   }
 };
@@ -64,26 +82,45 @@ export default {
 <style lang="scss">
 .toolbarItem {
   float: right !important;
+  color: #cfcfcf !important;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.toolbarItem:hover {
+  color: white !important;
 }
 
 .pa-2 a {
   font-size: 1.2em;
-  color: white !important;
+  color: #cfcfcf !important;
   text-decoration: none;
 }
 
-#holo {
-  z-index: 0;
-  width: 60vh;
-  background-image: url("https://img.freepik.com/free-photo/_40163-61.jpg?size=626&ext=jpg");
-  background-size: cover;
-  display: block;
-  width: 100vh;
-  height: 150px;
-  -webkit-filter: blur(7.5px);
-  -moz-filter: blur(7.5px);
-  -o-filter: blur(7.5px);
-  -ms-filter: blur(7.5px);
-  filter: blur(7.5px);
+.pa-2 a:hover {
+  color: white !important;
+}
+
+#navbarLogo:hover {
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 </style>

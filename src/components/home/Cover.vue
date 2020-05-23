@@ -5,6 +5,7 @@
         <v-col cols="1" lg="3" md="3" sm="2"></v-col>
         <v-col cols="10" lg="6" md="6" sm="8" justify="center">
           <v-img
+            id="imgLogo"
             class="mx-auto mb-12"
             min-width="100"
             max-width="700"

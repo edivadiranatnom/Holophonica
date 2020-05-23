@@ -11,10 +11,15 @@
         <v-btn id="upperCloseDialog" icon @click="dialog = !dialog">
           <v-icon class="mdi-36px">mdi-close</v-icon>
         </v-btn>
-        <v-form v-if="preSubscription" ref="form">
+        <v-form
+          v-model="valid"
+          v-if="preSubscription"
+          ref="form"
+          lazy-validation
+        >
           <span class="headline">Newsletter</span>
           <v-container>
-            Subscribe to our newsletter to receive the latest news.
+            Subscribe to receive our latest news.
             <v-row>
               <v-col cols="12" sm="8" md="12">
                 <v-text-field
@@ -48,14 +53,30 @@
                 ></v-text-field>
               </v-col>
             </v-row>
-
-            <small>*required field</small>
+            <v-row cols="12" sm="12" md="12" align="center">
+              <v-checkbox
+                v-model="subscriber.accept"
+                value="1"
+                type="checkbox"
+                :rules="rules.checkboxRules"
+                required
+              ></v-checkbox>
+              <small>
+                By submitting your informations you agree to our
+                <router-link to="Privacy" style="color: white"
+                  >&nbsp;Privacy Policy</router-link
+                >&nbsp;and
+                <router-link to="Terms" style="color: white"
+                  >&nbsp;Terms and Conditions</router-link
+                >
+              </small>
+            </v-row>
           </v-container>
           <v-spacer></v-spacer>
           <v-btn
             class="float-right"
             ref="subscribe"
-            color="blue darken-1"
+            color="white"
             :disabled="disabled"
             text
             @click="validate"
@@ -107,19 +128,21 @@ export default {
     subscriber: {
       firstname: "",
       lastname: "",
-      mail: ""
+      mail: "",
+      accept: false
     },
     rules: {
       nameRules: [
-        v => !!v || "Name is required",
+        v => !!v || "Name required",
         v => v.length > 0 || "Insert name"
       ],
       emailRules: [
-        v => !!v || "E-mail is required",
+        v => !!v || "E-mail required",
         v =>
           /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(v) ||
           "E-mail must be valid"
-      ]
+      ],
+      checkboxRules: [v => !!v]
     }
   }),
   methods: {
@@ -133,7 +156,8 @@ export default {
         data.firstname != "" &&
         data.lastname != "" &&
         data.mail != "" &&
-        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(data.mail)
+        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(data.mail) &&
+        this.accept == true
       ) {
         newsletterService
           .subscribe(data)

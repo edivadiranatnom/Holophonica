@@ -73,12 +73,7 @@
           </v-row>
         </v-col>
         <v-col v-else cols="10" lg="8" md="8" sm="8">
-          <v-carousel
-            cycle
-            hide-delimiters
-            :show-arrows="false"
-            interval="4000"
-          >
+          <v-carousel cycle :show-arrows="false" interval="4000">
             <v-carousel-item>
               <v-col id="leftStudio" cols="12" lg="5" md="5" sm="12">
                 <v-row>

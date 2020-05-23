@@ -4,7 +4,7 @@ import router from "./router";
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
-import "fullpage.js/vendors/scrolloverflow"; // Optional. When using scrollOverflow:true
+import "fullpage.js/vendors/scrolloverflow";
 import VueFullPage from "vue-fullpage.js";
 import Vuelidate from "vuelidate";
 

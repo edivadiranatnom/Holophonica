@@ -1,10 +1,16 @@
 <template>
   <v-app>
     <Navbar />
-    <v-content>
+    <v-content style="background-color: black !important">
       <full-page ref="fullpage" :options="options">
         <Cover />
+        <v-container fluid style="background-color:black">
+          <v-divider class="mr-12 ml-12"></v-divider>
+        </v-container>
         <Studio />
+        <v-container fluid style="background-color:black">
+          <v-divider class="mr-12 ml-12"></v-divider>
+        </v-container>
         <Packs />
       </full-page>
     </v-content>
