@@ -19,6 +19,7 @@
     "slick-carousel": "^1.8.1",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
+    "vue-cookies": "^1.7.0",
     "vue-flux": "^6.1.1",
     "vue-fullpage.js": "^0.1.5",
     "vue-parallaxy": "^1.1.1",

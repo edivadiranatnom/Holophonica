@@ -12,6 +12,21 @@
           <v-divider class="mr-12 ml-12"></v-divider>
         </v-container>
         <Packs />
+        <v-btn
+          v-scroll="onScroll"
+          v-show="fab"
+          class="ma-6"
+          small
+          fixed
+          fab
+          bottom
+          right
+          color="white"
+          direction="top"
+          @click="toTop"
+        >
+          <v-icon color="black">mdi-arrow-up</v-icon>
+        </v-btn>
       </full-page>
     </v-content>
     <Footer />
@@ -48,10 +63,20 @@ export default {
       licenseKey: ""
     },
     slide: "",
-    serviceText: ""
+    serviceText: "",
+    fab: false
   }),
   created() {
     this.$vuetify.theme.dark = true;
+  },
+  methods: {
+    onScroll(e) {
+      const top = window.pageYOffset || e.target.scrollTop || 0;
+      this.fab = top > (window.innerHeight / 10) * 22;
+    },
+    toTop() {
+      this.$vuetify.goTo(0);
+    }
   }
 };
 </script>
@@ -59,5 +84,8 @@ export default {
 <style lang="scss">
 #cover {
   background-color: black;
+}
+.v-divider {
+  background-color: white;
 }
 </style>

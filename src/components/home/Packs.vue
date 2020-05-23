@@ -6,42 +6,39 @@
         <v-col v-if="mobile" cols="0" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="$refs.slider.show('prev')">
-              <v-img
-                min-width="50"
-                width="60"
-                src="../../assets/leftArrow.png"
-              ></v-img>
+              <v-img min-width="50" width="60" src="../../assets/leftArrow.png"></v-img>
             </a>
           </v-row>
         </v-col>
         <v-col v-else></v-col>
         <v-col cols="0" lg="1" md="1" sm="1"></v-col>
         <v-col cols="12" lg="4" md="4" sm="4">
-          <p class="display-1 text-center">SAMPLE</p>
-          <div style="padding:10%; border: solid white 1px; border-radius: 1%">
+          <div class="samplepackParent">
+            <p class="samplepack display-1 text-center mt-4">SAMPLE</p>
+          </div>
+          <div class="ml-6 mr-6" style="padding:10%; border: solid white 1px; border-radius: 1%">
             <vue-flux
               :options="vfOptions"
               :images="vfImages"
               :transitions="vfTransitions"
               ref="slider"
               style="margin: auto;"
+              class="preloader"
             >
               <template v-slot:preloader>
                 <flux-preloader />
               </template>
             </vue-flux>
           </div>
-          <p class="display-1 text-center mt-4">PACKS</p>
+          <div class="samplepackParent">
+            <p class="samplepack display-1 text-center mt-4">PACKS</p>
+          </div>
         </v-col>
         <v-col cols="0" lg="1" md="1" sm="1"></v-col>
         <v-col v-if="mobile" cols="0" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="$refs.slider.show('next')">
-              <v-img
-                min-width="50"
-                width="60"
-                src="../../assets/rightArrow.png"
-              ></v-img>
+              <v-img min-width="50" width="60" src="../../assets/rightArrow.png"></v-img>
             </a>
           </v-row>
         </v-col>
@@ -72,10 +69,11 @@ export default {
       aspectRatio: "9:16"
     },
     vfImages: [
-      require("@/assets/testimg.jpg"),
-      require("@/assets/testTour.jpg")
+      require("@/assets/rudnick_1.png"),
+      require("@/assets/rudnick_2.png"),
+      require("@/assets/rudnick_3.jpg")
     ],
-    vfTransitions: ["cube", "fade", "fall", "slide", "swipe"]
+    vfTransitions: ["cube", "slide", "swipe"]
   }),
   created() {
     if (
@@ -96,5 +94,11 @@ export default {
 
 .vue-flux {
   height: 50vh;
+}
+
+.samplepackParent {
+  width: 50%;
+  border-radius: 1%;
+  margin: auto;
 }
 </style>
