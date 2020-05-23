@@ -30,7 +30,16 @@
                 <v-img src="https://picsum.photos/510/300?random" max-width="200" aspect-ratio="1"></v-img>
               </v-row>
               <p class="headline text-center mt-2">Francesco</p>
-              <p class="body-1 text-center mt-2">@frankthetraveler</p>
+              <v-row justify="center">
+                <v-btn
+                  class="text-lowercase"
+                  target="_blank"
+                  icon
+                  href="https://www.instagram.com/frankthetraveler"
+                >
+                  <v-icon small>mdi-instagram</v-icon>&nbsp;frankthetraveler
+                </v-btn>
+              </v-row>
             </v-col>
             <v-col cols="0" lg="1" md="1" sm="1"></v-col>
             <v-col class="mt-12" cols="12" lg="2" md="2" sm="2">
@@ -38,7 +47,16 @@
                 <v-img src="https://picsum.photos/510/300?random" max-width="200" aspect-ratio="1"></v-img>
               </v-row>
               <p class="headline text-center mt-2">Mattia</p>
-              <p class="body-1 text-center mt-2">@gojamusic</p>
+              <v-row justify="center">
+                <v-btn
+                  class="text-lowercase"
+                  target="_blank"
+                  icon
+                  href="https://www.instagram.com/gojamusic"
+                >
+                  <v-icon small>mdi-instagram</v-icon>&nbsp;gojamusic
+                </v-btn>
+              </v-row>
             </v-col>
             <v-col cols="0" lg="1" md="1" sm="1"></v-col>
             <v-col class="mt-12" cols="12" lg="2" md="2" sm="2">
@@ -46,7 +64,16 @@
                 <v-img src="https://picsum.photos/510/300?random" max-width="200" aspect-ratio="1"></v-img>
               </v-row>
               <p class="headline text-center mt-2">Davide</p>
-              <p class="body-1 text-center mt-2">@iamsurt</p>
+              <v-row justify="center">
+                <v-btn
+                  class="text-lowercase"
+                  target="_blank"
+                  icon
+                  href="https://www.instagram.com/iamsurt"
+                >
+                  <v-icon small>mdi-instagram</v-icon>&nbsp;iamsurt
+                </v-btn>
+              </v-row>
             </v-col>
             <v-col cols="0" lg="2" md="2" sm="2"></v-col>
           </v-row>
