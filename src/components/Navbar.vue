@@ -2,21 +2,16 @@
   <v-app-bar app flat hide-on-scroll color="transparent">
     <v-col cols="1">
       <router-link to="/">
-        <v-img
-          id="navbarLogo"
-          min-width="50"
-          width="60"
-          src="../assets/logo.png"
-        ></v-img>
+        <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
       </router-link>
     </v-col>
     <v-col cols="11">
-      <v-toolbar-items v-if="renderNavItem" class="toolbarItem pa-2 ml-3 mr-3">
+      <v-toolbar-items v-if="renderNavItem" class="toolbarItem pa-2 ml-1 mr-1">
         <router-link to="/about" style="font-size: 1em">About</router-link>
       </v-toolbar-items>
       <v-toolbar-items v-else></v-toolbar-items>
       <v-toolbar-items
-        class="toolbarItem pa-2 ml-3 mr-3"
+        class="toolbarItem pa-2 ml-2 mr-2"
         v-for="(el, i) in navItems"
         :key="i"
         @click="$vuetify.goTo('#' + el.url.split('/')[1])"
