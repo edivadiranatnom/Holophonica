@@ -2,12 +2,7 @@
   <v-app-bar app flat :color="backgroundcolor" v-scroll="onScroll">
     <v-col cols="1">
       <router-link to="/">
-        <v-img
-          id="navbarLogo"
-          min-width="50"
-          width="60"
-          src="../assets/logo.png"
-        ></v-img>
+        <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
       </router-link>
     </v-col>
     <v-col cols="11">
