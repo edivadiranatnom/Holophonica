@@ -16,7 +16,7 @@
         </v-col>
         <v-col v-else></v-col>
         <v-col cols="0" lg="1" md="1" sm="1"></v-col>
-        <v-col cols="12" lg="4" md="4" sm="4">
+        <v-col cols="12" lg="4" md="6" sm="6">
           <div class="samplepackParent">
             <p class="samplepack display-1 text-center mt-4">SAMPLE</p>
           </div>

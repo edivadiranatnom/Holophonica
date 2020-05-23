@@ -1,8 +1,13 @@
 <template>
-  <v-app-bar app flat hide-on-scroll color="black">
+  <v-app-bar app flat :color="backgroundcolor" v-scroll="onScroll">
     <v-col cols="1">
       <router-link to="/">
-        <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
+        <v-img
+          id="navbarLogo"
+          min-width="50"
+          width="60"
+          src="../assets/logo.png"
+        ></v-img>
       </router-link>
     </v-col>
     <v-col cols="11">
@@ -20,9 +25,6 @@
         {{ el.text }}
       </v-toolbar-items>
     </v-col>
-    <v-container fluid style="background-color:black">
-      <v-divider class="mr-12 ml-12"></v-divider>
-    </v-container>
   </v-app-bar>
 </template>
 
@@ -34,7 +36,9 @@ export default {
       { text: "", url: "" },
       { text: "", url: "" }
     ],
-    renderNavItem: true
+    renderNavItem: true,
+    backgroundcolor: "transparent",
+    top: 0
   }),
   created() {
     if (this.$route.path == "/") {
@@ -70,6 +74,26 @@ export default {
       // this.navItems[2].text = "Studio";
       // this.navItems[2].url = "/studio";
     }
+  },
+  methods: {
+    onScroll(e) {
+      this.top = window.pageYOffset || e.target.scrollTop || 0;
+    }
+  },
+  watch: {
+    top: function() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        this.backgroundcolor = "black";
+      } else {
+        if (this.top > (window.innerHeight / 10) * 10)
+          this.backgroundcolor = "black";
+        else this.backgroundcolor = "transparent";
+      }
+    }
   }
 };
 </script>
@@ -86,13 +110,13 @@ export default {
   color: white !important;
 }
 
-.pa-2 a {
+.toolbarItem a {
   font-size: 1.2em;
   color: #cfcfcf !important;
   text-decoration: none;
 }
 
-.pa-2 a:hover {
+.toolbarItem a:hover {
   color: white !important;
 }
 
