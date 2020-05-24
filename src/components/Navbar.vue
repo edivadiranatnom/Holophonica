@@ -1,26 +1,32 @@
 <template>
   <!-- <v-app-bar app flat :color="backgroundcolor" v-scroll="onScroll" style="opacity:0.9"> -->
-  <v-app-bar id="navbar" app flat color="black">
-    <v-col cols="1">
-      <router-link to="/">
-        <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
-      </router-link>
-    </v-col>
-    <v-col cols="11">
-      <v-toolbar-items v-if="renderNavItem" class="toolbarItem pa-2 ml-1 mr-1">
-        <router-link to="/about" style="font-size: 1em">About</router-link>
-      </v-toolbar-items>
-      <v-toolbar-items v-else></v-toolbar-items>
-      <v-toolbar-items
-        class="toolbarItem pa-2 ml-2 mr-2"
-        v-for="(el, i) in navItems"
-        :key="i"
-        @click="$vuetify.goTo('#' + el.url.split('/')[1])"
-      >
-        <!-- <router-link class="routerLink" :to="el.url">{{ el.text }}</router-link> -->
-        {{ el.text }}
-      </v-toolbar-items>
-    </v-col>
+  <v-app-bar id="navbar">
+    <div id="navbarOverlay"></div>
+    <v-container fluid>
+      <v-row>
+        <v-col cols="1">
+          <router-link to="/">
+            <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
+          </router-link>
+        </v-col>
+        <v-col cols="11">
+          <v-toolbar-items v-if="renderNavItem" class="toolbarItem pa-2 ml-1 mr-1">
+            <router-link to="/about" style="font-size: 1em">About</router-link>
+          </v-toolbar-items>
+          <v-toolbar-items v-else></v-toolbar-items>
+          <v-toolbar-items
+            class="toolbarItem pa-2 ml-2 mr-2"
+            v-for="(el, i) in navItems"
+            :key="i"
+            @click="$vuetify.goTo('#' + el.url.split('/')[1])"
+          >
+            <!-- Accrocchio con la split per togliere lo / dal route -->
+            <!-- <router-link class="routerLink" :to="el.url">{{ el.text }}</router-link> -->
+            {{ el.text }}
+          </v-toolbar-items>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-app-bar>
 </template>
 
@@ -95,12 +101,16 @@ export default {
 </script>
 
 <style lang="scss">
-#navbar {
-  opacity: 0.98;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-}
-
+// #navbarOverlay {
+//   background-image: url("../assets/navbarOverlay.png");
+//   min-width: 2000px;
+//   height: 64px;
+//   // filter: blur(10px);
+//   // -webkit-filter: blur(10px);
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+// }
 .toolbarItem {
   float: right !important;
   color: #cfcfcf !important;
@@ -126,6 +136,11 @@ export default {
   -webkit-animation: spin 2s linear infinite;
   -moz-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+}
+
+.v-toolbar__content,
+.v-toolbar__extension {
+  padding: 0 !important;
 }
 
 @-moz-keyframes spin {

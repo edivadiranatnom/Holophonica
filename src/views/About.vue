@@ -9,6 +9,9 @@
           </v-row>
           <v-divider class="mr-6 ml-6 mb-12"></v-divider>
           <v-row class="mt-12 mb-12">
+            <p
+              class="headline mb-12"
+            >Holophonica is the brainchild of three friends and producers who decided to offer their knowledge to help people bring their ideas to life.</p>
             <p class="body-1">
               Credits include releases on Universal, Spinnin', Monstercat, STMPD. Through the years, we gained extensive experience in multiple genres. We worked with artists such as Khalid, Martin Garrix, OG Maco as well as Edit Select and Antonio Ruscito for the techno/ambient scene. Besides this, we specialize in Mix/Mastering and Sound Design services.
               Davide, Francesco and Mattia are 3 producers from Italy; they have been producing, mixing and mastering full time for over 8 years.
@@ -29,7 +32,6 @@
               <v-row justify="center">
                 <v-img src="https://picsum.photos/510/300?random" max-width="200" aspect-ratio="1"></v-img>
               </v-row>
-              <p class="headline text-center mt-2">Francesco</p>
               <v-row justify="center">
                 <v-btn
                   class="text-lowercase"
@@ -46,7 +48,6 @@
               <v-row justify="center">
                 <v-img src="https://picsum.photos/510/300?random" max-width="200" aspect-ratio="1"></v-img>
               </v-row>
-              <p class="headline text-center mt-2">Mattia</p>
               <v-row justify="center">
                 <v-btn
                   class="text-lowercase"
@@ -63,7 +64,6 @@
               <v-row justify="center">
                 <v-img src="https://picsum.photos/510/300?random" max-width="200" aspect-ratio="1"></v-img>
               </v-row>
-              <p class="headline text-center mt-2">Davide</p>
               <v-row justify="center">
                 <v-btn
                   class="text-lowercase"

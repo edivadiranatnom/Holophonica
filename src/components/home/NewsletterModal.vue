@@ -1,25 +1,21 @@
 <template>
   <v-row justify="center">
-    <v-dialog
-      v-model="dialog"
-      ref="form"
-      overlay-opacity="0.8"
-      persistent
-      max-width="600px"
-    >
+    <v-dialog v-model="dialog" ref="form" overlay-opacity="0.8" persistent max-width="600px">
       <v-container fluid v-if="preSubscription" id="dialogContainer">
-        <v-btn id="upperCloseDialog" icon @click="dialog = !dialog">
-          <v-icon class="mdi-36px">mdi-close</v-icon>
-        </v-btn>
-        <v-form
-          v-model="valid"
-          v-if="preSubscription"
-          ref="form"
-          lazy-validation
-        >
-          <span class="headline">Newsletter</span>
+        <v-row>
+          <v-col cols="11">
+            Subscribe to our newsletter, stay updated and receive periodic sample packs for free.
+            By subscribing now, we will send you right away an exclusive pack as a welcome gift.
+            See you on the other side!
+          </v-col>
+          <v-col cols="1">
+            <v-btn class="ml-12" id="upperCloseDialog" icon @click="dialog = !dialog">
+              <v-icon class="mdi-36px">mdi-close</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+        <v-form v-model="valid" v-if="preSubscription" ref="form" lazy-validation>
           <v-container>
-            Subscribe to receive our latest news.
             <v-row>
               <v-col cols="12" sm="8" md="12">
                 <v-text-field
@@ -63,12 +59,8 @@
               ></v-checkbox>
               <small>
                 By submitting your informations you agree to our
-                <router-link to="Privacy" style="color: white"
-                  >&nbsp;Privacy Policy</router-link
-                >&nbsp;and
-                <router-link to="Terms" style="color: white"
-                  >&nbsp;Terms and Conditions</router-link
-                >
+                <router-link to="Privacy" style="color: white">&nbsp;Privacy Policy</router-link>&nbsp;and
+                <router-link to="Terms" style="color: white">&nbsp;Terms and Conditions</router-link>
               </small>
             </v-row>
           </v-container>
@@ -80,8 +72,7 @@
             :disabled="disabled"
             text
             @click="validate"
-            >Subscribe</v-btn
-          >
+          >Subscribe</v-btn>
         </v-form>
       </v-container>
       <v-container v-else fluid style="top: 10%">
@@ -102,9 +93,7 @@
           <v-col cols="6">
             <v-row>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="dialog = !dialog"
-                >Close</v-btn
-              >
+              <v-btn color="blue darken-1" text @click="dialog = !dialog">Close</v-btn>
             </v-row>
           </v-col>
           <v-col cols="3"></v-col>

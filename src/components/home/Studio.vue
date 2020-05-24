@@ -5,7 +5,9 @@
         <v-col cols="1" lg="3" md="3" sm="2"></v-col>
         <v-col cols="10" lg="6" md="6" sm="8">
           <h3 class="display-2 text-center font-weight-medium mb-4">STUDIO</h3>
-          <h3 class="font-weight-thin text-center">Lorem ipsum sit amet.</h3>
+          <h3
+            class="font-weight-thin text-center"
+          >Thanks to our team of experienced producers and sound engineers we offer a wide variety of services to help your music meet the highest professional standards.</h3>
         </v-col>
         <v-col cols="1" lg="3" md="3" sm="2"></v-col>
       </v-row>
@@ -17,9 +19,7 @@
               <v-row>
                 <v-col cols="2"></v-col>
                 <v-col cols="8">
-                  <h3 class="headline font-weight-thin mt-4 text-center">
-                    Improve your music
-                  </h3>
+                  <h3 class="headline font-weight-thin mt-4 text-center">Improve your music</h3>
                 </v-col>
                 <v-col cols="2"></v-col>
               </v-row>
@@ -37,8 +37,7 @@
                     color="white"
                     href="https://soundbetter.com/profiles/239809-holophonica-studios"
                     target="_blank"
-                    >Learn more</v-btn
-                  >
+                  >Learn more</v-btn>
                 </v-col>
               </v-row>
             </v-col>
@@ -47,9 +46,7 @@
               <v-row>
                 <v-col cols="2"></v-col>
                 <v-col cols="8">
-                  <h3 class="headline font-weight-thin mt-4 text-center">
-                    Create your music
-                  </h3>
+                  <h3 class="headline font-weight-thin mt-4 text-center">Create your music</h3>
                 </v-col>
                 <v-col cols="2"></v-col>
               </v-row>
@@ -67,8 +64,7 @@
                     color="white"
                     href="https://soundbetter.com/profiles/239809-holophonica-studios"
                     target="_blank"
-                    >Learn more</v-btn
-                  >
+                  >Learn more</v-btn>
                 </v-col>
               </v-row>
             </v-col>
@@ -81,9 +77,7 @@
                 <v-row>
                   <v-col cols="2"></v-col>
                   <v-col cols="8">
-                    <h3 class="headline font-weight-thin mt-4 text-center">
-                      Improve your music
-                    </h3>
+                    <h3 class="headline font-weight-thin mt-4 text-center">Improve your music</h3>
                   </v-col>
                   <v-col cols="2"></v-col>
                 </v-row>
@@ -100,8 +94,7 @@
                       rounded
                       color="white"
                       href="https://soundbetter.com/profiles/239809-holophonica-studios"
-                      >Learn more</v-btn
-                    >
+                    >Learn more</v-btn>
                   </v-col>
                 </v-row>
               </v-col>
@@ -111,9 +104,7 @@
                 <v-row>
                   <v-col cols="2"></v-col>
                   <v-col cols="8">
-                    <h3 class="headline font-weight-thin mt-4 text-center">
-                      Create your music
-                    </h3>
+                    <h3 class="headline font-weight-thin mt-4 text-center">Create your music</h3>
                   </v-col>
                   <v-col cols="2"></v-col>
                 </v-row>
@@ -130,8 +121,7 @@
                       rounded
                       color="white"
                       href="https://soundbetter.com/profiles/239809-holophonica-studios"
-                      >Learn more</v-btn
-                    >
+                    >Learn more</v-btn>
                   </v-col>
                 </v-row>
               </v-col>
