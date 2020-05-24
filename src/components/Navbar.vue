@@ -96,7 +96,7 @@ export default {
 
 <style lang="scss">
 #navbar {
-  opacity: 0.8;
+  opacity: 0.95;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
