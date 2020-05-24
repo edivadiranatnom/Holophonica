@@ -1,5 +1,6 @@
 <template>
-  <v-app-bar app flat :color="backgroundcolor" v-scroll="onScroll">
+  <!-- <v-app-bar app flat :color="backgroundcolor" v-scroll="onScroll" style="opacity:0.9"> -->
+  <v-app-bar id="navbar" app flat color="black">
     <v-col cols="1">
       <router-link to="/">
         <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
@@ -94,6 +95,12 @@ export default {
 </script>
 
 <style lang="scss">
+#navbar {
+  opacity: 0.8;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
 .toolbarItem {
   float: right !important;
   color: #cfcfcf !important;
