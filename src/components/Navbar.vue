@@ -6,19 +6,11 @@
       <v-row align="center">
         <v-col cols="1">
           <router-link to="/">
-            <v-img
-              id="navbarLogo"
-              min-width="50"
-              width="60"
-              src="../assets/logo.png"
-            ></v-img>
+            <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
           </router-link>
         </v-col>
         <v-col cols="11">
-          <v-toolbar-items
-            v-if="renderNavItem"
-            class="toolbarItem pa-2 ml-1 mr-1"
-          >
+          <v-toolbar-items v-if="renderNavItem" class="toolbarItem pa-2 ml-1 mr-1">
             <router-link to="/about" style="font-size: 1em">About</router-link>
           </v-toolbar-items>
           <v-toolbar-items v-else></v-toolbar-items>
@@ -118,6 +110,10 @@ export default {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+#navbar {
+  background-color: black !important;
 }
 
 #content {
