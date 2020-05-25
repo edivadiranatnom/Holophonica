@@ -18,12 +18,16 @@
       <v-card-text class="title white--text">Holophonica</v-card-text>
       <v-row justify="center">
         <p class="caption">
-          <router-link to="Privacy" style="color: white">Privacy Policy</router-link>
+          <router-link to="Privacy" style="color: white"
+            >Privacy Policy</router-link
+          >
         </p>
       </v-row>
       <v-row justify="center">
         <p class="caption">
-          <router-link to="Terms" style="color: white">Terms and Conditions</router-link>
+          <router-link to="Terms" style="color: white"
+            >Terms and Conditions</router-link
+          >
         </p>
       </v-row>
     </v-card>

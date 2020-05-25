@@ -1,16 +1,24 @@
 <template>
   <!-- <v-app-bar app flat :color="backgroundcolor" v-scroll="onScroll" style="opacity:0.9"> -->
-  <v-app-bar id="navbar">
-    <div id="navbarOverlay"></div>
-    <v-container fluid>
-      <v-row>
+  <v-app-bar app color="black" id="navbar">
+    <div id="navbarOverlay" />
+    <v-container id="content" fluid>
+      <v-row align="center">
         <v-col cols="1">
           <router-link to="/">
-            <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
+            <v-img
+              id="navbarLogo"
+              min-width="50"
+              width="60"
+              src="../assets/logo.png"
+            ></v-img>
           </router-link>
         </v-col>
         <v-col cols="11">
-          <v-toolbar-items v-if="renderNavItem" class="toolbarItem pa-2 ml-1 mr-1">
+          <v-toolbar-items
+            v-if="renderNavItem"
+            class="toolbarItem pa-2 ml-1 mr-1"
+          >
             <router-link to="/about" style="font-size: 1em">About</router-link>
           </v-toolbar-items>
           <v-toolbar-items v-else></v-toolbar-items>
@@ -101,16 +109,21 @@ export default {
 </script>
 
 <style lang="scss">
-// #navbarOverlay {
-//   background-image: url("../assets/navbarOverlay.png");
-//   min-width: 2000px;
-//   height: 64px;
-//   // filter: blur(10px);
-//   // -webkit-filter: blur(10px);
-//   position: absolute;
-//   top: 0;
-//   width: 100%;
-// }
+#navbarOverlay {
+  z-index: -1;
+  // background: center/100% url("../assets/navbarOverlay.png");
+  height: 50px;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#content {
+  z-index: 1;
+}
+
 .toolbarItem {
   float: right !important;
   color: #cfcfcf !important;

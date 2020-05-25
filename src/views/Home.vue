@@ -2,15 +2,19 @@
   <v-app>
     <Navbar />
     <v-content style="background-color: black !important">
-      <full-page ref="fullpage" :options="options" style="background-color:black">
+      <full-page
+        ref="fullpage"
+        :options="options"
+        style="background-color:black"
+      >
         <Cover style="background-color:black" />
         <v-container fluid style="background-color:black">
           <v-divider class="mr-12 ml-12"></v-divider>
         </v-container>
         <Studio />
-        <!-- <v-container fluid style="background-color:black">
+        <v-container fluid style="background-color:black">
           <v-divider class="mr-12 ml-12"></v-divider>
-        </v-container>-->
+        </v-container>
         <Packs />
         <v-btn
           v-scroll="onScroll"

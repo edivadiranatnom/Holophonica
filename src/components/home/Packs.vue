@@ -6,7 +6,11 @@
         <v-col v-if="mobile" cols="0" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="$refs.slider.show('prev')">
-              <v-img min-width="50" width="60" src="../../assets/leftArrow.png"></v-img>
+              <v-img
+                min-width="50"
+                width="60"
+                src="../../assets/matty_png/freccia sx.png"
+              ></v-img>
             </a>
           </v-row>
         </v-col>
@@ -14,15 +18,14 @@
         <v-col cols="0" lg="1" md="1" sm="1"></v-col>
         <v-col cols="12" lg="4" md="6" sm="6">
           <div class="samplepackParent">
-            <p class="samplepack display-1 text-center mt-4">SAMPLE</p>
+            <v-img src="../../assets/matty_png/Sample.png"></v-img>
           </div>
-          <div class="ml-6 mr-6" style="padding:10%; border: solid white 0.5px; border-radius: 1%">
+          <div id="artworkContainer">
             <vue-flux
               :options="vfOptions"
               :images="vfImages"
               :transitions="vfTransitions"
               ref="slider"
-              style="margin: auto;"
               class="preloader"
             >
               <template v-slot:preloader>
@@ -31,14 +34,18 @@
             </vue-flux>
           </div>
           <div class="samplepackParent">
-            <p class="samplepack display-1 text-center mt-4">PACKS</p>
+            <v-img src="../../assets/matty_png/packs.png"></v-img>
           </div>
         </v-col>
         <v-col cols="0" lg="1" md="1" sm="1"></v-col>
         <v-col v-if="mobile" cols="0" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="$refs.slider.show('next')">
-              <v-img min-width="50" width="60" src="../../assets/rightArrow.png"></v-img>
+              <v-img
+                min-width="50"
+                width="60"
+                src="../../assets/matty_png/freccia dx.png"
+              ></v-img>
             </a>
           </v-row>
         </v-col>
@@ -69,9 +76,8 @@ export default {
       aspectRatio: "9:16"
     },
     vfImages: [
-      require("@/assets/rudnick_1.png"),
-      require("@/assets/rudnick_2.png"),
-      require("@/assets/rudnick_3.jpg")
+      require("@/assets/matty_png/coverComingSoon.png"),
+      require("@/assets/matty_png/coverComingSoon.png")
     ],
     vfTransitions: ["slide"]
   }),
@@ -88,16 +94,26 @@ export default {
 </script>
 
 <style lang="scss">
+#artworkContainer {
+  border-radius: 0.5%;
+  background-color: #1d1d1d;
+  border: solid white 1px;
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
 #packs {
   background-color: black !important;
 }
 
 .vue-flux {
+  margin: auto;
   height: 50vh;
+  width: 40vh;
 }
 
 .samplepackParent {
-  width: 50%;
+  width: 80%;
   border-radius: 1%;
   margin: auto;
 }
