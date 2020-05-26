@@ -1,6 +1,6 @@
 <template>
   <!-- <v-app-bar app flat :color="backgroundcolor" v-scroll="onScroll" style="opacity:0.9"> -->
-  <v-app-bar app color="black" id="navbar">
+  <v-app-bar elevation="25" app color="black" id="navbar">
     <div id="navbarOverlay" />
     <v-container id="content" fluid>
       <v-row align="center">
@@ -103,7 +103,6 @@ export default {
 <style lang="scss">
 #navbarOverlay {
   z-index: -1;
-  // background: center/100% url("../assets/navbarOverlay.png");
   height: 50px;
   filter: blur(5px);
   -webkit-filter: blur(5px);
