@@ -21,18 +21,16 @@
       label="Service"
       required
     ></v-select>
-    <v-container fluid>
-      <v-textarea
-        v-model="text"
-        name="input-7-1"
-        filled
-        dark
-        :rules="textRules"
-        label="Inquiry"
-        auto-grow
-        required
-      ></v-textarea>
-    </v-container>
+    <v-textarea
+      v-model="text"
+      name="input-7-1"
+      filled
+      dark
+      :rules="textRules"
+      label="Inquiry"
+      auto-grow
+      required
+    ></v-textarea>
 
     <v-btn class="mr-4 float-right" @click="submit">Submit</v-btn>
     <v-snackbar v-model="snackbar">
@@ -95,3 +93,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.v-list.v-select-list.v-sheet.v-sheet--tile.theme--dark.theme--dark {
+  background-color: #121212 !important;
+}
+</style>

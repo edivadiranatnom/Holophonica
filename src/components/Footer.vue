@@ -1,5 +1,5 @@
 <template>
-  <v-footer absolute app color="black">
+  <v-footer absolute app>
     <v-card class="lighten-1 white--text text-center">
       <v-card-title>
         <v-btn
@@ -50,6 +50,11 @@ export default {
           id: "soundcloud",
           icon: "mdi-soundcloud",
           url: "https://soundcloud.com/user-580792470"
+        },
+        {
+          id: "gmail",
+          icon: "mdi-gmail",
+          url: "mailto:holophonica.studios@gmail.com"
         }
       ]
     };

@@ -1,9 +1,9 @@
 <template>
-  <div id="cover" class="section">
-    <v-container fluid>
-      <v-row>
+  <v-container id="cover" fluid>
+    <v-container>
+      <v-row class="mt-12" align="center">
         <v-col cols="1" lg="3" md="3" sm="2"></v-col>
-        <v-col cols="10" lg="6" md="6" sm="8" justify="center">
+        <v-col class="mt-12" cols="10" lg="6" md="6" sm="8" justify="center">
           <v-img
             class="imgLogo mx-auto mb-12"
             min-width="80"
@@ -17,14 +17,17 @@
               ratio="1"
             ></v-img>
           </v-row>
-          <h3 class="display-1 font-weight-thin mt-8 mb-4 text-center">
+          <p
+            id="soundsgood"
+            class="display-1 font-italic font-weight-thin mt-8 mb-4 text-center"
+          >
             Sounds good.
-          </h3>
+          </p>
           <v-row class="mt-12">
             <a class="mx-auto">
               <v-img
                 src="../../assets/arrowdown.png"
-                max-width="20"
+                max-width="40"
                 @click="$vuetify.goTo('#studio')"
               ></v-img>
             </a>
@@ -33,7 +36,7 @@
         <v-col cols="1" lg="3" md="3" sm="2"></v-col>
       </v-row>
     </v-container>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -42,4 +45,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#cover {
+  height: 95vh;
+}
+</style>

@@ -1,16 +1,23 @@
 <template>
-  <!-- <v-app-bar app flat :color="backgroundcolor" v-scroll="onScroll" style="opacity:0.9"> -->
-  <v-app-bar elevation="25" app color="black" id="navbar">
+  <v-app-bar app id="navbar" style="background: #121212 !important">
     <div id="navbarOverlay" />
-    <v-container id="content" fluid>
+    <v-container class="mr-6" id="content" fluid>
       <v-row align="center">
         <v-col cols="1">
           <router-link to="/">
-            <v-img id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
+            <v-img
+              id="navbarLogo"
+              min-width="50"
+              width="60"
+              src="../assets/logo.png"
+            ></v-img>
           </router-link>
         </v-col>
         <v-col cols="11">
-          <v-toolbar-items v-if="renderNavItem" class="toolbarItem pa-2 ml-1 mr-1">
+          <v-toolbar-items
+            v-if="renderNavItem"
+            class="toolbarItem pa-2 ml-1 mr-1"
+          >
             <router-link to="/about" style="font-size: 1em">About</router-link>
           </v-toolbar-items>
           <v-toolbar-items v-else></v-toolbar-items>
@@ -19,11 +26,8 @@
             v-for="(el, i) in navItems"
             :key="i"
             @click="$vuetify.goTo('#' + el.url.split('/')[1])"
+            >{{ el.text }}</v-toolbar-items
           >
-            <!-- Accrocchio con la split per togliere lo / dal route -->
-            <!-- <router-link class="routerLink" :to="el.url">{{ el.text }}</router-link> -->
-            {{ el.text }}
-          </v-toolbar-items>
         </v-col>
       </v-row>
     </v-container>
@@ -49,52 +53,17 @@ export default {
       this.navItems[0].url = "/packs";
       this.navItems[1].text = "Studio";
       this.navItems[1].url = "/studio";
-      // } else if (this.$route.path == "/packs") {
-      //   this.navItems[0].text = "Home";
-      //   this.navItems[0].url = "/";
-      //   this.navItems[1].text = "Studio";
-      //   this.navItems[1].url = "/studio";
-      //   this.navItems[2].text = "About";
-      //   this.navItems[2].url = "/about";
-      // } else if (this.$route.path == "/services") {
-      //   this.navItems[0].text = "Home";
-      //   this.navItems[0].url = "/";
-      //   this.navItems[1].text = "Packs";
-      //   this.navItems[1].url = "/packs";
-      //   this.navItems[2].text = "About";
-      //   this.navItems[2].url = "/about";
     } else if (
       this.$route.path == "/about" ||
       this.$route.path == "/Terms" ||
       this.$route.path == "/Privacy"
     ) {
       this.renderNavItem = false;
-      // this.navItems[0].text = "Home";
-      // this.navItems[0].url = "/";
-      // this.navItems[1].text = "Packs";
-      // this.navItems[1].url = "/packs";
-      // this.navItems[2].text = "Studio";
-      // this.navItems[2].url = "/studio";
     }
   },
   methods: {
     onScroll(e) {
       this.top = window.pageYOffset || e.target.scrollTop || 0;
-    }
-  },
-  watch: {
-    top: function() {
-      if (
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        )
-      ) {
-        this.backgroundcolor = "black";
-      } else {
-        if (this.top > (window.innerHeight / 10) * 10)
-          this.backgroundcolor = "black";
-        else this.backgroundcolor = "transparent";
-      }
     }
   }
 };
@@ -109,10 +78,6 @@ export default {
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-#navbar {
-  background-color: black !important;
 }
 
 #content {

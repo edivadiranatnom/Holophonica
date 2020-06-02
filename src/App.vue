@@ -5,9 +5,7 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: "Roboto Condensed", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.theme--dark.v-application {
+  background-attachment: black !important;
 }
 </style>

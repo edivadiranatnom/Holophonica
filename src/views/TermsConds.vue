@@ -1,11 +1,8 @@
 <template>
   <v-app>
     <Navbar />
-    <div>
-      <v-container
-        style="padding: 7%; background-color: black; color: white !important"
-        fluid
-      >
+    <v-content>
+      <v-container class="ma-12" style="color: white !important" fluid>
         <p>
           <b>TERMS OF USE</b>
         </p>
@@ -427,10 +424,9 @@
           class="western"
           style="margin-left: 0.21in; margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
         >
-          <span
-            >8. Use the Site to advertise or offer to sell goods and
-            services.</span
-          >
+          <span>
+            8. Use the Site to advertise or offer to sell goods and services.
+          </span>
         </p>
         <p
           class="western"
@@ -1893,7 +1889,7 @@
           <br />
         </p>
       </v-container>
-    </div>
+    </v-content>
   </v-app>
 </template>
 <script>

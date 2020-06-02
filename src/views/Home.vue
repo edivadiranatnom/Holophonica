@@ -1,37 +1,31 @@
 <template>
   <v-app>
     <Navbar />
-    <v-content style="background-color: black !important">
-      <full-page
-        ref="fullpage"
-        :options="options"
-        style="background-color:black"
+    <v-content>
+      <Cover />
+      <v-container fluid>
+        <v-divider class="mr-12 ml-12"></v-divider>
+      </v-container>
+      <Studio />
+      <v-container fluid>
+        <v-divider class="mr-12 ml-12"></v-divider>
+      </v-container>
+      <Packs />
+      <v-btn
+        v-scroll="onScroll"
+        v-show="fab"
+        class="ma-6"
+        small
+        fixed
+        fab
+        bottom
+        right
+        color="white"
+        direction="top"
+        @click="toTop"
       >
-        <Cover style="background-color:black" />
-        <v-container fluid style="background-color:black">
-          <v-divider class="mr-12 ml-12"></v-divider>
-        </v-container>
-        <Studio />
-        <v-container fluid style="background-color:black">
-          <v-divider class="mr-12 ml-12"></v-divider>
-        </v-container>
-        <Packs />
-        <v-btn
-          v-scroll="onScroll"
-          v-show="fab"
-          class="ma-6"
-          small
-          fixed
-          fab
-          bottom
-          right
-          color="white"
-          direction="top"
-          @click="toTop"
-        >
-          <v-icon color="black">mdi-arrow-up</v-icon>
-        </v-btn>
-      </full-page>
+        <v-icon color="black">mdi-arrow-up</v-icon>
+      </v-btn>
     </v-content>
     <Footer />
     <NewsletterModal />
@@ -86,9 +80,6 @@ export default {
 </script>
 
 <style lang="scss">
-#cover {
-  background-color: black;
-}
 .v-divider {
   background-color: white;
 }

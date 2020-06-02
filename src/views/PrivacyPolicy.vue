@@ -1,11 +1,8 @@
 <template>
   <v-app>
     <Navbar />
-    <div>
-      <v-container
-        style="padding: 7%; background-color: black; color: white !important"
-        fluid
-      >
+    <v-content>
+      <v-container class="pa-12" style="color: white !important" fluid>
         <h1
           class="western"
           style="margin-top: 0in; margin-bottom: 0.06in; border: none; padding: 0in; line-height: 119%"
@@ -905,10 +902,9 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Personal Data processed: email address; first name;
-              birthday.</font
-            >
+            <font size="2" style="font-size: 10pt">
+              Personal Data processed: email address; first name; birthday.
+            </font>
           </font>
         </p>
         <h3
@@ -974,10 +970,9 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Personal Data processed: country; email address; first
-              name.</font
-            >
+            <font size="2" style="font-size: 10pt">
+              Personal Data processed: country; email address; first name.
+            </font>
           </font>
         </p>
         <p
@@ -1414,10 +1409,9 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Holophonica does not support &ldquo;Do Not Track&rdquo;
-              requests.</font
-            >
+            <font size="2" style="font-size: 10pt">
+              Holophonica does not support &ldquo;Do Not Track&rdquo; requests.
+            </font>
           </font>
         </p>
         <p
@@ -1776,7 +1770,7 @@
           <br />
         </p>
       </v-container>
-    </div>
+    </v-content>
   </v-app>
 </template>
 <script>
@@ -1789,4 +1783,3 @@ export default {
   }
 };
 </script>
-<style lang="scss"></style>

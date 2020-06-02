@@ -1,11 +1,13 @@
 <template>
   <v-app>
     <Navbar />
-    <v-content style="background-color: black !important">
+    <v-content>
       <div>
         <v-container fluid fill-height>
           <v-row justify="center" class="mt-12">
-            <p v-if="mobile" class="display-2 text-center">Holophonica Studios</p>
+            <p v-if="mobile" class="display-2 text-center">
+              Holophonica Studios
+            </p>
             <p v-else class="display-4">Holophonica Studios</p>
           </v-row>
           <v-divider class="mr-6 ml-6 mb-12"></v-divider>
@@ -53,10 +55,20 @@
               </p>
             </div>
             <v-col v-if="mobile" cols="12">
-              <v-carousel height="100%" cycle hide-delimiters :show-arrows="false" interval="2000">
+              <v-carousel
+                height="100%"
+                cycle
+                hide-delimiters
+                :show-arrows="false"
+                interval="2000"
+              >
                 <v-carousel-item>
                   <v-row justify="center">
-                    <v-img src="../assets/portraits/francesco.png" max-width="200" aspect-ratio="1"></v-img>
+                    <v-img
+                      src="../assets/portraits/francesco.png"
+                      max-width="200"
+                      aspect-ratio="1"
+                    ></v-img>
                   </v-row>
                   <v-row justify="center">
                     <v-btn
@@ -71,7 +83,11 @@
                 </v-carousel-item>
                 <v-carousel-item>
                   <v-row justify="center">
-                    <v-img src="../assets/portraits/mattia.png" max-width="200" aspect-ratio="1"></v-img>
+                    <v-img
+                      src="../assets/portraits/mattia.png"
+                      max-width="200"
+                      aspect-ratio="1"
+                    ></v-img>
                   </v-row>
                   <v-row justify="center">
                     <v-btn
@@ -86,7 +102,11 @@
                 </v-carousel-item>
                 <v-carousel-item>
                   <v-row justify="center">
-                    <v-img src="../assets/portraits/davide.jpg" max-width="200" aspect-ratio="1"></v-img>
+                    <v-img
+                      src="../assets/portraits/davide.jpg"
+                      max-width="200"
+                      aspect-ratio="1"
+                    ></v-img>
                   </v-row>
                   <v-row justify="center">
                     <v-btn
@@ -105,7 +125,11 @@
               <v-col cols="0" lg="2" md="2" sm="2"></v-col>
               <v-col class="mt-12" lg="2" md="2" sm="2">
                 <v-row justify="center">
-                  <v-img src="../assets/portraits/francesco.png" max-width="200" aspect-ratio="1"></v-img>
+                  <v-img
+                    src="../assets/portraits/francesco.png"
+                    max-width="200"
+                    aspect-ratio="1"
+                  ></v-img>
                 </v-row>
                 <v-row justify="center">
                   <v-btn
@@ -121,7 +145,11 @@
               <v-col cols="0" lg="1" md="1" sm="1"></v-col>
               <v-col class="mt-12" lg="2" md="2" sm="2">
                 <v-row justify="center">
-                  <v-img src="../assets/portraits/mattia.png" max-width="200" aspect-ratio="1"></v-img>
+                  <v-img
+                    src="../assets/portraits/mattia.png"
+                    max-width="200"
+                    aspect-ratio="1"
+                  ></v-img>
                 </v-row>
                 <v-row justify="center">
                   <v-btn
@@ -137,7 +165,11 @@
               <v-col cols="0" lg="1" md="1" sm="1"></v-col>
               <v-col class="mt-12" lg="2" md="2" sm="2">
                 <v-row justify="center">
-                  <v-img src="../assets/portraits/davide.jpg" max-width="200" aspect-ratio="1"></v-img>
+                  <v-img
+                    src="../assets/portraits/davide.jpg"
+                    max-width="200"
+                    aspect-ratio="1"
+                  ></v-img>
                 </v-row>
                 <v-row justify="center">
                   <v-btn
@@ -163,6 +195,14 @@
               </v-row>
             </v-col>
             <v-col cols="12" lg="6" md="6" sm="12">
+              <div v-if="mobile">
+                <p class="body-1 text-justify mr-6 ml-6">
+                  Holophonica is the brainchild of three friends and producers
+                  who decided to offer their knowledge to help people bring
+                  their ideas to life.
+                </p>
+              </div>
+              <div v-else></div>
               <div class="inquiry-form">
                 <p class="body-1 text-justify">
                   We also offer placing services and additional production, if
@@ -219,7 +259,6 @@ export default {
 .container {
   margin-bottom: 10%;
   padding: 0 5% 0 5%;
-  background-color: black !important;
 }
 .container .row:nth-child(1),
 .container .row:nth-child(2) {
@@ -227,11 +266,11 @@ export default {
 }
 
 .container .row .v-image {
-  border-radius: 5%;
+  border-radius: 50%;
 }
 
 .inquiry-form {
-  padding: 15%;
+  padding: 6%;
 }
 
 .holo-sphere {

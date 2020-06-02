@@ -10,11 +10,11 @@
       <v-container fluid v-if="preSubscription" id="dialogContainer">
         <v-row>
           <v-col cols="11">
-            <p v-if="mobile" class="body-1 text-center">
+            <p v-if="mobile" class="body-1">
               Subscribe to our newsletter, we will send you an exclusive pack as
               a welcome gift!
             </p>
-            <p v-else class="body-1 text-center">
+            <p v-else class="body-1">
               Subscribe to our newsletter, stay updated and receive periodic
               sample packs for free. By subscribing now, we will send you right
               away an exclusive pack as a welcome gift. See you on the other
