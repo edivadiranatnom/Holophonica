@@ -14,19 +14,27 @@
       </v-col>
       <v-col cols="11">
         <v-img
-          v-if="renderNavItem"
+          v-if="showButton"
           class="menu-icon float-right mt-3 mr-9"
           width="20"
-          src="../assets/leftArrow.png"
+          src="../assets/arrowdown.png"
           @click="openMenu"
         ></v-img>
+        <transition name="rotateIn">
+          <v-img
+            v-if="showRotate"
+            class="menu-icon float-right mt-3 mr-9"
+            width="20"
+            src="../assets/leftArrow.png"
+            @click="openMenu"
+          ></v-img>
+        </transition>
         <transition name="slide-fade">
           <v-toolbar-items v-if="invisibleTab" class="tab pa-2 mr-lg-6 mr-3">
             <router-link
               to="/about"
-              style="font-size: 1em; text-decoration: none; color: white"
-              >About</router-link
-            >
+              style="font-size: 1em; text-decoration: none; color: #cfcfcf"
+            >About</router-link>
           </v-toolbar-items>
         </transition>
         <transition name="slide-fade">
@@ -34,16 +42,14 @@
             v-if="invisibleTab"
             class="tab pa-2 ml-lg-2 mr-lg-2"
             @click="$vuetify.goTo('#studio')"
-            >Studio</v-toolbar-items
-          >
+          >Studio</v-toolbar-items>
         </transition>
         <transition name="slide-fade">
           <v-toolbar-items
             v-if="invisibleTab"
             class="tab pa-2 ml-lg-2 mr-lg-2"
             @click="$vuetify.goTo('#packs')"
-            >Packs</v-toolbar-items
-          >
+          >Packs</v-toolbar-items>
         </transition>
       </v-col>
     </v-row>
@@ -60,7 +66,9 @@ export default {
       { text: "", url: "" },
       { text: "", url: "" }
     ],
-    renderNavItem: true
+    renderNavItem: true,
+    showButton: true,
+    showRotate: false
   }),
   created() {
     if (
@@ -76,9 +84,13 @@ export default {
       if (this.invisibleTab) {
         this.visibleTab = true;
         this.invisibleTab = false;
+        this.showRotate = true;
+        this.showButton = false;
       } else {
         this.visibleTab = false;
         this.invisibleTab = true;
+        this.showRotate = false;
+        this.showButton = true;
       }
     },
     onScroll() {
@@ -145,18 +157,36 @@ export default {
   opacity: 0;
 }
 
-.toolbarItem:hover {
+.tab:hover, .tab a:hover {
   color: white !important;
-}
-
-.toolbarItem-clicked {
-  animation-direction: left;
 }
 
 .menu-icon {
   cursor: pointer;
   background-color: transparent;
   transition: transform 2s;
+}
+
+.rotateIn-enter-active {
+  animation: rot 0.5s;
+}
+
+.rotateIn-leave-active {
+  animation: rot 0.5s reverse;
+}
+
+@keyframes rot {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+  }
 }
 
 #navbarLogo:hover {
@@ -167,20 +197,9 @@ export default {
 
 @keyframes spin {
   100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
   }
 }
 </style>
