@@ -31,17 +31,31 @@
             <v-row>
               <v-col cols="1"></v-col>
               <v-col cols="10">
-                <p class="headline font-weight-thin mt-4 text-center">Improve your music</p>
+                <p class="headline font-weight-thin mt-4 text-center">
+                  Improve your music
+                </p>
               </v-col>
               <v-col cols="1"></v-col>
             </v-row>
             <v-row>
               <v-col cols="1"></v-col>
               <v-col v-if="mobile" cols="9">
-                <p v-for="(el, i) in improve" :key="i" class="title font-weight-thin ma-2">{{ el }}</p>
+                <p
+                  v-for="(el, i) in improve"
+                  :key="i"
+                  class="title font-weight-thin ma-2"
+                >
+                  {{ el }}
+                </p>
               </v-col>
               <v-col v-else cols="9">
-                <p v-for="(el, i) in improve" :key="i" class="font-weight-thin ma-2">{{ el }}</p>
+                <p
+                  v-for="(el, i) in improve"
+                  :key="i"
+                  class="font-weight-thin ma-2"
+                >
+                  {{ el }}
+                </p>
               </v-col>
               <v-col cols="2">
                 <v-btn
@@ -50,7 +64,8 @@
                   color="white"
                   href="https://soundbetter.com/profiles/239809-holophonica-studios"
                   target="_blank"
-                >Learn more</v-btn>
+                  >Learn more</v-btn
+                >
               </v-col>
             </v-row>
           </v-col>
@@ -59,17 +74,31 @@
             <v-row>
               <v-col cols="2"></v-col>
               <v-col cols="8">
-                <p class="headline font-weight-thin mt-4 text-center">Create your music</p>
+                <p class="headline font-weight-thin mt-4 text-center">
+                  Create your music
+                </p>
               </v-col>
               <v-col cols="2"></v-col>
             </v-row>
             <v-row>
               <v-col cols="1"></v-col>
               <v-col v-if="mobile" cols="9">
-                <p v-for="(el, i) in create" :key="i" class="title font-weight-thin ma-2">{{ el }}</p>
+                <p
+                  v-for="(el, i) in create"
+                  :key="i"
+                  class="title font-weight-thin ma-2"
+                >
+                  {{ el }}
+                </p>
               </v-col>
               <v-col v-else cols="9">
-                <p v-for="(el, i) in create" :key="i" class="font-weight-thin ma-2">{{ el }}</p>
+                <p
+                  v-for="(el, i) in create"
+                  :key="i"
+                  class="font-weight-thin ma-2"
+                >
+                  {{ el }}
+                </p>
               </v-col>
               <v-col cols="2">
                 <v-btn
@@ -78,7 +107,8 @@
                   color="white"
                   href="https://soundbetter.com/profiles/239809-holophonica-studios"
                   target="_blank"
-                >Learn more</v-btn>
+                  >Learn more</v-btn
+                >
               </v-col>
             </v-row>
           </v-col>
@@ -98,13 +128,21 @@
             <v-col id="leftStudio" cols="12">
               <v-row>
                 <v-col cols="12">
-                  <p class="headline font-weight-thin mt-4 text-center">Improve your music</p>
+                  <p class="headline font-weight-thin mt-4 text-center">
+                    Improve your music
+                  </p>
                 </v-col>
               </v-row>
               <v-row>
                 <v-col cols="1"></v-col>
                 <v-col cols="11">
-                  <p v-for="(el, i) in improve" :key="i" class="font-weight-thin ma-2">{{ el }}</p>
+                  <p
+                    v-for="(el, i) in improve"
+                    :key="i"
+                    class="font-weight-thin ma-2"
+                  >
+                    {{ el }}
+                  </p>
                   <v-btn
                     x-small
                     class="float-right text-capitalize"
@@ -112,7 +150,8 @@
                     color="white"
                     href="https://soundbetter.com/profiles/239809-holophonica-studios"
                     target="_blank"
-                  >learn more</v-btn>
+                    >learn more</v-btn
+                  >
                 </v-col>
               </v-row>
             </v-col>
@@ -121,13 +160,21 @@
             <v-col id="rightStudio" cols="12">
               <v-row>
                 <v-col cols="12">
-                  <p class="headline font-weight-thin mt-4 text-center">Create your music</p>
+                  <p class="headline font-weight-thin mt-4 text-center">
+                    Create your music
+                  </p>
                 </v-col>
               </v-row>
               <v-row>
                 <v-col cols="1"></v-col>
                 <v-col cols="11">
-                  <p v-for="(el, i) in create" :key="i" class="font-weight-thin ma-2">{{ el }}</p>
+                  <p
+                    v-for="(el, i) in create"
+                    :key="i"
+                    class="font-weight-thin ma-2"
+                  >
+                    {{ el }}
+                  </p>
                   <v-btn
                     x-small
                     class="float-right text-capitalize"
@@ -135,7 +182,8 @@
                     color="white"
                     href="https://soundbetter.com/profiles/239809-holophonica-studios"
                     target="_blank"
-                  >learn more</v-btn>
+                    >learn more</v-btn
+                  >
                 </v-col>
               </v-row>
             </v-col>

@@ -25,7 +25,8 @@
             <router-link
               to="/about"
               style="font-size: 1em; text-decoration: none; color: white"
-            >About</router-link>
+              >About</router-link
+            >
           </v-toolbar-items>
         </transition>
         <transition name="slide-fade">
@@ -33,14 +34,16 @@
             v-if="invisibleTab"
             class="tab pa-2 ml-lg-2 mr-lg-2"
             @click="$vuetify.goTo('#studio')"
-          >Studio</v-toolbar-items>
+            >Studio</v-toolbar-items
+          >
         </transition>
         <transition name="slide-fade">
           <v-toolbar-items
             v-if="invisibleTab"
             class="tab pa-2 ml-lg-2 mr-lg-2"
             @click="$vuetify.goTo('#packs')"
-          >Packs</v-toolbar-items>
+            >Packs</v-toolbar-items
+          >
         </transition>
       </v-col>
     </v-row>
@@ -130,11 +133,11 @@ export default {
 }
 
 .slide-fade-enter-active {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .slide-fade-enter, .slide-fade-leave-to {
