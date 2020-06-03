@@ -14,42 +14,37 @@
       </v-col>
       <v-col cols="11">
         <v-img
-          v-if="showButton"
+          v-show="renderNavItem"
           class="menu-icon float-right mt-3 mr-9"
           width="20"
-          src="../assets/arrowdown.png"
+          :style="openMenu"
+          src="../assets/leftArrow.png"
           @click="openMenu"
         ></v-img>
-        <transition name="rotateIn">
-          <v-img
-            v-if="showRotate"
-            class="menu-icon float-right mt-3 mr-9"
-            width="20"
-            src="../assets/leftArrow.png"
-            @click="openMenu"
-          ></v-img>
-        </transition>
         <transition name="slide-fade">
           <v-toolbar-items v-if="invisibleTab" class="tab pa-2 mr-lg-6 mr-3">
             <router-link
               to="/about"
               style="font-size: 1em; text-decoration: none; color: #cfcfcf"
-            >About</router-link>
+              >About</router-link
+            >
           </v-toolbar-items>
         </transition>
         <transition name="slide-fade">
           <v-toolbar-items
             v-if="invisibleTab"
             class="tab pa-2 ml-lg-2 mr-lg-2"
-            @click="$vuetify.goTo('#studio')"
-          >Studio</v-toolbar-items>
+            @click="$vuetify.goTo('#packs')"
+            >Packs</v-toolbar-items
+          >
         </transition>
         <transition name="slide-fade">
           <v-toolbar-items
             v-if="invisibleTab"
             class="tab pa-2 ml-lg-2 mr-lg-2"
-            @click="$vuetify.goTo('#packs')"
-          >Packs</v-toolbar-items>
+            @click="$vuetify.goTo('#studio')"
+            >Studio</v-toolbar-items
+          >
         </transition>
       </v-col>
     </v-row>
@@ -66,9 +61,7 @@ export default {
       { text: "", url: "" },
       { text: "", url: "" }
     ],
-    renderNavItem: true,
-    showButton: true,
-    showRotate: false
+    renderNavItem: true
   }),
   created() {
     if (
@@ -86,11 +79,14 @@ export default {
         this.invisibleTab = false;
         this.showRotate = true;
         this.showButton = false;
+        return {};
       } else {
         this.visibleTab = false;
         this.invisibleTab = true;
         this.showRotate = false;
         this.showButton = true;
+
+        return {};
       }
     },
     onScroll() {
@@ -163,16 +159,6 @@ export default {
 
 .menu-icon {
   cursor: pointer;
-  background-color: transparent;
-  transition: transform 2s;
-}
-
-.rotateIn-enter-active {
-  animation: rot 0.5s;
-}
-
-.rotateIn-leave-active {
-  animation: rot 0.5s reverse;
 }
 
 @keyframes rot {

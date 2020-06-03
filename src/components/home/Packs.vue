@@ -3,10 +3,11 @@
     <v-row v-if="mobile" align="center" justify="center">
       <v-col cols="1" lg="3" md="3" sm="2"></v-col>
       <v-col cols="10" lg="6" md="6" sm="8">
-        <p class="display-2 text-center font-weight-medium mb-4">SAMPLE PACKS</p>
+        <p class="display-2 text-center font-weight-medium mb-4">
+          SAMPLE PACKS
+        </p>
         <p class="font-weight-thin text-center">
-          Our sample packs are the best sample packs in the sample packs
-          market.
+          Our sample packs are the best sample packs in the sample packs market.
         </p>
       </v-col>
       <v-col cols="1" lg="3" md="3" sm="2"></v-col>
@@ -20,7 +21,11 @@
       <v-col v-show="mobile" cols="1" lg="1" md="1" sm="1">
         <v-row justify="center">
           <a @click="slide--">
-            <v-img min-width="50" width="60" src="../../assets/leftArrow.png"></v-img>
+            <v-img
+              min-width="50"
+              width="60"
+              src="../../assets/leftArrow.png"
+            ></v-img>
           </a>
         </v-row>
       </v-col>
@@ -32,10 +37,14 @@
 
       <!-- CAROUSEL -->
       <v-col cols="10" lg="4" md="6" sm="6">
-        <p v-show="!mobile" class="display-1 text-center font-weight-medium mb-4">SAMPLE PACKS</p>
+        <p
+          v-show="!mobile"
+          class="display-1 text-center font-weight-medium mb-4"
+        >
+          SAMPLE PACKS
+        </p>
         <p v-show="!mobile" class="font-weight-thin text-center">
-          Our sample packs are the best sample packs in the sample packs
-          market.
+          Our sample packs are the best sample packs in the sample packs market.
         </p>
         <v-carousel
           v-if="mobile"
@@ -96,7 +105,11 @@
       <v-col v-show="mobile" cols="1" lg="1" md="1" sm="1">
         <v-row justify="center">
           <a @click="slide++">
-            <v-img min-width="50" width="60" src="../../assets/rightArrow.png"></v-img>
+            <v-img
+              min-width="50"
+              width="60"
+              src="../../assets/rightArrow.png"
+            ></v-img>
           </a>
         </v-row>
       </v-col>
