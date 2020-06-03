@@ -10,11 +10,7 @@
         <v-col v-show="mobile" cols="1" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="slide--">
-              <v-img
-                min-width="50"
-                width="60"
-                src="../../assets/leftArrow.png"
-              ></v-img>
+              <v-img min-width="50" width="60" src="../../assets/leftArrow.png"></v-img>
             </a>
           </v-row>
         </v-col>
@@ -26,12 +22,11 @@
 
         <!-- CAROUSEL -->
         <v-col cols="10" lg="4" md="6" sm="6">
-          <p v-if="mobile" class="text-center display-2 font-weigth-medium">
-            Sample Packs
-          </p>
-          <p v-else class="text-center display-1 font-weigth-medium">
-            Sample Packs
-          </p>
+          <p
+            v-if="mobile"
+            class="text-center display-2 font-weigth-medium text-uppercase"
+          >sample packs</p>
+          <p v-else class="text-center display-1 font-weigth-medium text-uppercase">sample packs</p>
 
           <v-carousel
             v-if="mobile"
@@ -48,9 +43,7 @@
                     v-if="hover"
                     class="d-flex transition-fast-in-fast-out grey darken-2 v-card--reveal display-3 white--text"
                     style="height: 100%;"
-                  >
-                    $14.99
-                  </div>
+                  >$14.99</div>
                 </v-expand-transition>
               </v-img>
             </v-carousel-item>
@@ -80,11 +73,7 @@
         <v-col v-show="mobile" cols="1" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="slide++">
-              <v-img
-                min-width="50"
-                width="60"
-                src="../../assets/rightArrow.png"
-              ></v-img>
+              <v-img min-width="50" width="60" src="../../assets/rightArrow.png"></v-img>
             </a>
           </v-row>
         </v-col>
