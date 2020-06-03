@@ -36,15 +36,19 @@
         >
           <router-link to="/about" style="font-size: 1em">About</router-link>
         </v-toolbar-items>
-        <v-toolbar-items v-else></v-toolbar-items>
         <v-toolbar-items
           :class="endTrans"
           v-show="showTabs"
           class="toolbarItem pa-2 ml-lg-2 mr-lg-2"
-          v-for="(el, i) in navItems"
-          :key="i"
-          @click="$vuetify.goTo('#' + el.url.split('/')[1])"
-          >{{ el.text }}</v-toolbar-items
+          @click="$vuetify.goTo('#studio')"
+          >Studio</v-toolbar-items
+        >
+        <v-toolbar-items
+          :class="endTrans"
+          v-show="showTabs"
+          class="toolbarItem pa-2 ml-lg-2 mr-lg-2"
+          @click="$vuetify.goTo('#packs')"
+          >Packs</v-toolbar-items
         >
       </v-col>
     </v-row>
@@ -65,16 +69,10 @@ export default {
     renderNavItem: true
   }),
   created() {
-    if (this.$route.path == "/") {
-      this.renderNavItem = true;
-      this.navItems[0].text = "Packs";
-      this.navItems[0].url = "/packs";
-      this.navItems[1].text = "Studio";
-      this.navItems[1].url = "/studio";
-    } else if (
+    if (
       this.$route.path == "/about" ||
-      this.$route.path == "/Terms" ||
-      this.$route.path == "/Privacy"
+      this.$route.path == "/terms" ||
+      this.$route.path == "/privacy"
     ) {
       this.renderNavItem = false;
     }
