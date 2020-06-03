@@ -4,7 +4,7 @@
       <v-col cols="1">
         <router-link to="/">
           <v-img
-            class="ml-3 mt-lg-0 mt-2"
+            class="ml-3 mt-lg-2 mt-2"
             id="navbarLogo"
             min-width="50"
             width="60"
@@ -14,42 +14,34 @@
       </v-col>
       <v-col cols="11">
         <v-img
-          v-show="renderNavItem"
-          v-if="!showTabs"
-          class="menu-icon float-right mt-3 mr-6"
+          v-if="renderNavItem"
+          class="menu-icon float-right mt-3 mr-9"
           width="20"
           src="../assets/leftArrow.png"
           @click="openMenu"
         ></v-img>
-        <v-img
-          v-else
-          class="menu-icon float-right mt-3 mr-6"
-          width="20"
-          src="../assets/close.png"
-          @click="openMenu"
-        ></v-img>
-        <v-toolbar-items
-          :class="endTrans"
-          v-show="showTabs"
-          v-if="renderNavItem"
-          class="toolbarItem pa-2 ml-1 mr-lg-6 mr-3"
-        >
-          <router-link to="/about" style="font-size: 1em">About</router-link>
-        </v-toolbar-items>
-        <v-toolbar-items
-          :class="endTrans"
-          v-show="showTabs"
-          class="toolbarItem pa-2 ml-lg-2 mr-lg-2"
-          @click="$vuetify.goTo('#studio')"
-          >Studio</v-toolbar-items
-        >
-        <v-toolbar-items
-          :class="endTrans"
-          v-show="showTabs"
-          class="toolbarItem pa-2 ml-lg-2 mr-lg-2"
-          @click="$vuetify.goTo('#packs')"
-          >Packs</v-toolbar-items
-        >
+        <transition name="slide-fade">
+          <v-toolbar-items v-if="invisibleTab" class="tab pa-2 mr-lg-6 mr-3">
+            <router-link
+              to="/about"
+              style="font-size: 1em; text-decoration: none; color: white"
+            >About</router-link>
+          </v-toolbar-items>
+        </transition>
+        <transition name="slide-fade">
+          <v-toolbar-items
+            v-if="invisibleTab"
+            class="tab pa-2 ml-lg-2 mr-lg-2"
+            @click="$vuetify.goTo('#studio')"
+          >Studio</v-toolbar-items>
+        </transition>
+        <transition name="slide-fade">
+          <v-toolbar-items
+            v-if="invisibleTab"
+            class="tab pa-2 ml-lg-2 mr-lg-2"
+            @click="$vuetify.goTo('#packs')"
+          >Packs</v-toolbar-items>
+        </transition>
       </v-col>
     </v-row>
   </div>
@@ -59,8 +51,7 @@
 export default {
   name: "Navigation",
   data: () => ({
-    showTabs: false,
-    endTrans: "",
+    invisibleTab: false,
     navshdw: "",
     navItems: [
       { text: "", url: "" },
@@ -79,8 +70,13 @@ export default {
   },
   methods: {
     openMenu() {
-      this.endTrans = "toolbarItem-clicked";
-      this.showTabs = !this.showTabs;
+      if (this.invisibleTab) {
+        this.visibleTab = true;
+        this.invisibleTab = false;
+      } else {
+        this.visibleTab = false;
+        this.invisibleTab = true;
+      }
     },
     onScroll() {
       if (window.pageYOffset < 150) this.navshdw = "";
@@ -113,8 +109,7 @@ export default {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Navbar links */
-.toolbarItem {
+.tab {
   float: right;
   display: block;
   text-align: center;
@@ -125,13 +120,29 @@ export default {
   cursor: pointer;
 }
 
-.toolbarItem a {
-  font-size: 1.2em;
-  color: #cfcfcf !important;
-  text-decoration: none;
+.visibleTab {
+  visibility: visible;
 }
 
-.toolbarItem:hover, .toolbarItem a:hover {
+/* Navbar links */
+.invisibleTab {
+  visibility: hidden;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.toolbarItem:hover {
   color: white !important;
 }
 
@@ -142,6 +153,7 @@ export default {
 .menu-icon {
   cursor: pointer;
   background-color: transparent;
+  transition: transform 2s;
 }
 
 #navbarLogo:hover {
