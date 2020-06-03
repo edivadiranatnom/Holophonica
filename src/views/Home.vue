@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navbar />
-    <v-content>
+    <v-content style="margin-top: 68px !important">
       <Cover />
       <v-container fluid>
         <v-divider class="mr-12 ml-12"></v-divider>

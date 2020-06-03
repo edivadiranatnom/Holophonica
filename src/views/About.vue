@@ -5,7 +5,9 @@
       <div>
         <v-container fluid fill-height>
           <v-row justify="center" class="mt-12">
-            <p v-if="mobile" class="display-2 text-center">Holophonica Studios</p>
+            <p v-if="mobile" class="display-2 text-center">
+              Holophonica Studios
+            </p>
             <p v-else class="display-4">Holophonica Studios</p>
           </v-row>
           <v-divider class="mr-6 ml-6 mb-12"></v-divider>
@@ -53,10 +55,20 @@
               </p>
             </div>
             <v-col v-if="mobile" cols="12">
-              <v-carousel height="100%" cycle hide-delimiters :show-arrows="false" interval="2000">
+              <v-carousel
+                height="100%"
+                cycle
+                hide-delimiters
+                :show-arrows="false"
+                interval="2000"
+              >
                 <v-carousel-item>
                   <v-row justify="center">
-                    <v-img src="../assets/portraits/francesco.png" max-width="200" aspect-ratio="1"></v-img>
+                    <v-img
+                      src="../assets/portraits/francesco.png"
+                      max-width="200"
+                      aspect-ratio="1"
+                    ></v-img>
                   </v-row>
                   <v-row justify="center">
                     <v-btn
@@ -71,7 +83,11 @@
                 </v-carousel-item>
                 <v-carousel-item>
                   <v-row justify="center">
-                    <v-img src="../assets/portraits/mattia.png" max-width="200" aspect-ratio="1"></v-img>
+                    <v-img
+                      src="../assets/portraits/mattia.png"
+                      max-width="200"
+                      aspect-ratio="1"
+                    ></v-img>
                   </v-row>
                   <v-row justify="center">
                     <v-btn
@@ -86,7 +102,11 @@
                 </v-carousel-item>
                 <v-carousel-item>
                   <v-row justify="center">
-                    <v-img src="../assets/portraits/davide.jpg" max-width="200" aspect-ratio="1"></v-img>
+                    <v-img
+                      src="../assets/portraits/davide.jpg"
+                      max-width="200"
+                      aspect-ratio="1"
+                    ></v-img>
                   </v-row>
                   <v-row justify="center">
                     <v-btn
@@ -105,7 +125,11 @@
               <v-col cols="0" lg="2" md="2" sm="2"></v-col>
               <v-col class="mt-12" lg="2" md="2" sm="2">
                 <v-row justify="center">
-                  <v-img src="../assets/portraits/francesco.png" max-width="200" aspect-ratio="1"></v-img>
+                  <v-img
+                    src="../assets/portraits/francesco.png"
+                    max-width="200"
+                    aspect-ratio="1"
+                  ></v-img>
                 </v-row>
                 <v-row justify="center">
                   <v-btn
@@ -121,7 +145,11 @@
               <v-col cols="0" lg="1" md="1" sm="1"></v-col>
               <v-col class="mt-12" lg="2" md="2" sm="2">
                 <v-row justify="center">
-                  <v-img src="../assets/portraits/mattia.png" max-width="200" aspect-ratio="1"></v-img>
+                  <v-img
+                    src="../assets/portraits/mattia.png"
+                    max-width="200"
+                    aspect-ratio="1"
+                  ></v-img>
                 </v-row>
                 <v-row justify="center">
                   <v-btn
@@ -137,7 +165,11 @@
               <v-col cols="0" lg="1" md="1" sm="1"></v-col>
               <v-col class="mt-12" lg="2" md="2" sm="2">
                 <v-row justify="center">
-                  <v-img src="../assets/portraits/davide.jpg" max-width="200" aspect-ratio="1"></v-img>
+                  <v-img
+                    src="../assets/portraits/davide.jpg"
+                    max-width="200"
+                    aspect-ratio="1"
+                  ></v-img>
                 </v-row>
                 <v-row justify="center">
                   <v-btn
@@ -192,6 +224,7 @@
 import Navbar from "../components/Navbar.vue";
 import InquiryForm from "../components/services/InquiryForm.vue";
 import Footer from "../components/Footer.vue";
+
 export default {
   name: "About",
   components: {
@@ -214,7 +247,6 @@ export default {
       this.mobile = true;
     }
     this.$vuetify.theme.dark = true;
-    
   }
 };
 </script>

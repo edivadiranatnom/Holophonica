@@ -91,9 +91,9 @@
                         {{ pack.name }} Vol. {{ pack.vol }}
                       </h2>
                     </v-card-subtitle>
-                    <v-card-subtitle class="pb-0">
-                      {{ pack.artist }}
-                    </v-card-subtitle>
+                    <v-card-subtitle class="pb-0">{{
+                      pack.artist
+                    }}</v-card-subtitle>
                     <v-card-text class="pb-0">{{ pack.genre }}</v-card-text>
                     <Player :file="audiofile" />
                   </div>

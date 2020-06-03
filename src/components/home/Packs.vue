@@ -4,10 +4,13 @@
       <v-row v-if="mobile" align="center" justify="center">
         <v-col cols="1" lg="3" md="3" sm="2"></v-col>
         <v-col cols="10" lg="6" md="6" sm="8">
-          <p class="display-2 text-center font-weight-medium mb-4">SAMPLE PACKS</p>
-          <p
-            class="font-weight-thin text-center"
-          >Our sample packs are the best sample packs in the sample packs market.</p>
+          <p class="display-2 text-center font-weight-medium mb-4">
+            SAMPLE PACKS
+          </p>
+          <p class="font-weight-thin text-center">
+            Our sample packs are the best sample packs in the sample packs
+            market.
+          </p>
         </v-col>
         <v-col cols="1" lg="3" md="3" sm="2"></v-col>
       </v-row>
@@ -20,7 +23,11 @@
         <v-col v-show="mobile" cols="1" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="slide--">
-              <v-img min-width="50" width="60" src="../../assets/leftArrow.png"></v-img>
+              <v-img
+                min-width="50"
+                width="60"
+                src="../../assets/leftArrow.png"
+              ></v-img>
             </a>
           </v-row>
         </v-col>
@@ -32,10 +39,16 @@
 
         <!-- CAROUSEL -->
         <v-col cols="10" lg="4" md="6" sm="6">
-          <p v-show="!mobile" class="display-1 text-center font-weight-medium mb-4">SAMPLE PACKS</p>
           <p
-            class="font-weight-thin text-center"
-          >Our sample packs are the best sample packs in the sample packs market.</p>
+            v-show="!mobile"
+            class="display-1 text-center font-weight-medium mb-4"
+          >
+            SAMPLE PACKS
+          </p>
+          <p v-show="!mobile" class="font-weight-thin text-center">
+            Our sample packs are the best sample packs in the sample packs
+            market.
+          </p>
           <v-carousel
             v-if="mobile"
             :show-arrows="false"
@@ -57,9 +70,14 @@
                       target="_blank"
                       style="text-decoration: none; color: white"
                     >
-                      <p
-                        class="title font-weight-thin"
-                      >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis nec risus et sodales. Nam sodales vulputate quam ultrices pellentesque. Ut malesuada purus vulputate, rhoncus metus consectetur, pulvinar lectus. Donec eu volutpat tortor, sed congue nisi. Praesent feugiat ex vel odio viverra tempor.</p>
+                      <p class="title font-weight-thin">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla facilisis nec risus et sodales. Nam sodales
+                        vulputate quam ultrices pellentesque. Ut malesuada purus
+                        vulputate, rhoncus metus consectetur, pulvinar lectus.
+                        Donec eu volutpat tortor, sed congue nisi. Praesent
+                        feugiat ex vel odio viverra tempor.
+                      </p>
                     </a>
                   </div>
                 </v-expand-transition>
@@ -77,7 +95,7 @@
             delimiter-icon="mdi-minus"
           >
             <v-carousel-item v-for="(slide, i) in slides" :key="i">
-              <v-img :aspect-ratio="1/1" :src="slide"></v-img>
+              <v-img :aspect-ratio="1 / 1" :src="slide"></v-img>
             </v-carousel-item>
           </v-carousel>
         </v-col>
@@ -91,7 +109,11 @@
         <v-col v-show="mobile" cols="1" lg="1" md="1" sm="1">
           <v-row justify="center">
             <a @click="slide++">
-              <v-img min-width="50" width="60" src="../../assets/rightArrow.png"></v-img>
+              <v-img
+                min-width="50"
+                width="60"
+                src="../../assets/rightArrow.png"
+              ></v-img>
             </a>
           </v-row>
         </v-col>
@@ -101,6 +123,7 @@
         <v-col cols="0" lg="1" md="1" sm="1"></v-col>
         <!--  -->
       </v-row>
+      <v-row></v-row>
     </v-container>
   </v-hover>
 </template>
