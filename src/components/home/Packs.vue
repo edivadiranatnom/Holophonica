@@ -1,6 +1,16 @@
 <template>
   <v-hover v-slot:default="{ hover }">
-    <v-container class="mb-12 mt-12" id="packs" fluid>
+    <v-container id="packs" fluid>
+      <v-row v-if="mobile" align="center" justify="center">
+        <v-col cols="1" lg="3" md="3" sm="2"></v-col>
+        <v-col cols="10" lg="6" md="6" sm="8">
+          <p class="display-2 text-center font-weight-medium mb-4">SAMPLE PACKS</p>
+          <p
+            class="font-weight-thin text-center"
+          >Our sample packs are the best sample packs in the sample packs market.</p>
+        </v-col>
+        <v-col cols="1" lg="3" md="3" sm="2"></v-col>
+      </v-row>
       <v-row align="center" justify="center">
         <!-- SPACE -->
         <v-col cols="0" lg="1" md="1" sm="0"></v-col>
@@ -22,12 +32,10 @@
 
         <!-- CAROUSEL -->
         <v-col cols="10" lg="4" md="6" sm="6">
+          <p v-show="!mobile" class="display-1 text-center font-weight-medium mb-4">SAMPLE PACKS</p>
           <p
-            v-if="mobile"
-            class="text-center display-2 font-weigth-medium text-uppercase"
-          >sample packs</p>
-          <p v-else class="text-center display-1 font-weigth-medium text-uppercase">sample packs</p>
-
+            class="font-weight-thin text-center"
+          >Our sample packs are the best sample packs in the sample packs market.</p>
           <v-carousel
             v-if="mobile"
             :show-arrows="false"
@@ -41,9 +49,19 @@
                 <v-expand-transition>
                   <div
                     v-if="hover"
-                    class="d-flex transition-fast-in-fast-out grey darken-2 v-card--reveal display-3 white--text"
+                    class="d-flex transition-fast-in-fast-out black v-card--reveal pa-8"
                     style="height: 100%;"
-                  >$14.99</div>
+                  >
+                    <a
+                      href="https://splice.com/"
+                      target="_blank"
+                      style="text-decoration: none; color: white"
+                    >
+                      <p
+                        class="title font-weight-thin"
+                      >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis nec risus et sodales. Nam sodales vulputate quam ultrices pellentesque. Ut malesuada purus vulputate, rhoncus metus consectetur, pulvinar lectus. Donec eu volutpat tortor, sed congue nisi. Praesent feugiat ex vel odio viverra tempor.</p>
+                    </a>
+                  </div>
                 </v-expand-transition>
               </v-img>
             </v-carousel-item>
@@ -59,7 +77,7 @@
             delimiter-icon="mdi-minus"
           >
             <v-carousel-item v-for="(slide, i) in slides" :key="i">
-              <v-img :aspect-ratio="1 / 1" :src="slide"></v-img>
+              <v-img :aspect-ratio="1/1" :src="slide"></v-img>
             </v-carousel-item>
           </v-carousel>
         </v-col>
@@ -115,11 +133,7 @@ export default {
 
 <style lang="scss">
 .v-card--reveal {
-  align-items: center;
-  bottom: 0;
   justify-content: center;
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
+  opacity: 0.85;
 }
 </style>
