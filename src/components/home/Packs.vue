@@ -6,11 +6,15 @@
         <p
           class="display-2 text-center font-weight-medium mb-4"
           style="font-family: 'Helvetica Now Text' !important"
-        >SAMPLE PACKS</p>
+        >
+          SAMPLE PACKS
+        </p>
         <p
           class="title font-weight-regular text-center"
           style="font-family: 'Helvetica Now Text' !important"
-        >Our sample packs are the best sample packs in the sample packs market.</p>
+        >
+          Our sample packs are the best sample packs in the sample packs market.
+        </p>
       </v-col>
       <v-col cols="1" lg="3" md="3" sm="2"></v-col>
     </v-row>
@@ -23,7 +27,11 @@
       <v-col v-show="mobile" v-if="!resize" cols="0" lg="1" md="1" sm="0">
         <v-row justify="center">
           <a @click="slide--">
-            <v-img min-width="50" width="60" src="../../assets/leftArrow.png"></v-img>
+            <v-img
+              min-width="50"
+              width="60"
+              src="../../assets/leftArrow.png"
+            ></v-img>
           </a>
         </v-row>
       </v-col>
@@ -39,14 +47,28 @@
           v-show="!mobile"
           class="display-1 text-center font-weight-medium mb-4"
           style="font-family: 'Helvetica Now Text' !important"
-        >SAMPLE PACKS</p>
+        >
+          SAMPLE PACKS
+        </p>
         <p
           v-show="!mobile"
           class="font-weight-thin text-center"
           style="font-family: 'Helvetica Now Text' !important"
-        >Our sample packs are the best sample packs on the sample packs market.</p>
-        <v-carousel v-if="mobile" :show-arrows="false" v-model="slide" cycle hide-delimiters>
-          <v-carousel-item v-for="(slide, i) in slides" target="_blank" :key="i">
+        >
+          Our sample packs are the best sample packs on the sample packs market.
+        </p>
+        <v-carousel
+          v-if="mobile"
+          :show-arrows="false"
+          v-model="slide"
+          cycle
+          hide-delimiters
+        >
+          <v-carousel-item
+            v-for="(slide, i) in slides"
+            target="_blank"
+            :key="i"
+          >
             <div class="img-contain">
               <transition name="flip" mode="out-in">
                 <slot v-if="!isShowing"></slot>
@@ -58,7 +80,11 @@
                   :src="slide"
                   style="margin: auto; border-radius: 1%"
                 >
-                  <a href="https://splice.com/" target="_blank" style="text-decoration: none">
+                  <a
+                    href="https://splice.com/"
+                    target="_blank"
+                    style="text-decoration: none"
+                  >
                     <div class="overlay pa-6">
                       <p
                         class="sample-description subtitle-1 text-justify ma-lg-12 ma-6"
@@ -101,7 +127,11 @@
       <v-col v-show="mobile" v-if="!resize" cols="0" lg="1" md="1">
         <v-row justify="center">
           <a @click="slide++">
-            <v-img min-width="50" width="60" src="../../assets/rightArrow.png"></v-img>
+            <v-img
+              min-width="50"
+              width="60"
+              src="../../assets/rightArrow.png"
+            ></v-img>
           </a>
         </v-row>
       </v-col>
