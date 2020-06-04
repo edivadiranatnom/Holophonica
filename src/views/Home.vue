@@ -70,7 +70,7 @@ export default {
   methods: {
     onScroll(e) {
       const top = window.pageYOffset || e.target.scrollTop || 0;
-      this.fab = top > (window.innerHeight / 10) * 22;
+      this.fab = top > (window.innerHeight / 10) * 18;
     },
     toTop() {
       this.$vuetify.goTo(0);

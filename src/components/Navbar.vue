@@ -93,8 +93,8 @@ export default {
 
 <style lang="stylus" scoped>
 .nav {
-  height: 7vh;
-  z-index: 1;
+  height: 64px;
+  z-index: 1000;
   overflow: hidden;
   opacity: 0.85;
   backdrop-filter: blur(2px);
@@ -102,12 +102,6 @@ export default {
   position: fixed;
   top: 0;
   width: 100vw;
-}
-
-@media only screen and (max-width: 600px) {
-  .nav {
-    height: 10vh;
-  }
 }
 
 .navshdw {
