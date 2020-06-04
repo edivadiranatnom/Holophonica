@@ -2,7 +2,11 @@
   <v-app>
     <Navbar />
     <v-content>
-      <v-container class="pa-12" style="color: white !important" fluid>
+      <v-container
+        class="pa-12"
+        style="color: white !important; font-family: 'Helvetica Now Text'"
+        fluid
+      >
         <h1
           class="western"
           style="margin-top: 0in; margin-bottom: 0.06in; border: none; padding: 0in; line-height: 119%"
@@ -22,9 +26,10 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Holophonica collects some Personal Data from its Users.</font
-            >
+            <font
+              size="2"
+              style="font-size: 10pt"
+            >Holophonica collects some Personal Data from its Users.</font>
           </font>
         </p>
         <p
@@ -79,9 +84,7 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Holophonica Studios &copy;</font
-            >
+            <font size="2" style="font-size: 10pt">Holophonica Studios &copy;</font>
           </font>
         </p>
         <p
@@ -94,9 +97,7 @@
             </font>
           </font>
           <font>
-            <font size="2" style="font-size: 10pt"
-              >holophonica.studios@gmail.com</font
-            >
+            <font size="2" style="font-size: 10pt">holophonica.studios@gmail.com</font>
           </font>
         </p>
         <p
@@ -143,9 +144,7 @@
               </font>
               <br />
               <font>
-                <font size="2" style="font-size: 10pt"
-                  >Personal Data: Cookies; Usage Data</font
-                >
+                <font size="2" style="font-size: 10pt">Personal Data: Cookies; Usage Data</font>
               </font>
             </p>
           </li>
@@ -174,9 +173,7 @@
               </font>
               <br />
               <font>
-                <font size="2" style="font-size: 10pt"
-                  >Personal Data: email address; first name</font
-                >
+                <font size="2" style="font-size: 10pt">Personal Data: email address; first name</font>
               </font>
             </p>
           </li>
@@ -205,9 +202,10 @@
               </font>
               <br />
               <font>
-                <font size="2" style="font-size: 10pt"
-                  >Personal Data: country; email address; first name</font
-                >
+                <font
+                  size="2"
+                  style="font-size: 10pt"
+                >Personal Data: country; email address; first name</font>
               </font>
             </p>
           </li>
@@ -754,10 +752,7 @@
             </font>
           </font>
         </p>
-        <h3
-          class="western"
-          style="margin-top: 0in; margin-bottom: 0in; line-height: 115%"
-        >
+        <h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 115%">
           <a name="h.humzyfstuuwb"></a>
           <font>
             <font size="2" style="font-size: 10pt">
@@ -817,9 +812,7 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Personal Data processed: Cookies; Usage Data.</font
-            >
+            <font size="2" style="font-size: 10pt">Personal Data processed: Cookies; Usage Data.</font>
           </font>
         </p>
         <p
@@ -827,9 +820,7 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 100%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Place of processing: United States &ndash;</font
-            >
+            <font size="2" style="font-size: 10pt">Place of processing: United States &ndash;</font>
           </font>
           <font color="#333b43">
             <font size="2" style="font-size: 10pt">
@@ -849,9 +840,7 @@
             </font>
           </font>
           <font>
-            <font size="2" style="font-size: 10pt"
-              >. Privacy Shield participant.</font
-            >
+            <font size="2" style="font-size: 10pt">. Privacy Shield participant.</font>
           </font>
         </p>
         <p
@@ -860,10 +849,7 @@
         >
           <br />
         </p>
-        <h3
-          class="western"
-          style="margin-top: 0in; margin-bottom: 0in; line-height: 115%"
-        >
+        <h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 115%">
           <a name="h.s3z9zx7g74dp"></a>
           <font>
             <font size="2" style="font-size: 10pt">
@@ -902,15 +888,13 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt">
-              Personal Data processed: email address; first name; birthday.
-            </font>
+            <font
+              size="2"
+              style="font-size: 10pt"
+            >Personal Data processed: email address; first name; birthday.</font>
           </font>
         </p>
-        <h3
-          class="western"
-          style="margin-top: 0in; margin-bottom: 0in; line-height: 115%"
-        >
+        <h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 115%">
           <a name="h.bc4vxl24dl9a"></a>
           <font>
             <font size="2" style="font-size: 10pt">
@@ -970,9 +954,10 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt">
-              Personal Data processed: country; email address; first name.
-            </font>
+            <font
+              size="2"
+              style="font-size: 10pt"
+            >Personal Data processed: country; email address; first name.</font>
           </font>
         </p>
         <p
@@ -980,9 +965,7 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 100%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Place of processing: United States &ndash;</font
-            >
+            <font size="2" style="font-size: 10pt">Place of processing: United States &ndash;</font>
           </font>
           <font color="#333b43">
             <font size="2" style="font-size: 10pt">
@@ -992,9 +975,7 @@
             </font>
           </font>
           <font>
-            <font size="2" style="font-size: 10pt"
-              >. Privacy Shield participant.</font
-            >
+            <font size="2" style="font-size: 10pt">. Privacy Shield participant.</font>
           </font>
         </p>
         <p
@@ -1036,9 +1017,10 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >In particular, Users have the right to do the following:</font
-            >
+            <font
+              size="2"
+              style="font-size: 10pt"
+            >In particular, Users have the right to do the following:</font>
           </font>
         </p>
         <ul>
@@ -1409,9 +1391,10 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt">
-              Holophonica does not support &ldquo;Do Not Track&rdquo; requests.
-            </font>
+            <font
+              size="2"
+              style="font-size: 10pt"
+            >Holophonica does not support &ldquo;Do Not Track&rdquo; requests.</font>
           </font>
         </p>
         <p
@@ -1477,10 +1460,7 @@
         >
           <br />
         </p>
-        <h3
-          class="western"
-          style="margin-top: 0in; margin-bottom: 0in; line-height: 115%"
-        >
+        <h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 115%">
           <a name="h.9c1wwajvf87j"></a>
           <font>
             <font size="2" style="font-size: 10pt">
@@ -1584,9 +1564,10 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >The natural person to whom the Personal Data refers.</font
-            >
+            <font
+              size="2"
+              style="font-size: 10pt"
+            >The natural person to whom the Personal Data refers.</font>
           </font>
         </p>
         <h4

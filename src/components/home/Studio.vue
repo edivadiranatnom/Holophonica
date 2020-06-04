@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mt-12 mb-12" id="studio" fluid fill-heigth>
+  <v-container class="mt-12 mb-12" fluid fill-heigth>
     <v-row v-if="mobile" class="ma-12" justify="center">
       <v-col cols="3"></v-col>
       <v-col cols="6">
