@@ -1,7 +1,7 @@
 <template>
   <v-footer absolute app>
     <v-card class="lighten-1 white--text text-center">
-      <v-card-title>
+      <v-card-title v-if="mobile">
         <v-btn
           icon
           v-for="(el, i) in socialIcons"
@@ -14,18 +14,36 @@
           <v-icon large>{{ el.icon }}</v-icon>
         </v-btn>
       </v-card-title>
+      <v-card-title v-else>
+        <v-btn
+          icon
+          x-small
+          v-for="(el, i) in socialIcons"
+          :key="i"
+          :href="el.url"
+          target="_blank"
+          class="mx-4 white--text text-center socialIcon"
+          dark
+        >
+          <v-icon large>{{ el.icon }}</v-icon>
+        </v-btn>
+      </v-card-title>
       <v-divider></v-divider>
-      <v-card-text class="title white--text">Holophonica</v-card-text>
+      <v-card-text
+        class="title white--text"
+        style="font-family: 'Helvetica Now Text' !important"
+        >Holophonica</v-card-text
+      >
       <v-row justify="center">
-        <p class="caption">
-          <router-link to="Privacy" style="color: white"
+        <p class="caption" style="font-family: 'Helvetica Now Text' !important">
+          <router-link to="/privacy" style="color: white"
             >Privacy Policy</router-link
           >
         </p>
       </v-row>
       <v-row justify="center">
-        <p class="caption">
-          <router-link to="Terms" style="color: white"
+        <p class="caption" style="font-family: 'Helvetica Now Text' !important">
+          <router-link to="/terms" style="color: white"
             >Terms and Conditions</router-link
           >
         </p>
@@ -58,6 +76,16 @@ export default {
         }
       ]
     };
+  },
+  created() {
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      ) |
+      (window.innerWidth > 568)
+    ) {
+      this.mobile = true;
+    }
   }
 };
 </script>

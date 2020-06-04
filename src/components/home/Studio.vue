@@ -1,117 +1,95 @@
 <template>
-  <v-container id="studio" fluid fill-heigth>
-    <v-row v-if="mobile" class="ma-12">
-      <v-col cols="1" lg="3" md="3" sm="2"></v-col>
-      <v-col cols="10" lg="6" md="6" sm="8">
-        <p class="display-2 text-center font-weight-medium mb-4">STUDIO</p>
-        <p class="font-weight-thin text-center">
+  <v-container class="mt-12 mb-12" id="studio" fluid fill-heigth>
+    <v-row v-if="mobile" class="ma-12" justify="center">
+      <v-col cols="3"></v-col>
+      <v-col cols="6">
+        <p
+          class="display-2 text-center font-weight-medium mb-4"
+          style="font-family: 'Helvetica Now Text' !important"
+        >
+          STUDIO
+        </p>
+        <p
+          class="title font-weight-regular text-center"
+          style="font-family: 'Helvetica Now Text' !important"
+        >
           Our team of experienced producers and sound engineers offer a wide
           variety of services to help your music meet the highest professional
           standards.
         </p>
       </v-col>
-      <v-col cols="1" lg="3" md="3" sm="2"></v-col>
+      <v-col cols="3"></v-col>
     </v-row>
     <v-row v-else>
-      <v-col cols="1" lg="0" md="2" sm="2"></v-col>
-      <v-col cols="10" lg="12" md="8" sm="8">
-        <p class="display-2 text-center font-weight-medium mb-4">STUDIO</p>
-        <p class="font-weight-thin text-center">
+      <v-col cols="2" lg="3" md="3"></v-col>
+      <v-col cols="8" lg="6" md="3">
+        <p
+          class="display-2 text-center font-weight-medium mb-4"
+          style="font-family: 'Helvetica Now Text' !important"
+        >
+          STUDIO
+        </p>
+        <p class="title font-weight-thin text-center">
           Our team offers a variety of services to help your music meet the
           highest professional standards.
         </p>
       </v-col>
-      <v-col cols="1" lg="0" md="0" sm="0"></v-col>
+      <v-col cols="2" lg="3" md="3"></v-col>
     </v-row>
     <v-row>
-      <v-col cols="1" lg="2" md="3" sm="2"></v-col>
-      <v-col v-if="mobile" cols="10" lg="8" md="8" sm="8">
-        <v-row>
-          <v-col id="leftStudio" cols="12" lg="5" md="5" sm="12">
-            <v-row>
-              <v-col cols="1"></v-col>
-              <v-col cols="10">
-                <p class="headline font-weight-thin mt-4 text-center">
-                  Improve your music
-                </p>
-              </v-col>
-              <v-col cols="1"></v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="1"></v-col>
-              <v-col v-if="mobile" cols="9">
-                <p
-                  v-for="(el, i) in improve"
-                  :key="i"
-                  class="title font-weight-thin ma-2"
-                >
-                  {{ el }}
-                </p>
-              </v-col>
-              <v-col v-else cols="9">
-                <p
-                  v-for="(el, i) in improve"
-                  :key="i"
-                  class="font-weight-thin ma-2"
-                >
-                  {{ el }}
-                </p>
-              </v-col>
-              <v-col cols="2">
-                <v-btn
-                  class="float-right text-capitalize align-center"
-                  text
-                  color="white"
-                  href="https://soundbetter.com/profiles/239809-holophonica-studios"
-                  target="_blank"
-                  >Learn more</v-btn
-                >
-              </v-col>
-            </v-row>
-          </v-col>
-          <v-col cols="2" lg="2" md="2" sm="2"></v-col>
-          <v-col id="rightStudio" cols="12" lg="5" md="5" sm="12">
-            <v-row>
-              <v-col cols="2"></v-col>
-              <v-col cols="8">
-                <p class="headline font-weight-thin mt-4 text-center">
-                  Create your music
-                </p>
-              </v-col>
-              <v-col cols="2"></v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="1"></v-col>
-              <v-col v-if="mobile" cols="9">
-                <p
-                  v-for="(el, i) in create"
-                  :key="i"
-                  class="title font-weight-thin ma-2"
-                >
-                  {{ el }}
-                </p>
-              </v-col>
-              <v-col v-else cols="9">
-                <p
-                  v-for="(el, i) in create"
-                  :key="i"
-                  class="font-weight-thin ma-2"
-                >
-                  {{ el }}
-                </p>
-              </v-col>
-              <v-col cols="2">
-                <v-btn
-                  class="float-right text-capitalize"
-                  text
-                  color="white"
-                  href="https://soundbetter.com/profiles/239809-holophonica-studios"
-                  target="_blank"
-                  >Learn more</v-btn
-                >
-              </v-col>
-            </v-row>
-          </v-col>
+      <v-col cols="2"></v-col>
+      <v-col v-if="mobile" cols="8">
+        <v-row align="center" justify="space-around">
+          <div class="studio pa-12" style="width: 25vw">
+            <p
+              class="headline font-weight-medium mt-4 text-center"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
+              Improve your music
+            </p>
+            <p
+              v-for="(el, i) in improve"
+              :key="i"
+              class="subtitle-1 font-weight-thin ma-2"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
+              {{ el }}
+            </p>
+            <v-btn
+              class="float-right text-capitalize"
+              text
+              color="white"
+              href="https://soundbetter.com/profiles/239809-holophonica-studios"
+              target="_blank"
+              style="font-family: 'Helvetica Now Text' !important"
+              >Learn more</v-btn
+            >
+          </div>
+          <div class="studio pa-12" style="width: 25vw">
+            <p
+              class="headline font-weight-medium mt-4 text-center"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
+              Create your music
+            </p>
+            <p
+              v-for="(el, i) in create"
+              :key="i"
+              class="subtitle-1 font-weight-thin ma-2"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
+              {{ el }}
+            </p>
+            <v-btn
+              class="float-right text-capitalize"
+              text
+              color="white"
+              href="https://soundbetter.com/profiles/239809-holophonica-studios"
+              target="_blank"
+              style="font-family: 'Helvetica Now Text' !important"
+              >Learn more</v-btn
+            >
+          </div>
         </v-row>
       </v-col>
 
@@ -125,7 +103,7 @@
           interval="4000"
         >
           <v-carousel-item>
-            <v-col id="leftStudio" cols="12">
+            <v-col id="studio" cols="12">
               <v-row>
                 <v-col cols="12">
                   <p class="headline font-weight-thin mt-4 text-center">
@@ -157,7 +135,7 @@
             </v-col>
           </v-carousel-item>
           <v-carousel-item>
-            <v-col id="rightStudio" cols="12">
+            <v-col class="studio" cols="12">
               <v-row>
                 <v-col cols="12">
                   <p class="headline font-weight-thin mt-4 text-center">
@@ -221,3 +199,14 @@ export default {
   }
 };
 </script>
+
+<style lang="stylus" scoped>
+p {
+  font-family: 'Helvetica Now Text' !important;
+}
+
+.studio {
+  background: #1e1e1e;
+  border-radius: 1%;
+}
+</style>

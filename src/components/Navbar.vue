@@ -17,7 +17,6 @@
           v-show="renderNavItem"
           class="menu-icon float-right mt-3 mr-9"
           width="20"
-          :style="openMenu"
           src="../assets/leftArrow.png"
           @click="openMenu"
         ></v-img>
@@ -61,7 +60,8 @@ export default {
       { text: "", url: "" },
       { text: "", url: "" }
     ],
-    renderNavItem: true
+    renderNavItem: true,
+    show: false
   }),
   created() {
     if (
@@ -79,14 +79,11 @@ export default {
         this.invisibleTab = false;
         this.showRotate = true;
         this.showButton = false;
-        return {};
       } else {
         this.visibleTab = false;
         this.invisibleTab = true;
         this.showRotate = false;
         this.showButton = true;
-
-        return {};
       }
     },
     onScroll() {
@@ -98,6 +95,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 .nav {
   height: 7vh;
   z-index: 1;
@@ -129,6 +127,7 @@ export default {
   color: #cfcfcf;
   font-size: 1.2em;
   cursor: pointer;
+  font-family: 'Helvetica Now Text';
 }
 
 .visibleTab {
@@ -159,6 +158,8 @@ export default {
 
 .menu-icon {
   cursor: pointer;
+  transition: all 3s;
+  transition-timing: ease-in-out;
 }
 
 @keyframes rot {

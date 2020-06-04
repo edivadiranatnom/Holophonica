@@ -49,4 +49,8 @@ export default {
 #cover {
   height: 95vh;
 }
+
+#soundsgood {
+  font-family: "Helvetica Now Text" !important;
+}
 </style>

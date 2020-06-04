@@ -3,23 +3,39 @@
     <Navbar />
     <v-content>
       <div>
-        <v-container fluid fill-height>
+        <v-container fluid>
           <v-row justify="center" class="mt-12">
-            <p v-if="mobile" class="display-2 text-center">
+            <p
+              v-if="mobile"
+              class="display-1 text-center"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
+              Holophonica
+            </p>
+            <p
+              v-else
+              class="display-4"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
               Holophonica Studios
             </p>
-            <p v-else class="display-4">Holophonica Studios</p>
           </v-row>
           <v-divider class="mr-6 ml-6 mb-12"></v-divider>
           <v-row class="ml-12 mr-12">
             <div v-if="mobile"></div>
             <div v-else>
-              <p class="headline mb-12 text-justify">
+              <p
+                class="headline mb-12 text-justify"
+                style="font-family: 'Helvetica Now Text' !important"
+              >
                 Holophonica is the brainchild of three friends and producers who
                 decided to offer their knowledge to help people bring their
                 ideas to life.
               </p>
-              <p class="body-1 text-justify">
+              <p
+                class="body-1 text-justify"
+                style="font-family: 'Helvetica Now Text' !important"
+              >
                 Credits include releases on Universal, Spinnin', Monstercat,
                 STMPD. Through the years, we gained extensive experience in
                 multiple genres. We worked with artists such as Khalid, Martin
@@ -29,7 +45,10 @@
                 Mattia are 3 producers from Italy; they have been producing,
                 mixing and mastering full time for over 8 years.
               </p>
-              <p class="body-1 text-justify">
+              <p
+                class="body-1 text-justify"
+                style="font-family: 'Helvetica Now Text' !important"
+              >
                 Davide (Surt) works in the techno/ambient field with releases on
                 Planet Rhythm, Edit Select, Informa, Northallsen and Affuté
                 under his belt. He is particularly skilled in producing huge
@@ -37,7 +56,10 @@
                 celestial soundscapes, as well as 4/4 to the floor techno tracks
                 with strong basslines and throbbing drum patterns.
               </p>
-              <p class="body-1 text-justify">
+              <p
+                class="body-1 text-justify"
+                style="font-family: 'Helvetica Now Text' !important"
+              >
                 Mattia (Goja/Falling Down) works in the EDM/electronic scene. He
                 started playing the piano at 5 and the bass guitar at 12. At 20,
                 he founded "Goja"; through this project, he had the chance to
@@ -48,7 +70,10 @@
                 and Wolv (Dyro's label). In 2020 he started to write his first
                 album under his new project "Falling Down".
               </p>
-              <p class="body-1 text-justify">
+              <p
+                class="body-1 text-justify"
+                style="font-family: 'Helvetica Now Text' !important"
+              >
                 Francesco (Frank The Traveler) co-founded Goja and has been part
                 of the project until 2018; he is now producing under his new
                 project 'Frank The Traveler' for Pop and Hip Hop artists.
@@ -76,6 +101,7 @@
                       target="_blank"
                       icon
                       href="https://www.instagram.com/frankthetraveler"
+                      style="font-family: 'Helvetica Now Text' !important"
                     >
                       <v-icon small>mdi-instagram</v-icon>&nbsp;frankthetraveler
                     </v-btn>
@@ -95,6 +121,7 @@
                       target="_blank"
                       icon
                       href="https://www.instagram.com/itsgoja"
+                      style="font-family: 'Helvetica Now Text' !important"
                     >
                       <v-icon small>mdi-instagram</v-icon>&nbsp;itsgoja
                     </v-btn>
@@ -114,6 +141,7 @@
                       target="_blank"
                       icon
                       href="https://www.instagram.com/iamsurt"
+                      style="font-family: 'Helvetica Now Text' !important"
                     >
                       <v-icon small>mdi-instagram</v-icon>&nbsp;iamsurt
                     </v-btn>
@@ -137,6 +165,7 @@
                     target="_blank"
                     icon
                     href="https://www.instagram.com/frankthetraveler"
+                    style="font-family: 'Helvetica Now Text' !important"
                   >
                     <v-icon small>mdi-instagram</v-icon>&nbsp;frankthetraveler
                   </v-btn>
@@ -157,6 +186,7 @@
                     target="_blank"
                     icon
                     href="https://www.instagram.com/gojamusic"
+                    style="font-family: 'Helvetica Now Text' !important"
                   >
                     <v-icon small>mdi-instagram</v-icon>&nbsp;gojamusic
                   </v-btn>
@@ -177,6 +207,7 @@
                     target="_blank"
                     icon
                     href="https://www.instagram.com/iamsurt"
+                    style="font-family: 'Helvetica Now Text' !important"
                   >
                     <v-icon small>mdi-instagram</v-icon>&nbsp;iamsurt
                   </v-btn>
@@ -196,7 +227,10 @@
             </v-col>
             <v-col cols="12" lg="6" md="6" sm="12">
               <div v-if="mobile">
-                <p class="body-1 text-justify mr-6 ml-6">
+                <p
+                  class="body-1 text-justify mr-6 ml-6"
+                  style="font-family: 'Helvetica Now Text' !important"
+                >
                   Holophonica is the brainchild of three friends and producers
                   who decided to offer their knowledge to help people bring
                   their ideas to life.
@@ -204,7 +238,10 @@
               </div>
               <div v-else></div>
               <div class="inquiry-form">
-                <p class="body-1 text-justify">
+                <p
+                  class="body-1 text-justify"
+                  style="font-family: 'Helvetica Now Text' !important"
+                >
                   We also offer placing services and additional production, if
                   needed. Just send us a message!
                 </p>

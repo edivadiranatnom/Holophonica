@@ -80,6 +80,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("../assets/font/stylesheet.css");
 .v-divider {
   background-color: white;
 }

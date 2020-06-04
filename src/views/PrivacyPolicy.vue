@@ -902,10 +902,9 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Personal Data processed: email address; first name;
-              birthday.</font
-            >
+            <font size="2" style="font-size: 10pt">
+              Personal Data processed: email address; first name; birthday.
+            </font>
           </font>
         </p>
         <h3
@@ -971,10 +970,9 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Personal Data processed: country; email address; first
-              name.</font
-            >
+            <font size="2" style="font-size: 10pt">
+              Personal Data processed: country; email address; first name.
+            </font>
           </font>
         </p>
         <p
@@ -1411,10 +1409,9 @@
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 142%"
         >
           <font>
-            <font size="2" style="font-size: 10pt"
-              >Holophonica does not support &ldquo;Do Not Track&rdquo;
-              requests.</font
-            >
+            <font size="2" style="font-size: 10pt">
+              Holophonica does not support &ldquo;Do Not Track&rdquo; requests.
+            </font>
           </font>
         </p>
         <p
@@ -1783,6 +1780,9 @@ export default {
   name: "Privacy",
   components: {
     Navbar: Navbar
+  },
+  created() {
+    this.$vuetify.theme.dark = true;
   }
 };
 </script>

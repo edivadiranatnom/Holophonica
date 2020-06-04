@@ -3,10 +3,16 @@
     <v-row v-if="mobile" align="center" justify="center">
       <v-col cols="1" lg="3" md="3" sm="2"></v-col>
       <v-col cols="10" lg="6" md="6" sm="8">
-        <p class="display-2 text-center font-weight-medium mb-4">
+        <p
+          class="display-2 text-center font-weight-medium mb-4"
+          style="font-family: 'Helvetica Now Text' !important"
+        >
           SAMPLE PACKS
         </p>
-        <p class="font-weight-thin text-center">
+        <p
+          class="title font-weight-regular text-center"
+          style="font-family: 'Helvetica Now Text' !important"
+        >
           Our sample packs are the best sample packs in the sample packs market.
         </p>
       </v-col>
@@ -32,7 +38,7 @@
       <!--  -->
 
       <!-- SPACE IN BETWEEN -->
-      <v-col cols="0" lg="1" md="1" sm="1"></v-col>
+      <v-col cols="0" lg="1" md="1" sm="2"></v-col>
       <!--  -->
 
       <!-- CAROUSEL -->
@@ -40,41 +46,56 @@
         <p
           v-show="!mobile"
           class="display-1 text-center font-weight-medium mb-4"
+          style="font-family: 'Helvetica Now Text' !important"
         >
           SAMPLE PACKS
         </p>
-        <p v-show="!mobile" class="font-weight-thin text-center">
-          Our sample packs are the best sample packs in the sample packs market.
+        <p
+          v-show="!mobile"
+          class="font-weight-thin text-center"
+          style="font-family: 'Helvetica Now Text' !important"
+        >
+          Our sample packs are the best sample packs on the sample packs market.
         </p>
         <v-carousel
           v-if="mobile"
           :show-arrows="false"
           v-model="slide"
           cycle
-          height="400"
           hide-delimiters
         >
-          <v-carousel-item v-for="(slide, i) in slides" :key="i">
-            <div class="img-contain">
+          <v-carousel-item
+            v-for="(slide, i) in slides"
+            target="_blank"
+            :key="i"
+          >
+            <div class="img-contain carousel pb-12 pt-12">
               <transition name="flip" mode="out-in">
                 <slot v-if="!isShowing"></slot>
-                <v-img v-else :src="slide" alt>
-                  <div class="overlay pa-12">
-                    <a
-                      href="https://splice.com/"
-                      target="_blank"
-                      style="text-decoration: none; color: white"
-                    >
-                      <p class="title font-weight-thin">
+                <v-img
+                  v-else
+                  height="40vh"
+                  width="40vh"
+                  aspect-ratio="1"
+                  :src="slide"
+                  style="margin: auto; border-radius: 1%;"
+                >
+                  <a
+                    href="https://splice.com/"
+                    target="_blank"
+                    style="text-decoration: none"
+                  >
+                    <div class="overlay pa-6">
+                      <p
+                        class="sample-description subtitle-1 text-justify ma-lg-12 ma-6"
+                        style="font-family: 'Helvetica Now Text' !important"
+                      >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla facilisis nec risus et sodales. Nam sodales
-                        vulputate quam ultrices pellentesque. Ut malesuada purus
-                        vulputate, rhoncus metus consectetur, pulvinar lectus.
-                        Donec eu volutpat tortor, sed congue nisi. Praesent
-                        feugiat ex vel odio viverra tempor.
+                        vulputate quam ultrices pellentesque.
                       </p>
-                    </a>
-                  </div>
+                    </div>
+                  </a>
                 </v-img>
               </transition>
             </div>
@@ -98,7 +119,7 @@
       <!--  -->
 
       <!-- SPACE IN BETWEEN -->
-      <v-col cols="0" lg="1" md="1" sm="1"></v-col>
+      <v-col cols="0" lg="1" md="0" sm="1"></v-col>
       <!--  -->
 
       <!-- RIGHT ARROW -->
@@ -142,7 +163,8 @@ export default {
     if (
       !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
-      )
+      ) |
+      (window.innerWidth > 568)
     ) {
       this.mobile = true;
     }
@@ -151,6 +173,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+p {
+  font-family: "Helvetica Now Text" !important;
+}
+
+.sample-description {
+  color: white;
+}
+
+.carousel {
+  border: solid #1d1d1d 1px;
+  border-radius: 1%;
+  background: #1e1e1e;
+}
+
 img {
   cursor: pointer;
   transform: scaleY(1) translateZ(0);
@@ -159,15 +195,16 @@ img {
 
 .img-contain:hover .overlay {
   opacity: 1;
-  background: hsla(50, 0%, 0%, 0.6);
-  transition: 0.3s opacity ease-out;
+  background: hsla(50, 0%, 0%, 0.75);
+  backdrop-filter: blur(3px);
+  transition: 0.2s opacity ease-out;
 }
 
 .img-contain .overlay {
   height: 100%;
   opacity: 0;
   overflow: hidden;
-  transition: 0.3s opacity ease-in;
+  transition: 0.2s opacity ease-in;
 }
 
 .flip-enter-active {
@@ -175,7 +212,7 @@ img {
 }
 
 .flip-leave-active {
-  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); //ease-out-quad
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); //ease-out-quad
 }
 
 .flip-enter,

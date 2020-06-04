@@ -6,15 +6,24 @@
       overlay-opacity="0.8"
       persistent
       max-width="600px"
+      style="font-family: 'Helvetica Now Text' !important"
     >
       <v-container fluid v-if="preSubscription" id="dialogContainer">
         <v-row>
           <v-col cols="11">
-            <p v-if="mobile" class="body-1">
+            <p
+              v-if="mobile"
+              class="body-1"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
               Subscribe to our newsletter, we will send you an exclusive pack as
               a welcome gift!
             </p>
-            <p v-else class="body-1">
+            <p
+              v-else
+              class="body-1"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
               Subscribe to our newsletter, stay updated and receive periodic
               sample packs for free. By subscribing now, we will send you right
               away an exclusive pack as a welcome gift. See you on the other
@@ -71,7 +80,7 @@
                 ></v-checkbox>
               </v-col>
               <v-col cols="10">
-                <small>
+                <small style="font-family: 'Helvetica Now Text' !important">
                   By submitting you agree to our
                   <router-link
                     to="Privacy"
@@ -101,7 +110,7 @@
                 ></v-checkbox>
               </v-col>
               <v-col cols="11">
-                <small>
+                <small style="font-family: 'Helvetica Now Text' !important">
                   By submitting your informations you agree to our
                   <router-link
                     to="Privacy"
@@ -129,6 +138,7 @@
             :disabled="disabled"
             text
             @click="validate"
+            style="font-family: 'Helvetica Now Text' !important"
             >Subscribe</v-btn
           >
         </v-form>
@@ -138,7 +148,7 @@
           <v-col cols="3"></v-col>
           <v-col cols="6">
             <v-row>
-              <p style="text-align: center">
+              <p style="font-family: 'Helvetica Now Text' !important">
                 Thanks for subscribing, you'll receive a lot of exclusive
                 material!
               </p>
@@ -151,7 +161,11 @@
           <v-col cols="6">
             <v-row>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="dismissDialog"
+              <v-btn
+                color="blue darken-1"
+                text
+                @click="dismissDialog"
+                style="font-family: 'Helvetica Now Text' !important"
                 >Close</v-btn
               >
             </v-row>

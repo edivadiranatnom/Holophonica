@@ -1,5 +1,5 @@
 <template>
-  <v-form ref="form">
+  <v-form ref="form" style="font-family: 'Helvetica Now Text' !important">
     <v-text-field
       v-model="name"
       :rules="nameRules"
@@ -32,7 +32,12 @@
       required
     ></v-textarea>
 
-    <v-btn class="mr-4 float-right" @click="submit">Submit</v-btn>
+    <v-btn
+      class="mr-4 float-right"
+      @click="submit"
+      style="font-family: 'Helvetica Now Text' !important"
+      >Submit</v-btn
+    >
     <v-snackbar v-model="snackbar">
       Your inquiry has been succesfully sent to the team!
       <v-btn color="pink" text @click="snackbar = false">Close</v-btn>
