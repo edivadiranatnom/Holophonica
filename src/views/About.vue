@@ -100,6 +100,7 @@
                       class="text-lowercase"
                       target="_blank"
                       icon
+                      dark
                       href="https://www.instagram.com/frankthetraveler"
                       style="font-family: 'Helvetica Now Text' !important"
                     >
@@ -120,6 +121,7 @@
                       class="text-lowercase"
                       target="_blank"
                       icon
+                      dark
                       href="https://www.instagram.com/itsgoja"
                       style="font-family: 'Helvetica Now Text' !important"
                     >
@@ -140,6 +142,7 @@
                       class="text-lowercase"
                       target="_blank"
                       icon
+                      dark
                       href="https://www.instagram.com/iamsurt"
                       style="font-family: 'Helvetica Now Text' !important"
                     >
@@ -164,6 +167,7 @@
                     class="text-lowercase"
                     target="_blank"
                     icon
+                    dark
                     href="https://www.instagram.com/frankthetraveler"
                     style="font-family: 'Helvetica Now Text' !important"
                   >
@@ -185,6 +189,7 @@
                     class="text-lowercase"
                     target="_blank"
                     icon
+                    dark
                     href="https://www.instagram.com/gojamusic"
                     style="font-family: 'Helvetica Now Text' !important"
                   >
@@ -206,6 +211,7 @@
                     class="text-lowercase"
                     target="_blank"
                     icon
+                    dark
                     href="https://www.instagram.com/iamsurt"
                     style="font-family: 'Helvetica Now Text' !important"
                   >
