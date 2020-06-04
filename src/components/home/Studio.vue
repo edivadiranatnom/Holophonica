@@ -34,7 +34,7 @@
     </v-row>
     <v-row>
       <v-col cols="1" lg="1" md="3" sm="3"></v-col>
-      <v-col v-if="!mobile" cols="10" lg="10" md="8" sm="6">
+      <v-col v-if="!mobile" cols="10" lg="10" md="6" sm="6">
         <v-row align="center" justify="space-around">
           <div class="studio pa-12" style="width: 25vw">
             <p
@@ -160,7 +160,8 @@ export default {
     if (
       !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
-      )
+      ) |
+      (window.innerWidth > 768)
     ) {
       this.mobile = false;
     }
