@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navbar />
-    <v-content>
+    <v-content style="margin-top: 68px !important">
       <v-container
         class="pa-12"
         style="color: white !important; font-family: 'Helvetica Now Text'"
