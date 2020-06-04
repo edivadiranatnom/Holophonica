@@ -3,7 +3,7 @@
     <Navbar />
     <v-content style="margin-top: 68px !important">
       <v-container
-        class="pa-12"
+        class="pl-12 pr-12 pb-12"
         style="color: white !important; font-family: 'Helvetica Now Text'"
         fluid
       >
@@ -13,12 +13,7 @@
         >
           <a name="h.qocplij0mx01"></a>
           <font>
-            <font size="4" style="font-size: 14pt">Privacy Policy of</font>
-          </font>
-          <font>
-            <font size="4" style="font-size: 14pt">
-              <b>&nbsp;Holophonica</b>
-            </font>
+            <font size="4" style="font-size: 14pt">Privacy Policy of Holophonica</font>
           </font>
         </h1>
         <p
@@ -824,9 +819,18 @@
           </font>
           <font color="#333b43">
             <font size="2" style="font-size: 10pt">
-              <a href="https://policies.google.com/privacy">Privacy</a>
-              <a href="https://policies.google.com/privacy"></a>
-              <a href="https://policies.google.com/privacy">Policy</a>
+              <a
+                href="https://policies.google.com/privacy"
+                style="text-decoration: none; color: white"
+              >Privacy</a>
+              <a
+                href="https://policies.google.com/privacy"
+                style="text-decoration: none; color: white"
+              ></a>
+              <a
+                href="https://policies.google.com/privacy"
+                style="text-decoration: none; color: white"
+              >Policy</a>
             </font>
           </font>
           <font>
@@ -834,9 +838,18 @@
           </font>
           <font color="#333b43">
             <font size="2" style="font-size: 10pt">
-              <a href="https://tools.google.com/dlpage/gaoptout?hl=en">Opt</a>
-              <a href="https://tools.google.com/dlpage/gaoptout?hl=en"></a>
-              <a href="https://tools.google.com/dlpage/gaoptout?hl=en">Out</a>
+              <a
+                href="https://tools.google.com/dlpage/gaoptout?hl=en"
+                style="text-decoration: none; color: white"
+              >Opt</a>
+              <a
+                href="https://tools.google.com/dlpage/gaoptout?hl=en"
+                style="text-decoration: none; color: white"
+              ></a>
+              <a
+                href="https://tools.google.com/dlpage/gaoptout?hl=en"
+                style="text-decoration: none; color: white"
+              >Out</a>
             </font>
           </font>
           <font>
@@ -969,9 +982,18 @@
           </font>
           <font color="#333b43">
             <font size="2" style="font-size: 10pt">
-              <a href="https://mailchimp.com/legal/privacy/">Privacy</a>
-              <a href="https://mailchimp.com/legal/privacy/"></a>
-              <a href="https://mailchimp.com/legal/privacy/">Policy</a>
+              <a
+                href="https://mailchimp.com/legal/privacy/"
+                style="text-decoration: none; color: white"
+              >Privacy</a>
+              <a
+                href="https://mailchimp.com/legal/privacy/"
+                style="text-decoration: none; color: white"
+              ></a>
+              <a
+                href="https://mailchimp.com/legal/privacy/"
+                style="text-decoration: none; color: white"
+              >Policy</a>
             </font>
           </font>
           <font>

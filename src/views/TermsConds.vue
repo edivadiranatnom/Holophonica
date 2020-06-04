@@ -63,13 +63,10 @@
             color="#1155cc"
           >
             <u>
-              <a href="https://www.holophonica.com/">https</a>
-              <a href="https://www.holophonica.com/">://</a>
-              <a href="https://www.holophonica.com/">www</a>
-              <a href="https://www.holophonica.com/">.</a>
-              <a href="https://www.holophonica.com/">holophonica</a>
-              <a href="https://www.holophonica.com/">.</a>
-              <a href="https://www.holophonica.com/">com</a>
+              <a
+                href="https://www.holophonica.com/"
+                style="text-decoration: none; color: white"
+              >https://www.holophonica.com</a>
             </u>
           </font>
           website as well as any other media form, media channel, mobile website
@@ -1087,18 +1084,10 @@
             color="#1155cc"
           >
             <u>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">https</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">://</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">www</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">.</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">iubenda</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">.</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">com</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">/</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">privacy</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">-</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">policy</a>
-              <a href="https://www.iubenda.com/privacy-policy/45992810">/45992810</a>
+              <a
+                href="https://www.iubenda.com/privacy-policy/45992810"
+                style="text-decoration: none; color: white"
+              >https://www.iubenda.com/privacy-policy/45992810</a>
             </u>
           </font>. By using the Site, you agree to be bound by our Privacy Policy,
           which is incorporated into these Terms of Use. Please be advised the
