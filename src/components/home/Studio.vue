@@ -108,7 +108,7 @@
         >
           <v-carousel-item>
             <v-col class="studio" cols="12">
-              <v-row>
+              <v-row dense>
                 <v-col cols="1"></v-col>
                 <v-col cols="11">
                   <p class="headline font-weight-thin mt-4">
@@ -123,7 +123,7 @@
                   </p>
                   <v-btn
                     x-small
-                    class="float-right text-capitalize"
+                    class="float-right text-capitalize mr-4"
                     text
                     outlined
                     color="white"
@@ -138,7 +138,7 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-col class="studio" cols="12">
-              <v-row>
+              <v-row dense>
                 <v-col cols="1"></v-col>
                 <v-col cols="11">
                   <p class="headline font-weight-thin mt-4">
@@ -153,7 +153,7 @@
                   </p>
                   <v-btn
                     x-small
-                    class="float-right text-capitalize"
+                    class="float-right text-capitalize mr-4"
                     text
                     outlined
                     color="white"
