@@ -24,7 +24,7 @@
       <!--  -->
 
       <!-- LEFT ARROW -->
-      <v-col v-show="mobile" cols="1" lg="1" md="1" sm="1">
+      <v-col v-show="mobile" v-if="!resize" cols="0" lg="1" md="1" sm="0">
         <v-row justify="center">
           <a @click="slide--">
             <v-img
@@ -38,11 +38,11 @@
       <!--  -->
 
       <!-- SPACE IN BETWEEN -->
-      <v-col cols="0" lg="1" md="1" sm="2"></v-col>
+      <v-col cols="0" lg="1" md="1" sm="1"></v-col>
       <!--  -->
 
-      <!-- CAROUSEL -->
-      <v-col cols="10" lg="4" md="6" sm="6">
+      <!-- DESKTOP CAROUSEL -->
+      <v-col cols="10" lg="4" md="6" sm="8">
         <p
           v-show="!mobile"
           class="display-1 text-center font-weight-medium mb-4"
@@ -69,16 +69,15 @@
             target="_blank"
             :key="i"
           >
-            <div class="img-contain carousel pb-12 pt-12">
+            <div class="img-contain">
               <transition name="flip" mode="out-in">
                 <slot v-if="!isShowing"></slot>
                 <v-img
                   v-else
-                  height="40vh"
-                  width="40vh"
+                  class="carousel d-flex"
                   aspect-ratio="1"
                   :src="slide"
-                  style="margin: auto; border-radius: 1%;"
+                  style="margin: auto; border-radius: 1%"
                 >
                   <a
                     href="https://splice.com/"
@@ -101,6 +100,7 @@
             </div>
           </v-carousel-item>
         </v-carousel>
+        <!-- MOBILE CAROUSEL -->
         <v-carousel
           v-else
           :show-arrows="false"
@@ -119,11 +119,11 @@
       <!--  -->
 
       <!-- SPACE IN BETWEEN -->
-      <v-col cols="0" lg="1" md="0" sm="1"></v-col>
+      <v-col cols="0" lg="1" md="1" sm="1"></v-col>
       <!--  -->
 
       <!-- RIGHT ARROW -->
-      <v-col v-show="mobile" cols="1" lg="1" md="1" sm="1">
+      <v-col v-show="mobile" v-if="!resize" cols="0" lg="1" md="1">
         <v-row justify="center">
           <a @click="slide++">
             <v-img
@@ -137,7 +137,7 @@
       <!--  -->
 
       <!-- SPACE -->
-      <v-col cols="0" lg="1" md="1" sm="1"></v-col>
+      <v-col cols="0" lg="1" md="1" sm="0"></v-col>
       <!--  -->
     </v-row>
     <v-row></v-row>
@@ -153,6 +153,7 @@ export default {
     packs: packs,
     isShowing: true,
     mobile: false,
+    resize: false,
     slide: 0,
     slides: [
       require("@/assets/matty_png/coverComingSoon.png"),
@@ -168,6 +169,22 @@ export default {
     ) {
       this.mobile = true;
     }
+  },
+  mounted() {
+    window.addEventListener("resize", this.handleWindowResize);
+  },
+  beforeDestroy: function() {
+    window.removeEventListener("resize", this.handleWindowResize);
+  },
+  methods: {
+    handleWindowResize(e) {
+      let width = e.currentTarget.innerWidth;
+      if (width < 960) {
+        this.resize = true;
+      } else {
+        this.resize = false;
+      }
+    }
   }
 };
 </script>
@@ -182,7 +199,6 @@ p {
 }
 
 .carousel {
-  border: solid #1d1d1d 1px;
   border-radius: 1%;
   background: #1e1e1e;
 }
