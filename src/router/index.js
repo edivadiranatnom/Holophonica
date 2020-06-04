@@ -60,7 +60,7 @@ const router = new VueRouter({
   //   return { x: 0, y: 0 };
   // }
   scrollBehavior: (to, from, savedPosition) => {
-    let scrollTo = 0;
+    let scrollTo = (0, 0);
 
     if (to.hash) {
       scrollTo = to.hash;
