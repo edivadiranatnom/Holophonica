@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navbar />
-    <v-content style="margin-top: 68px !important">
+    <v-content style="margin-top: 60px !important">
       <Cover />
       <v-container id="studio" fluid>
         <v-divider class="mr-12 ml-12"></v-divider>
@@ -27,7 +27,9 @@
         <v-icon color="black">mdi-arrow-up</v-icon>
       </v-btn>
     </v-content>
+
     <Footer />
+
     <NewsletterModal />
   </v-app>
 </template>
