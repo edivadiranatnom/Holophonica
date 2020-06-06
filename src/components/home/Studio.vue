@@ -37,7 +37,7 @@
       <v-col v-if="!mobile" cols="10" lg="10" md="10" sm="10">
         <v-row align="center" justify="center">
           <v-col lg="4" md="4" sm="12">
-            <div class="studio pa-12">
+            <!-- <div class="studio pa-12">
               <p
                 class="headline font-weight-medium mt-4 text-center"
                 style="font-family: 'Helvetica Now Text' !important"
@@ -56,7 +56,31 @@
                 target="_blank"
                 style="font-family: 'Helvetica Now Text' !important"
               >Learn more</v-btn>
-            </div>
+            </div>-->
+            <v-card class="pa-12">
+              <v-card-title>
+                <p
+                  class="headline font-weight-medium mt-4 text-center"
+                  style="font-family: 'Helvetica Now Text' !important"
+                >Improve your music</p>
+              </v-card-title>
+              <v-card-text>
+                <p
+                  v-for="(el, i) in improve"
+                  :key="i"
+                  class="subtitle-1 font-weight-thin ma-2"
+                  style="font-family: 'Helvetica Now Text' !important"
+                >{{ el }}</p>
+                <v-btn
+                  class="float-right text-capitalize"
+                  text
+                  color="white"
+                  href="https://soundbetter.com/profiles/239809-holophonica-studios"
+                  target="_blank"
+                  style="font-family: 'Helvetica Now Text' !important"
+                >Learn more</v-btn>
+              </v-card-text>
+            </v-card>
           </v-col>
           <v-col cols="0" lg="1" md="2" sm="0"></v-col>
           <v-col lg="4" md="4" sm="12">

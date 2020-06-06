@@ -1,5 +1,5 @@
 <template>
-  <v-container id="packs" fluid>
+  <v-container class="mt-md-12 mt-sm-12 mb-md-12 mb-sm-12" id="packs" fluid>
     <v-row v-if="mobile" align="center" justify="center">
       <v-col cols="1" lg="3" md="3" sm="2"></v-col>
       <v-col cols="10" lg="6" md="6" sm="8">
@@ -139,6 +139,9 @@ export default {
       (window.innerWidth > 568)
     ) {
       this.mobile = true;
+    }
+    if (window.innerWidth < 568) {
+      this.resize = true;
     }
   },
   mounted() {

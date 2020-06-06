@@ -1,25 +1,20 @@
 <template>
   <div v-scroll="onScroll" :class="navshdw" class="nav">
-    <v-row>
+    <v-row align="center">
       <v-col cols="1">
         <router-link to="/">
-          <v-img
-            class="ml-3 mt-lg-2 mt-2"
-            id="navbarLogo"
-            min-width="50"
-            width="60"
-            src="../assets/logo.png"
-          ></v-img>
+          <v-img class="ml-3" id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
         </router-link>
       </v-col>
       <v-col cols="11">
-        <v-img
+        <v-icon
+          class="float-right mr-9 mt-1"
+          large
+          dark
+          dense
           v-show="renderNavItem"
-          class="menu-icon float-right mt-3 mr-9"
-          width="20"
-          src="../assets/leftArrow.png"
           @click="openMenu"
-        ></v-img>
+        >{{ invisibleTab ? 'mdi-chevron-left' : 'mdi-chevron-down' }}</v-icon>
         <transition name="slide-fade">
           <v-toolbar-items v-if="invisibleTab" class="tab pa-2 mr-lg-6 mr-3">
             <router-link to="/about" style="font-size: 1em; text-decoration: none; color: #cfcfcf">
@@ -60,8 +55,7 @@ export default {
       { text: "", url: "" },
       { text: "", url: "" }
     ],
-    renderNavItem: true,
-    show: false
+    renderNavItem: true
   }),
   created() {
     if (
@@ -75,15 +69,9 @@ export default {
   methods: {
     openMenu() {
       if (this.invisibleTab) {
-        this.visibleTab = true;
         this.invisibleTab = false;
-        this.showRotate = true;
-        this.showButton = false;
       } else {
-        this.visibleTab = false;
         this.invisibleTab = true;
-        this.showRotate = false;
-        this.showButton = true;
       }
     },
     onScroll() {
@@ -99,8 +87,9 @@ export default {
   height: 64px;
   z-index: 1000;
   overflow: hidden;
-  opacity: 0.85;
-  backdrop-filter: blur(2px);
+  opacity: 0.98;
+  backdrop-filter: saturate(180%) blur(2px);
+  -webkit-backdrop-filter: saturate(180%) blur(2px);
   background-color: #131313;
   position: fixed;
   top: 0;
@@ -153,6 +142,10 @@ export default {
   cursor: pointer;
   transition: all 3s;
   transition-timing: ease-in-out;
+}
+
+.v-icon.v-icon:after {
+  background-color: transparent;
 }
 
 @keyframes rot {
