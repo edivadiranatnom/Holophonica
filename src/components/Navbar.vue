@@ -87,7 +87,7 @@ export default {
   height: 64px;
   z-index: 1000;
   overflow: hidden;
-  opacity: 0.98;
+  opacity: 0.85;
   backdrop-filter: saturate(180%) blur(2px);
   -webkit-backdrop-filter: saturate(180%) blur(2px);
   background-color: #131313;
