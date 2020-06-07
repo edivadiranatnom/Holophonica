@@ -8,7 +8,7 @@
           style="font-family: 'Helvetica Now Text' !important"
         >STUDIO</p>
         <p
-          class="title font-weight-regular text-center"
+          class="title font-weight-thin text-center"
           style="font-family: 'Helvetica Now Text' !important"
         >
           Our team of experienced producers and sound engineers offer a wide
@@ -22,7 +22,7 @@
       <v-col cols="2" lg="3" md="3"></v-col>
       <v-col cols="8" lg="6" md="3">
         <p
-          class="display-2 text-center font-weight-medium mb-4"
+          class="display-2 text-center font-weight-thin mb-4"
           style="font-family: 'Helvetica Now Text' !important"
         >STUDIO</p>
         <p class="title font-weight-thin text-center">
