@@ -36,8 +36,8 @@
         >Holophonica&reg;</v-card-text>
         <v-row justify="center">
           <p class="caption" style="font-family: 'Helvetica Now Text' !important">
-            <router-link to="/privacy" style="color: white">Privacy Policy</router-link>&nbsp;
-            <router-link to="/terms" style="color: white">Terms & Conditions</router-link>
+            <router-link to="/privacy" style="color: white">Privacy Policy</router-link>
+            <router-link class="ml-4" to="/terms" style="color: white">Terms & Conditions</router-link>
           </p>
         </v-row>
       </v-card>

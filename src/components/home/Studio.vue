@@ -22,7 +22,7 @@
       <v-col cols="2" lg="3" md="3"></v-col>
       <v-col cols="8" lg="6" md="3">
         <p
-          class="display-2 text-center font-weight-thin mb-4"
+          class="display-2 text-center font-weight-medium mb-4"
           style="font-family: 'Helvetica Now Text' !important"
         >STUDIO</p>
         <p class="title font-weight-thin text-center">
@@ -36,7 +36,11 @@
       <v-col cols="1" lg="1" md="1" sm="1"></v-col>
       <v-col v-if="!mobile" cols="10" lg="10" md="10" sm="10">
         <v-row align="center" justify="center">
-          <v-col lg="4" md="4" sm="12">
+          <!-- LEFT SPACER -->
+          <v-col cols="0" lg="2" md="auto" sm="2"></v-col>
+
+          <!-- LEFT BOX -->
+          <v-col id="leftBox" cols="12" lg="3" md="4" sm="8">
             <div class="studio pa-12">
               <p
                 class="headline font-weight-medium mt-4 text-center"
@@ -58,8 +62,11 @@
               >Learn more</v-btn>
             </div>
           </v-col>
-          <v-col cols="0" lg="1" md="2" sm="0"></v-col>
-          <v-col lg="4" md="4" sm="12">
+
+          <v-col cols="0" lg="2" md="1" sm="2"></v-col>
+
+          <!-- RIGHT BOX -->
+          <v-col id="rightBox" cols="12" lg="3" md="4" sm="8">
             <div class="studio pa-12">
               <p
                 class="headline font-weight-medium mt-4 text-center"
@@ -81,6 +88,8 @@
               >Learn more</v-btn>
             </div>
           </v-col>
+          <!-- RIGHT SPACER -->
+          <v-col cols="0" lg="2" md="auto" sm="2"></v-col>
         </v-row>
       </v-col>
       <v-col v-else cols="10" lg="8" md="10" sm="10">
@@ -174,6 +183,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@media only screen and (min-width: 600px) and (max-width: 960px) {
+  // cafonata to keep rightBox centered
+  #rightBox {
+    margin-left: 16.5%;
+  }
+}
+
 .theme--dark.v-btn:hover:before {
   opacity: 0;
 }
