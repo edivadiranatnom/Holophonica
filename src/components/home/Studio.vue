@@ -174,8 +174,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.studiocontainer {
-  // height: 100vh;
+.theme--dark.v-btn:hover:before {
+  opacity: 0;
 }
 
 p {

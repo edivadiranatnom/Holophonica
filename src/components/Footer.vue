@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 footer.v-footer.pa-2 {
   align-items: center;
   justify-content: center;
@@ -92,6 +92,7 @@ footer.v-footer.pa-2 {
   bottom: 0 !important;
   width: 100%;
 }
+
 .pa-2 {
   padding: 0 !important;
 }
