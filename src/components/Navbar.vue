@@ -8,7 +8,7 @@
       </v-col>
       <v-col cols="11">
         <v-icon
-          class="float-right mr-9 mt-1"
+          class="float-right mr-lg-9 mr-4 mt-1"
           large
           dark
           dense
@@ -83,6 +83,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+#navbarLogo {
+  position: absolute;
+  top: 16px;
+}
+
 .nav {
   height: 64px;
   z-index: 1000;

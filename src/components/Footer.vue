@@ -85,6 +85,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-btn:not(.v-btn--text):not(.v-btn--outlined):hover::before {
+  opacity: 0;
+}
+
 footer.v-footer.pa-2 {
   align-items: center;
   justify-content: center;

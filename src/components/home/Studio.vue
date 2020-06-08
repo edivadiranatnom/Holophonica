@@ -190,6 +190,11 @@ export default {
   }
 }
 
+.v-ripple__container {
+  background: transparent;
+  opacity: 0;
+}
+
 .theme--dark.v-btn:hover:before {
   opacity: 0;
 }
