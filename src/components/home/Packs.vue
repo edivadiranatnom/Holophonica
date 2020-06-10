@@ -81,10 +81,9 @@
           :show-arrows="false"
           v-model="slide"
           cycle
-          height="100%"
+          height="120%"
           hide-delimiter-background
           show-arrows-on-hover
-          delimiter-icon="mdi-minus"
         >
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-img :aspect-ratio="1 / 1" :src="slide"></v-img>
@@ -136,11 +135,11 @@ export default {
       !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       ) |
-      (window.innerWidth > 568)
+      (window.innerWidth > 768)
     ) {
       this.mobile = true;
     }
-    if (window.innerWidth < 568) {
+    if (window.innerWidth < 768) {
       this.resize = true;
     }
   },
