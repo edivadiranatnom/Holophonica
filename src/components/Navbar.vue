@@ -90,7 +90,7 @@ export default {
 
 .nav {
   height: 64px;
-  z-index: 1000;
+  z-index: 2;
   overflow: hidden;
   opacity: 0.85;
   backdrop-filter: saturate(180%) blur(2px);
