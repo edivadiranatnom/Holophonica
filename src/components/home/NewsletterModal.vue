@@ -3,26 +3,27 @@
     <v-dialog
       v-model="dialog"
       ref="form"
-      overlay-opacity="0.8"
+      overlay-opacity="0.9"
       overlay-color="#121212"
       persistent
       max-width="600px"
-      style="font-family: 'Helvetica Now Text' !important; z-index: 1001;"
+      style="font-family: 'Helvetica Now Text' !important;"
     >
       <v-container fluid v-if="preSubscription" id="dialogContainer">
         <v-row>
-          <v-col cols="11">
+          <v-col cols="10">
             <p v-if="mobile" class="body-1" style="font-family: 'Helvetica Now Text' !important">
               Subscribe to our newsletter, we will send you an exclusive pack as
-              a welcome gift!
+              welcome gift!
             </p>
             <p v-else class="body-1" style="font-family: 'Helvetica Now Text' !important">
               Subscribe to our newsletter, stay updated and receive periodic
               sample packs for free. By subscribing now, we will send you right
-              away an exclusive pack as a welcome gift. See you on the other
+              away an exclusive pack as welcome gift. See you on the other
               side!
             </p>
           </v-col>
+          <v-col cols="1"></v-col>
           <v-col cols="1">
             <v-btn class="ml-12" id="upperCloseDialog" icon @click="dismissDialog">
               <v-icon class="mdi-36px">mdi-close</v-icon>

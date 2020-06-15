@@ -101,9 +101,16 @@ footer.v-footer.pa-2 {
   padding: 0 !important;
 }
 
+@media only screen and (max-width: 600px) {
+  .v-footer .lighten-1 {
+    width: 80% !important;
+  }
+}
+
 .v-footer .lighten-1 {
   width: 100%;
 }
+
 .v-footer .lighten-1 .v-card__title {
   display: block !important;
 }

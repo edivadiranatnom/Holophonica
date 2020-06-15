@@ -3,12 +3,12 @@
     <Navbar />
     <v-content style="margin-top: 60px !important">
       <Cover />
-      <v-container id="studio" fluid>
-        <v-divider class="mr-12 ml-12"></v-divider>
+      <v-container fluid>
+        <v-divider class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"></v-divider>
       </v-container>
       <Studio />
       <v-container id="packs" fluid>
-        <v-divider class="mr-12 ml-12"></v-divider>
+        <v-divider class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"></v-divider>
       </v-container>
       <Packs />
       <v-btn
@@ -85,5 +85,9 @@ export default {
 @import url("../assets/font/stylesheet.css");
 .v-divider {
   background-color: white;
+}
+
+.border {
+  border: solid red 1px;
 }
 </style>
