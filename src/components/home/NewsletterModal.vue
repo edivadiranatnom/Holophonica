@@ -9,18 +9,14 @@
       max-width="600px"
       style="font-family: 'Helvetica Now Text' !important;"
     >
-      <v-container fluid v-if="preSubscription" id="dialogContainer">
+      <v-container fluid fill-height v-if="preSubscription" id="dialogContainer">
         <v-row>
           <v-col cols="10">
-            <p v-if="mobile" class="body-1" style="font-family: 'Helvetica Now Text' !important">
-              Subscribe to our newsletter, we will send you an exclusive pack as
+            <p class="body-1" style="font-family: 'Helvetica Now Text' !important">
+              Subscribe to our
+              <b>newsletter</b>, we will send you an
+              <b>exclusive pack</b> as
               welcome gift!
-            </p>
-            <p v-else class="body-1" style="font-family: 'Helvetica Now Text' !important">
-              Subscribe to our newsletter, stay updated and receive periodic
-              sample packs for free. By subscribing now, we will send you right
-              away an exclusive pack as welcome gift. See you on the other
-              side!
             </p>
           </v-col>
           <v-col cols="1"></v-col>
@@ -240,6 +236,17 @@ export default {
 
 .v-dialog:not(.v-dialog--fullscreen) {
   max-height: 65% !important;
+}
+@media only screen and (max-width: 400px) {
+  .v-dialog:not(.v-dialog--fullscreen) {
+    max-height: 80% !important;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .v-dialog:not(.v-dialog--fullscreen) {
+    max-height: 70% !important;
+  }
 }
 
 .v-card.v-sheet {

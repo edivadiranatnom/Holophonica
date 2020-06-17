@@ -3,7 +3,14 @@
     <v-row align="center">
       <v-col cols="1">
         <router-link to="/">
-          <v-img class="ml-3" id="navbarLogo" min-width="50" width="60" src="../assets/logo.png"></v-img>
+          <v-img
+            class="ml-3"
+            id="navbarLogo"
+            min-width="50"
+            width="60"
+            src="../assets/logo.png"
+            @click="$vuetify.goTo(0)"
+          ></v-img>
         </router-link>
       </v-col>
       <v-col cols="11">
