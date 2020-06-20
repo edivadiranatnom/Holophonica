@@ -3,7 +3,7 @@
     <Navbar />
     <v-content style="margin-top: 60px !important">
       <Cover />
-      <v-container fluid>
+      <v-container id="studio" fluid>
         <v-divider class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"></v-divider>
       </v-container>
       <Studio />
