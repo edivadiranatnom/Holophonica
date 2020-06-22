@@ -9,7 +9,7 @@
         >SAMPLE PACKS</p>
         <p
           class="title font-weight-thin text-center"
-          style="font-family: 'Helvetica Now Text' !important"
+          style="font-family: 'Helvetica Now Text' !important; font-weight: 200 !important;"
         >Our sample packs are the best sample packs in the sample packs market.</p>
       </v-col>
       <v-col cols="1" lg="3" md="3" sm="2"></v-col>

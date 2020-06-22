@@ -1,7 +1,7 @@
 <template>
-  <v-app>
-    <Navbar />
-    <v-content style="margin-top: 68px !important">
+  <v-app style="background: black !important">
+    <Navbar style="background: black !important" />
+    <v-content style="margin-top: 68px !important; background: black !important">
       <div>
         <v-container fluid>
           <v-row justify="center">

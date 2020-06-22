@@ -1,16 +1,16 @@
 <template>
-  <v-app>
+  <v-app style="background: black !important">
     <Navbar />
     <v-content style="margin-top: 60px !important">
-      <Cover />
-      <v-container id="studio" fluid>
+      <Cover style="background: black !important" />
+      <v-container id="studio" style="background: black !important" fluid>
         <v-divider class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"></v-divider>
       </v-container>
-      <Studio />
-      <v-container id="packs" fluid>
+      <Studio style="background: black !important" />
+      <v-container id="packs" style="background: black !important" fluid>
         <v-divider class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"></v-divider>
       </v-container>
-      <Packs />
+      <Packs style="background: black !important" />
       <v-btn
         v-scroll="onScroll"
         v-show="fab"
@@ -28,7 +28,7 @@
       </v-btn>
     </v-content>
 
-    <Footer />
+    <Footer style="background: black !important" />
 
     <NewsletterModal />
   </v-app>

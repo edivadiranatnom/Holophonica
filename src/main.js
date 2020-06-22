@@ -5,18 +5,17 @@ import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
 import Vuelidate from "vuelidate";
-import VueCookies from "vue-cookies";
+import "vue-video-section/dist/vue-video-section.css";
+
+import VueVideoSection from "vue-video-section";
+
+Vue.component('vue-video-section', VueVideoSection)
 
 Vue.use(Vuelidate);
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();
 Vue.use(Vuetify);
 
-Vue.use(VueCookies);
-
-Vue.$cookies.config("7d");
-Vue.$cookies.set("theme", "default");
-Vue.$cookies.set("hover-time", "1s");
 
 new Vue({
   el: "#app",

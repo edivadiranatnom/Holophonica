@@ -102,7 +102,7 @@ export default {
   opacity: 0.85;
   backdrop-filter: saturate(180%) blur(2px);
   -webkit-backdrop-filter: saturate(180%) blur(2px);
-  background-color: #131313;
+  background-color: black;
   position: fixed;
   top: 0;
   width: 100vw;

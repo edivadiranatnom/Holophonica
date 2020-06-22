@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="background: black !important">
     <Navbar />
     <v-content style="margin-top: 68px !important">
       <v-container
@@ -19,9 +19,7 @@
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          Last updated May 21, 2020
-        </p>
+        >Last updated May 21, 2020</p>
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 117%"
@@ -61,13 +59,14 @@
           and Holophonica (&quot;Company&quot;, &ldquo;we&rdquo;,
           &ldquo;us&rdquo;, or &ldquo;our&rdquo;), concerning your access to and
           use of the
-          <font color="#1155cc">
+          <font
+            color="#1155cc"
+          >
             <u>
               <a
                 href="https://www.holophonica.com/"
                 style="text-decoration: none; color: white"
-                >https://www.holophonica.com</a
-              >
+              >https://www.holophonica.com</a>
             </u>
           </font>
           website as well as any other media form, media channel, mobile website
@@ -345,9 +344,7 @@
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          As a user of the Site, you agree not to:
-        </p>
+        >As a user of the Site, you agree not to:</p>
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 100%"
@@ -426,17 +423,13 @@
           class="western"
           style="margin-left: 0.21in; margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
         >
-          <span>
-            8. Use the Site to advertise or offer to sell goods and services.
-          </span>
+          <span>8. Use the Site to advertise or offer to sell goods and services.</span>
         </p>
         <p
           class="western"
           style="margin-left: 0.21in; margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
         >
-          <span
-            >9. Engage in unauthorized framing of or linking to the Site.</span
-          >
+          <span>9. Engage in unauthorized framing of or linking to the Site.</span>
         </p>
         <p
           class="western"
@@ -668,9 +661,7 @@
         <p
           class="western"
           style="margin-left: 0.21in; margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          4. Your Contributions are not false, inaccurate, or misleading.
-        </p>
+        >4. Your Contributions are not false, inaccurate, or misleading.</p>
         <p
           class="western"
           style="margin-left: 0.21in; margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
@@ -1086,15 +1077,16 @@
         >
           We care about data privacy and security. Please review our Privacy
           Policy:
-          <font color="#1155cc">
+          <font
+            color="#1155cc"
+          >
             <u>
               <a
                 href="https://www.iubenda.com/privacy-policy/45992810"
                 style="text-decoration: none; color: white"
-                >https://www.iubenda.com/privacy-policy/45992810</a
-              >
-            </u> </font
-          >. By using the Site, you agree to be bound by our Privacy Policy,
+              >https://www.iubenda.com/privacy-policy/45992810</a>
+            </u>
+          </font>. By using the Site, you agree to be bound by our Privacy Policy,
           which is incorporated into these Terms of Use. Please be advised the
           Site is hosted in __________. If you access the Site from any other
           region of the world with laws or other requirements governing personal
@@ -1287,9 +1279,7 @@
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 117%"
-        >
-          Informal Negotiations
-        </p>
+        >Informal Negotiations</p>
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 100%"
@@ -1319,9 +1309,7 @@
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 117%"
-        >
-          Binding Arbitration
-        </p>
+        >Binding Arbitration</p>
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 100%"
@@ -1352,9 +1340,7 @@
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 117%"
-        >
-          Restrictions
-        </p>
+        >Restrictions</p>
         <p
           class="western"
           align="justify"
@@ -1385,9 +1371,7 @@
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 117%"
-        >
-          Exceptions to Informal Negotiations and Arbitration
-        </p>
+        >Exceptions to Informal Negotiations and Arbitration</p>
         <p
           class="western"
           align="justify"
@@ -1431,9 +1415,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          CORRECTIONS
-        </p>
+        >CORRECTIONS</p>
         <p
           class="western"
           align="center"
@@ -1470,9 +1452,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          DISCLAIMER
-        </p>
+        >DISCLAIMER</p>
         <p
           class="western"
           align="center"
@@ -1533,9 +1513,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          LIMITATIONS OF LIABILITY
-        </p>
+        >LIMITATIONS OF LIABILITY</p>
         <p
           class="western"
           align="center"
@@ -1581,9 +1559,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          INDEMNIFICATION
-        </p>
+        >INDEMNIFICATION</p>
         <p
           class="western"
           align="center"
@@ -1631,9 +1607,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          USER DATA
-        </p>
+        >USER DATA</p>
         <p
           class="western"
           align="center"
@@ -1673,9 +1647,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES
-        </p>
+        >ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</p>
         <p
           class="western"
           align="center"
@@ -1721,9 +1693,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 149%"
-        >
-          CALIFORNIA USERS AND RESIDENTS
-        </p>
+        >CALIFORNIA USERS AND RESIDENTS</p>
         <p
           class="western"
           align="center"
@@ -1760,9 +1730,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 149%"
-        >
-          MISCELLANEOUS
-        </p>
+        >MISCELLANEOUS</p>
         <p
           class="western"
           align="center"
@@ -1814,9 +1782,7 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          CONTACT US
-        </p>
+        >CONTACT US</p>
         <p
           class="western"
           align="center"
@@ -1843,30 +1809,22 @@
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          Holophonica
-        </p>
+        >Holophonica</p>
         <p
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          Bologna, Italy 40018
-        </p>
+        >Bologna, Italy 40018</p>
         <p
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          Italy
-        </p>
+        >Italy</p>
         <p
           class="western"
           align="center"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 150%"
-        >
-          holophonica.studios@gmail.com
-        </p>
+        >holophonica.studios@gmail.com</p>
         <p
           class="western"
           style="margin-bottom: 0in; border: none; padding: 0in; line-height: 115%"

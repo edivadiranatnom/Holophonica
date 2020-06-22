@@ -9,7 +9,7 @@
         >STUDIO</p>
         <p
           class="title font-weight-thin text-center"
-          style="font-family: 'Helvetica Now Text' !important"
+          style="font-family: 'Helvetica Now Text' !important; font-weight: 200 !important;"
         >
           Our team of experienced producers and sound engineers offer a wide
           variety of services to help your music meet the highest professional
