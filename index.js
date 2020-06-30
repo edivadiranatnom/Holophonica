@@ -69,11 +69,11 @@ app.post("/subscribe", function (req, res) {
     });
 });
 
-// app.use(express.static(path.join(__dirname, "./dist")));
+app.use(express.static(path.join(__dirname, "./dist")));
 
-// app.get("*", function (request, response) {
-//   response.sendFile(path.resolve(__dirname, "./dist/index.html"));
-// });
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./dist/index.html"));
+});
 
 var PORT = process.env.PORT || 3000;
 
