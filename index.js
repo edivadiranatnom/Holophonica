@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, "./dist")));
 
 var mailchimp = new Mailchimp("6c64f888b6a56a882eef8b34df7b44a5-us18");
 
-app.use(cors({ origin: "https://holophonica.herokuapp.com:3000" }));
+app.use(cors({ origin: "https://holophonica.herokuapp.com:8080" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -73,6 +73,6 @@ app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./dist/index.html"));
 });
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}...`));
