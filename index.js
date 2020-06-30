@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, "./dist")));
 
 var mailchimp = new Mailchimp("6c64f888b6a56a882eef8b34df7b44a5-us18");
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://holophonica.herokuapp.com:3000" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
