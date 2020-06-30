@@ -11,9 +11,18 @@ app.use(express.static(path.join(__dirname, "./dist")));
 
 var mailchimp = new Mailchimp("6c64f888b6a56a882eef8b34df7b44a5-us18");
 
-app.use(cors({ origin: "https://holophonica.herokuapp.com:8080" }));
+app.use(cors({ origin: "https://holophonica.herokuapp.com" }));
+// app.use(cors({ origin: "http://localhost:8080" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://holophonica.herokuapp.com");
+  // res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 const transporter = nodemailer.createTransport({
   service: "mailgun",
@@ -73,6 +82,6 @@ app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./dist/index.html"));
 });
 
-var PORT = process.env.PORT || 5000;
+var PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}...`));
