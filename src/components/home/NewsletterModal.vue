@@ -105,7 +105,7 @@
             color="white"
             :disabled="disabled"
             text
-            @click="validate"
+            @click="validate()"
             style="font-family: 'Helvetica Now Text' !important"
           >Subscribe</v-btn>
         </v-form>
@@ -198,12 +198,15 @@ export default {
         lastname: this.subscriber.lastname,
         mail: this.subscriber.mail
       };
+
+      console.log(data);
+
       if (
         data.firstname != "" &&
         data.lastname != "" &&
         data.mail != "" &&
         /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(data.mail) &&
-        this.accept == true
+        this.subscriber.accept == true
       ) {
         newsletterService
           .subscribe(data)
