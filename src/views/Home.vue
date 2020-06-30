@@ -4,11 +4,15 @@
     <v-content style="margin-top: 60px !important">
       <Cover style="background: black !important" />
       <v-container id="studio" style="background: black !important" fluid>
-        <v-divider class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"></v-divider>
+        <v-divider
+          class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"
+        ></v-divider>
       </v-container>
       <Studio style="background: black !important" />
       <v-container id="packs" style="background: black !important" fluid>
-        <v-divider class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"></v-divider>
+        <v-divider
+          class="mr-6 ml-6 mr-md-12 ml-md-12 mr-lg-12 ml-lg-12"
+        ></v-divider>
       </v-container>
       <Packs style="background: black !important" />
       <v-btn

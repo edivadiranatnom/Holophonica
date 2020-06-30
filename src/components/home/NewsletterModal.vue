@@ -9,24 +9,41 @@
       max-width="600px"
       style="font-family: 'Helvetica Now Text' !important;"
     >
-      <v-container fluid fill-height v-if="preSubscription" id="dialogContainer">
+      <v-container
+        fluid
+        fill-height
+        v-if="preSubscription"
+        id="dialogContainer"
+      >
         <v-row>
           <v-col cols="10">
-            <p class="body-1" style="font-family: 'Helvetica Now Text' !important">
+            <p
+              class="body-1"
+              style="font-family: 'Helvetica Now Text' !important"
+            >
               Subscribe to our
-              <b>newsletter</b>, we will send you an
-              <b>exclusive pack</b> as
+              <b>newsletter</b>, we will send you an <b>exclusive pack</b> as
               welcome gift!
             </p>
           </v-col>
           <v-col cols="1"></v-col>
           <v-col cols="1">
-            <v-btn class="ml-12" id="upperCloseDialog" icon @click="dismissDialog">
+            <v-btn
+              class="ml-12"
+              id="upperCloseDialog"
+              icon
+              @click="dismissDialog"
+            >
               <v-icon class="mdi-36px">mdi-close</v-icon>
             </v-btn>
           </v-col>
         </v-row>
-        <v-form v-model="valid" v-if="preSubscription" ref="form" lazy-validation>
+        <v-form
+          v-model="valid"
+          v-if="preSubscription"
+          ref="form"
+          lazy-validation
+        >
           <v-container>
             <v-text-field
               ref="firstname"
@@ -62,11 +79,17 @@
               <v-col cols="10">
                 <small style="font-family: 'Helvetica Now Text' !important">
                   By submitting you agree to our
-                  <router-link to="Privacy" style="color: white; text-decoration: none;">
+                  <router-link
+                    to="Privacy"
+                    style="color: white; text-decoration: none;"
+                  >
                     &nbsp;
-                    <b>Privacy Policy</b>
-                  </router-link>&nbsp;and
-                  <router-link to="Terms" style="color: white; text-decoration: none;">
+                    <b>Privacy Policy</b> </router-link
+                  >&nbsp;and
+                  <router-link
+                    to="Terms"
+                    style="color: white; text-decoration: none;"
+                  >
                     &nbsp;
                     <b>Terms and Conditions</b>
                   </router-link>
@@ -86,11 +109,17 @@
               <v-col cols="11">
                 <small style="font-family: 'Helvetica Now Text' !important">
                   By submitting your informations you agree to our
-                  <router-link to="Privacy" style="color: white; text-decoration: none;">
+                  <router-link
+                    to="Privacy"
+                    style="color: white; text-decoration: none;"
+                  >
                     &nbsp;
-                    <b>Privacy Policy</b>
-                  </router-link>&nbsp;and
-                  <router-link to="Terms" style="color: white; text-decoration: none;">
+                    <b>Privacy Policy</b> </router-link
+                  >&nbsp;and
+                  <router-link
+                    to="Terms"
+                    style="color: white; text-decoration: none;"
+                  >
                     &nbsp;
                     <b>Terms and Conditions</b>
                   </router-link>
@@ -107,7 +136,8 @@
             text
             @click="validate()"
             style="font-family: 'Helvetica Now Text' !important"
-          >Subscribe</v-btn>
+            >Subscribe</v-btn
+          >
         </v-form>
       </v-container>
       <v-container v-else fluid style="top: 10%">
@@ -133,7 +163,8 @@
                 text
                 @click="dismissDialog"
                 style="font-family: 'Helvetica Now Text' !important"
-              >Close</v-btn>
+                >Close</v-btn
+              >
             </v-row>
           </v-col>
           <v-col cols="3"></v-col>

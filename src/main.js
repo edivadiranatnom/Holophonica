@@ -9,13 +9,12 @@ import "vue-video-section/dist/vue-video-section.css";
 
 import VueVideoSection from "vue-video-section";
 
-Vue.component('vue-video-section', VueVideoSection)
+Vue.component("vue-video-section", VueVideoSection);
 
 Vue.use(Vuelidate);
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();
 Vue.use(Vuetify);
-
 
 new Vue({
   el: "#app",

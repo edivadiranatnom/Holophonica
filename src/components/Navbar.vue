@@ -21,10 +21,14 @@
           dense
           v-show="renderNavItem"
           @click="openMenu"
-        >{{ invisibleTab ? 'mdi-chevron-left' : 'mdi-chevron-down' }}</v-icon>
+          >{{ invisibleTab ? "mdi-chevron-left" : "mdi-chevron-down" }}</v-icon
+        >
         <transition name="slide-fade">
           <v-toolbar-items v-if="invisibleTab" class="tab pa-2 mr-lg-6 mr-3">
-            <router-link to="/about" style="font-size: 1em; text-decoration: none; color: #cfcfcf">
+            <router-link
+              to="/about"
+              style="font-size: 1em; text-decoration: none; color: #cfcfcf"
+            >
               <p style="pointer-events: none">About</p>
             </router-link>
           </v-toolbar-items>

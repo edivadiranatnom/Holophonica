@@ -33,11 +33,19 @@
         <v-card-text
           class="title white--text"
           style="font-family: 'Helvetica Now Text' !important"
-        >Holophonica&reg;</v-card-text>
+          >Holophonica&reg;</v-card-text
+        >
         <v-row justify="center">
-          <p class="caption" style="font-family: 'Helvetica Now Text' !important">
-            <router-link to="/privacy" style="color: white">Privacy Policy</router-link>
-            <router-link class="ml-4" to="/terms" style="color: white">Terms & Conditions</router-link>
+          <p
+            class="caption"
+            style="font-family: 'Helvetica Now Text' !important"
+          >
+            <router-link to="/privacy" style="color: white"
+              >Privacy Policy</router-link
+            >
+            <router-link class="ml-4" to="/terms" style="color: white"
+              >Terms & Conditions</router-link
+            >
           </p>
         </v-row>
       </v-card>
