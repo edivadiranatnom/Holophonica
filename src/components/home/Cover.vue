@@ -8,6 +8,7 @@
           style="z-index: 0 !important"
           elementId="video"
           :mp4Source="require('../../assets/video.mp4')"
+          :webmSource="require('../../assets/video.webm')"
           :mobileBreakpoint="600"
           :mobileHeight="350"
           :desktopHeight="675"
