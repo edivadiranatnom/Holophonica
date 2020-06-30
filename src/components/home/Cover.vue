@@ -8,10 +8,9 @@
           style="z-index: 0 !important"
           elementId="video"
           :mp4Source="require('../../assets/video.mp4')"
-          :mobileBreakpoint="992"
+          :mobileBreakpoint="600"
           :mobileHeight="350"
           :desktopHeight="675"
-          :playsinline="true"
           :autoplay="true"
           :loop="false"
         ></vue-video-section>
@@ -21,7 +20,7 @@
           class="title font-weight-thin mt-8 mt-sm-12 mb-4 text-center"
         >SOUNDS GOOD</p>
         <p id="soundsgood" v-else class="title font-weight-thin mt-8 mb-4 text-center">SOUNDS GOOD.</p>
-        <v-row class="mt-6 mt-xl-6 mt-lg-0 mt-md-12 mt-sm-6"></v-row>
+        <v-row class="mt-0 mt-xl-6 mt-lg-0 mt-md-12 mt-sm-6"></v-row>
         <v-row class="mt-6 mt-xl-6 mt-lg-0 mt-md-12 mt-sm-6"></v-row>
         <v-row :class="{ 'mt-12': !mobile }" class="mt-xl-0 mt-lg-0 mt-md-12 mt-sm-0"></v-row>
         <v-row :class="{ 'mt-12': !mobile }" class="mt-xl-0 mt-lg-0 mt-md-0 mt-sm-0"></v-row>

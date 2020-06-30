@@ -7,6 +7,8 @@ const nodemailer = require("nodemailer");
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, "./dist")));
+
 var mailchimp = new Mailchimp('6c64f888b6a56a882eef8b34df7b44a5-us18');
 
 app.use(cors({ origin: "http://localhost:8080" }));
@@ -60,11 +62,9 @@ app.post('/subscribe', function (req, res) {
 
 });
 
-app.use(express.static(path.join(__dirname, "./dist")));
-
-app.get('*', function (request, response) {
-    response.sendFile(path.resolve(__dirname, './dist/index.html'))
-})
+app.get("*", function (request, response) {
+    response.sendFile(path.resolve(__dirname, "./dist/index.html"));
+});
 
 var port = process.env.PORT || 5000;
 
