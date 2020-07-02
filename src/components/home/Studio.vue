@@ -41,52 +41,64 @@
 
           <!-- LEFT BOX -->
           <v-col id="leftBox" cols="12" lg="3" md="4" sm="8">
-            <div class="studio pa-12">
-              <p
-                class="headline font-weight-medium mt-4 text-center"
-                style="font-family: 'Helvetica Now Text' !important"
-              >Improve your music</p>
-              <p
-                v-for="(el, i) in improve"
-                :key="i"
-                class="subtitle-1 font-weight-thin ma-2"
-                style="font-family: 'Helvetica Now Text' !important"
-              >{{ el }}</p>
-              <v-btn
-                class="float-right text-capitalize"
-                text
-                color="white"
-                href="https://soundbetter.com/profiles/239809-holophonica-studios"
-                target="_blank"
-                style="font-family: 'Helvetica Now Text' !important"
-              >Learn more</v-btn>
-            </div>
+            <v-card class="studio pa-12" max-width="344" outlined>
+              <v-list-item three-line>
+                <v-list-item-content>
+                  <v-list-item-title
+                    class="title font-weight-medium text-center mb-4"
+                    style="font-family: 'Helvetica Now Text' !important"
+                  >Improve your music</v-list-item-title>
+                  <v-list-item-subtitle
+                    v-for="(el, i) in improve"
+                    :key="i"
+                    class="subtitle-1 font-weight-thin ma-2"
+                    style="font-family: 'Helvetica Now Text' !important"
+                  >{{ el }}</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-row align="center" justify="end">
+                <v-btn
+                  class="text-capitalize"
+                  text
+                  color="white"
+                  href="https://soundbetter.com/profiles/239809-holophonica-studios"
+                  target="_blank"
+                  style="font-family: 'Helvetica Now Text' !important"
+                >Learn More</v-btn>
+              </v-row>
+            </v-card>
           </v-col>
 
           <v-col cols="0" lg="2" md="1" sm="2"></v-col>
 
           <!-- RIGHT BOX -->
           <v-col id="rightBox" cols="12" lg="3" md="4" sm="8">
-            <div class="studio pa-12">
-              <p
-                class="headline font-weight-medium mt-4 text-center"
-                style="font-family: 'Helvetica Now Text' !important"
-              >Create your music</p>
-              <p
-                v-for="(el, i) in create"
-                :key="i"
-                class="subtitle-1 font-weight-thin ma-2"
-                style="font-family: 'Helvetica Now Text' !important"
-              >{{ el }}</p>
-              <v-btn
-                class="float-right text-capitalize"
-                text
-                color="white"
-                href="https://soundbetter.com/profiles/239809-holophonica-studios"
-                target="_blank"
-                style="font-family: 'Helvetica Now Text' !important"
-              >Learn more</v-btn>
-            </div>
+            <v-card class="studio pa-12" max-width="344" outlined>
+              <v-list-item three-line>
+                <v-list-item-content>
+                  <v-list-item-title
+                    class="title font-weight-medium text-center mb-4"
+                    style="font-family: 'Helvetica Now Text' !important"
+                  >Create your music</v-list-item-title>
+                  <v-list-item-subtitle
+                    v-for="(el, i) in create"
+                    :key="i"
+                    class="subtitle-1 font-weight-thin ma-2"
+                    style="font-family: 'Helvetica Now Text' !important"
+                  >{{ el }}</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-row align="center" justify="end">
+                <v-btn
+                  class="text-capitalize"
+                  text
+                  color="white"
+                  href="https://soundbetter.com/profiles/239809-holophonica-studios"
+                  target="_blank"
+                  style="font-family: 'Helvetica Now Text' !important"
+                >Learn More</v-btn>
+              </v-row>
+            </v-card>
           </v-col>
           <!-- RIGHT SPACER -->
           <v-col cols="0" lg="2" md="auto" sm="2"></v-col>
@@ -183,11 +195,32 @@ export default {
 
 <style lang="stylus" scoped>
 @media only screen and (min-width: 600px) and (max-width: 960px) {
-  // cafonata to keep rightBox centered
   #rightBox, #leftBox {
-    // margin-left: 16.5%;
-    margin-left: 2%;
+    margin-left: 2vw;
   }
+}
+
+@media only screen and (max-width: 513px) {
+  #rightBox, #leftBox {
+    margin-left: 10%;
+  }
+}
+
+@media only screen and (min-width: 514px) and (max-width: 599px) {
+  #rightBox, #leftBox {
+    margin-left: 20vw;
+  }
+}
+
+@media only screen and (min-width: 687px) and (max-width: 959px) {
+  #rightBox, #leftBox {
+    margin-left: 25vw;
+  }
+}
+
+.v-card {
+  background-color: #1e1e1e !important;
+  border: 0px !important;
 }
 
 .v-ripple__container {
