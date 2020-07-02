@@ -6,9 +6,7 @@
         <p
           class="display-2 text-center font-weight-medium mb-4"
           style="font-family: 'Helvetica Now Text' !important"
-        >
-          STUDIO
-        </p>
+        >STUDIO</p>
         <p
           class="title font-weight-thin text-center"
           style="font-family: 'Helvetica Now Text' !important; font-weight: 200 !important;"
@@ -26,9 +24,7 @@
         <p
           class="display-2 text-center font-weight-medium mb-4"
           style="font-family: 'Helvetica Now Text' !important"
-        >
-          STUDIO
-        </p>
+        >STUDIO</p>
         <p class="title font-weight-thin text-center">
           Our team offers a variety of services to help your music meet the
           highest professional standards.
@@ -49,17 +45,13 @@
               <p
                 class="headline font-weight-medium mt-4 text-center"
                 style="font-family: 'Helvetica Now Text' !important"
-              >
-                Improve your music
-              </p>
+              >Improve your music</p>
               <p
                 v-for="(el, i) in improve"
                 :key="i"
                 class="subtitle-1 font-weight-thin ma-2"
                 style="font-family: 'Helvetica Now Text' !important"
-              >
-                {{ el }}
-              </p>
+              >{{ el }}</p>
               <v-btn
                 class="float-right text-capitalize"
                 text
@@ -67,8 +59,7 @@
                 href="https://soundbetter.com/profiles/239809-holophonica-studios"
                 target="_blank"
                 style="font-family: 'Helvetica Now Text' !important"
-                >Learn more</v-btn
-              >
+              >Learn more</v-btn>
             </div>
           </v-col>
 
@@ -80,17 +71,13 @@
               <p
                 class="headline font-weight-medium mt-4 text-center"
                 style="font-family: 'Helvetica Now Text' !important"
-              >
-                Create your music
-              </p>
+              >Create your music</p>
               <p
                 v-for="(el, i) in create"
                 :key="i"
                 class="subtitle-1 font-weight-thin ma-2"
                 style="font-family: 'Helvetica Now Text' !important"
-              >
-                {{ el }}
-              </p>
+              >{{ el }}</p>
               <v-btn
                 class="float-right text-capitalize"
                 text
@@ -98,8 +85,7 @@
                 href="https://soundbetter.com/profiles/239809-holophonica-studios"
                 target="_blank"
                 style="font-family: 'Helvetica Now Text' !important"
-                >Learn more</v-btn
-              >
+              >Learn more</v-btn>
             </div>
           </v-col>
           <!-- RIGHT SPACER -->
@@ -119,16 +105,12 @@
               <v-row dense>
                 <v-col cols="1"></v-col>
                 <v-col cols="11">
-                  <p class="headline font-weight-thin mt-4 mb-6">
-                    Improve your music
-                  </p>
+                  <p class="headline font-weight-thin mt-4 mb-6">Improve your music</p>
                   <p
                     v-for="(el, i) in improve"
                     :key="i"
                     class="subtitle-2 font-weight-thin"
-                  >
-                    {{ el }}
-                  </p>
+                  >{{ el }}</p>
                   <v-btn
                     x-small
                     class="float-right text-capitalize mr-4"
@@ -138,8 +120,7 @@
                     href="https://soundbetter.com/profiles/239809-holophonica-studios"
                     target="_blank"
                     style="bottom: 16%"
-                    >learn more</v-btn
-                  >
+                  >learn more</v-btn>
                 </v-col>
               </v-row>
             </v-col>
@@ -149,16 +130,8 @@
               <v-row dense>
                 <v-col cols="1"></v-col>
                 <v-col cols="11">
-                  <p class="headline font-weight-thin mt-4 mb-6">
-                    Create your music
-                  </p>
-                  <p
-                    v-for="(el, i) in create"
-                    :key="i"
-                    class="subtitle-2 font-weight-thin"
-                  >
-                    {{ el }}
-                  </p>
+                  <p class="headline font-weight-thin mt-4 mb-6">Create your music</p>
+                  <p v-for="(el, i) in create" :key="i" class="subtitle-2 font-weight-thin">{{ el }}</p>
                   <v-btn
                     x-small
                     class="float-right text-capitalize mr-4"
@@ -168,8 +141,7 @@
                     href="https://soundbetter.com/profiles/239809-holophonica-studios"
                     target="_blank"
                     style="bottom: 16%"
-                    >learn more</v-btn
-                  >
+                  >learn more</v-btn>
                 </v-col>
               </v-row>
             </v-col>
@@ -212,8 +184,9 @@ export default {
 <style lang="stylus" scoped>
 @media only screen and (min-width: 600px) and (max-width: 960px) {
   // cafonata to keep rightBox centered
-  #rightBox {
-    margin-left: 16.5%;
+  #rightBox, #leftBox {
+    // margin-left: 16.5%;
+    margin-left: 2%;
   }
 }
 
