@@ -1,8 +1,18 @@
 <template>
   <v-form ref="form" style="font-family: 'Helvetica Now Text' !important">
-    <v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
+    <v-text-field
+      v-model="name"
+      :rules="nameRules"
+      label="Name"
+      required
+    ></v-text-field>
 
-    <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+    <v-text-field
+      v-model="email"
+      :rules="emailRules"
+      label="E-mail"
+      required
+    ></v-text-field>
 
     <v-select
       v-model="select"
@@ -26,7 +36,8 @@
       class="mr-4 float-right"
       @click="submit"
       style="font-family: 'Helvetica Now Text' !important"
-    >Submit</v-btn>
+      >Submit</v-btn
+    >
     <v-snackbar v-model="snackbar">
       Your inquiry has been succesfully sent to the team!
       <v-btn color="pink" text @click="snackbar = false">Close</v-btn>

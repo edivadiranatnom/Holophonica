@@ -14,7 +14,6 @@ var mailchimp = new Mailchimp("6c64f888b6a56a882eef8b34df7b44a5-us18");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 const transporter = nodemailer.createTransport({
   service: "mailgun",
   auth: {
@@ -23,7 +22,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-app.post("/inquire", function (req, res) {
+app.post("/inquire", function(req, res) {
   const mailOptions = {
     from: req.body.email,
     to: "holophonica.studios@gmail.com",
@@ -38,7 +37,7 @@ app.post("/inquire", function (req, res) {
       req.body.text +
       "</h5>"
   };
-  transporter.sendMail(mailOptions, function (error, info) {
+  transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
       console.log(error);
       res.send(error);
@@ -49,7 +48,7 @@ app.post("/inquire", function (req, res) {
   });
 });
 
-app.post("/subscribe", function (req, res) {
+app.post("/subscribe", function(req, res) {
   const { firstname, lastname, mail } = req.body;
 
   mailchimp
@@ -61,17 +60,17 @@ app.post("/subscribe", function (req, res) {
         LNAME: lastname
       }
     })
-    .then(function (result) {
+    .then(function(result) {
       res.send(result);
     })
-    .catch(function (err) {
+    .catch(function(err) {
       res.send(err);
     });
 });
 
 app.use(express.static(path.join(__dirname, "./dist")));
 
-app.get("*", function (request, response) {
+app.get("*", function(request, response) {
   response.sendFile(path.resolve(__dirname, "./dist/index.html"));
 });
 

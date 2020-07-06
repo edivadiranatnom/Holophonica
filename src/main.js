@@ -6,12 +6,13 @@ import "vuetify/dist/vuetify.min.css";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
 import Vuelidate from "vuelidate";
 import "vue-video-section/dist/vue-video-section.css";
-
 import VueVideoSection from "vue-video-section";
+import Meta from "vue-meta";
 
 Vue.component("vue-video-section", VueVideoSection);
 
 Vue.use(Vuelidate);
+Vue.use(Meta);
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();
 Vue.use(Vuetify);

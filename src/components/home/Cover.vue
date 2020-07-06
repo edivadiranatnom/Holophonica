@@ -73,8 +73,19 @@ export default {
   name: "Cover",
   data() {
     return {
+      videoId: "YbD_TkBXH1w",
+      playerVars: {
+        autoplay: 1,
+        showinfo: 0,
+        controls: 0
+      },
       mobile: true
     };
+  },
+  computed: {
+    player() {
+      return this.$refs.youtube.player;
+    }
   },
   created() {
     if (
