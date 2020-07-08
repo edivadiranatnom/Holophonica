@@ -37,7 +37,7 @@
           SOUNDS GOOD.
         </p>
         <v-row class="mt-6 mt-xl-6 mt-lg-0 mt-md-0 mt-sm-8"></v-row>
-        <v-row class="mt-12 mt-xl-6 mt-lg-8 mt-md-4 mt-sm-6 mb-6">
+        <v-row class="mt-4 mt-xl-6 mt-lg-8 mt-md-4 mt-sm-6 mb-6">
           <v-img
             class="mx-auto"
             src="../../assets/arrowdown.png"
