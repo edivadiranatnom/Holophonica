@@ -1,9 +1,15 @@
 <template>
   <!-- <v-container class="mt-12 mt-md-6 mt-sm-6" id="cover" fluid> -->
   <v-container id="cover" fluid>
-    <v-row class="mt-3 mt-lg-0 mt-md-0 mt-sm-12" justify="center" align="center">
+    <v-row class="mt-3 mt-lg-0 mt-md-0 mt-sm-0" justify="center" align="center">
       <v-col cols="0" lg="2" md="1" sm="1"></v-col>
-      <v-col class="mt-3 mt-lg-0 mt-md-6 mt-sm-12" cols="12" lg="8" md="10" sm="10">
+      <v-col
+        class="mt-3 mt-lg-0 mt-md-1 mt-sm-0"
+        cols="12"
+        lg="8"
+        md="10"
+        sm="10"
+      >
         <vue-video-section
           style="z-index: 0 !important"
           elementId="video"
@@ -19,15 +25,19 @@
         <p
           id="soundsgood"
           v-if="!mobile"
-          class="title font-weight-thin mt-8 mt-sm-12 mb-4 text-center"
-        >SOUNDS GOOD</p>
-        <p id="soundsgood" v-else class="title font-weight-thin mt-8 mb-4 text-center">SOUNDS GOOD.</p>
-        <v-row class="mt-0 mt-xl-6 mt-lg-0 mt-md-12 mt-sm-6"></v-row>
-        <v-row class="mt-6 mt-xl-6 mt-lg-0 mt-md-12 mt-sm-6"></v-row>
-        <v-row :class="{ 'mt-12': !mobile }" class="mt-xl-0 mt-lg-0 mt-md-12 mt-sm-0"></v-row>
-        <v-row :class="{ 'mt-12': !mobile }" class="mt-xl-0 mt-lg-0 mt-md-0 mt-sm-0"></v-row>
-        <v-row :class="{ 'mt-12': !mobile }" class="mt-xl-0 mt-lg-0 mt-md-0 mt-sm-12"></v-row>
-        <v-row class="mt-12 mt-xl-6 mt-lg-8 mt-md-0 mt-sm-12 mb-6">
+          class="title font-weight-thin mt-8 mt-sm-0 mt-md-6 mt-lg-4 mb-4 text-center"
+        >
+          SOUNDS GOOD
+        </p>
+        <p
+          id="soundsgood"
+          v-else
+          class="title font-weight-thin mt-8 mb-4 text-center"
+        >
+          SOUNDS GOOD.
+        </p>
+        <v-row class="mt-6 mt-xl-6 mt-lg-0 mt-md-0 mt-sm-8"></v-row>
+        <v-row class="mt-12 mt-xl-6 mt-lg-8 mt-md-4 mt-sm-6 mb-6">
           <v-img
             class="mx-auto"
             src="../../assets/arrowdown.png"
