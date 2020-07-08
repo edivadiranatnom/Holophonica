@@ -102,6 +102,9 @@ export default {
 </script>
 
 <style lang="scss">
+.vue-video-section__overlay-content-wrapper__background {
+  visibility: hidden !important;
+}
 .vue-video-section-wrapper {
   background-color: black !important;
 }
