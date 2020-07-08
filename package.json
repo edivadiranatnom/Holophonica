@@ -35,7 +35,8 @@
     "vue-youtube-embed": "^2.2.2",
     "vuelidate": "^0.7.5",
     "vuetify": "^2.2.22",
-    "vuetify-audio": "^0.3.2"
+    "vuetify-audio": "^0.3.2",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",

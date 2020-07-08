@@ -3,39 +3,25 @@
   <v-container id="cover" fluid>
     <v-row class="mt-3 mt-lg-0 mt-md-0 mt-sm-0" justify="center" align="center">
       <v-col cols="0" lg="2" md="1" sm="1"></v-col>
-      <v-col
-        class="mt-3 mt-lg-0 mt-md-1 mt-sm-0"
-        cols="12"
-        lg="8"
-        md="10"
-        sm="10"
-      >
+      <v-col class="mt-3 mt-lg-0 mt-md-1 mt-sm-0" cols="12" lg="8" md="10" sm="10">
         <vue-video-section
           style="z-index: 0 !important"
           elementId="video"
+          ref="coverVideo"
           :mp4Source="require('../../assets/video.mp4')"
           :webmSource="require('../../assets/video.webm')"
           :mobileBreakpoint="600"
           :mobileHeight="350"
           :desktopHeight="680"
           :playsinline="true"
-          :autoplay="true"
           :loop="false"
         ></vue-video-section>
         <p
           id="soundsgood"
           v-if="!mobile"
           class="title font-weight-thin mt-8 mt-sm-0 mt-md-6 mt-lg-4 mb-4 text-center"
-        >
-          SOUNDS GOOD
-        </p>
-        <p
-          id="soundsgood"
-          v-else
-          class="title font-weight-thin mt-8 mb-4 text-center"
-        >
-          SOUNDS GOOD.
-        </p>
+        >SOUNDS GOOD</p>
+        <p id="soundsgood" v-else class="title font-weight-thin mt-8 mb-4 text-center">SOUNDS GOOD.</p>
         <v-row class="mt-6 mt-xl-6 mt-lg-0 mt-md-0 mt-sm-8"></v-row>
         <v-row class="mt-4 mt-xl-6 mt-lg-8 mt-md-4 mt-sm-6 mb-6">
           <v-img
@@ -57,19 +43,9 @@ export default {
   name: "Cover",
   data() {
     return {
-      videoId: "YbD_TkBXH1w",
-      playerVars: {
-        autoplay: 1,
-        showinfo: 0,
-        controls: 0
-      },
+      coverVideo: "",
       mobile: true
     };
-  },
-  computed: {
-    player() {
-      return this.$refs.youtube.player;
-    }
   },
   created() {
     if (
@@ -80,6 +56,21 @@ export default {
       this.mobile = false;
     } else {
       this.responsive = "mt-6";
+    }
+  },
+  mounted() {
+    if (this.$store.getters.getStartVideo == false)
+      this.$refs.coverVideo.pauseVideo();
+    else this.$refs.coverVideo.playVideo();
+  },
+  computed: {
+    boolVideo() {
+      return this.$store.getters.getStartVideo;
+    }
+  },
+  watch: {
+    boolVideo(val) {
+      if (val) this.$refs.coverVideo.playVideo();
     }
   }
 };

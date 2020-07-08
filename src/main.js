@@ -8,6 +8,7 @@ import Vuelidate from "vuelidate";
 import "vue-video-section/dist/vue-video-section.css";
 import VueVideoSection from "vue-video-section";
 import Meta from "vue-meta";
+import store from './store'
 
 Vue.component("vue-video-section", VueVideoSection);
 
@@ -19,6 +20,7 @@ Vue.use(Vuetify);
 
 new Vue({
   el: "#app",
+  store,
   vuetify: new Vuetify(),
   data: () => ({
     dialog: true,
@@ -28,5 +30,6 @@ new Vue({
     drawer: null
   }),
   router,
+
   render: h => h(App)
 }).$mount("#app");
