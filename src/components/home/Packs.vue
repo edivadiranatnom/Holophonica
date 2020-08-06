@@ -10,7 +10,7 @@
         <p
           class="title font-weight-thin text-center"
           style="font-family: 'Helvetica Now Text' !important; font-weight: 200 !important;"
-        >Our sample packs are the best sample packs in the sample packs market.</p>
+        >Our sample packs range from Trap to Techno with high quality standards.</p>
       </v-col>
       <v-col cols="1" lg="3" md="3" sm="2"></v-col>
     </v-row>
