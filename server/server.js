@@ -9,23 +9,17 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "./dist")));
 
-var mailchimp = new Mailchimp('6c64f888b6a56a882eef8b34df7b44a5-us18');
+var mailchimp = new Mailchimp('MAILCHIMP_API');
 
-app.use(cors({ origin: "http://localhost:8080" }));
+app.use(cors({ origin: "ORIGIN" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const transporter = nodemailer.createTransport({
-    // service: "mailgun",
-    // auth: {
-    //     user: "postmaster@sandbox62a5930ee544419cb4514ccbfc122fdc.mailgun.org",
-    //     pass: "986dea58ba41f1d9f6efa04c567c6324-0afbfc6c-5ce4abaa" // naturally, replace both with your real credentials or an application-specific password
-    // }
-    host: "smtp.holophonica.com",
-    port: 587,
+    service: "mailgun",
     auth: {
-        user: "inquiry@holophonica.com",
-        pass: "Chicco93"
+        user: "MAILGUN_USER",
+        pass: "MAILGUN_PASS"
     }
 });
 
@@ -51,7 +45,7 @@ app.post('/subscribe', function (req, res) {
 
     const { firstname, lastname, mail } = req.body;
 
-    mailchimp.post('/lists/d6f83f0bc0/members', {
+    mailchimp.post('MAILCHIMP_PATH', {
         email_address: mail,
         status: 'subscribed',
         merge_fields: {

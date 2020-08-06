@@ -9,7 +9,7 @@ const app = express();
 // app.use(cors({ origin: "https://holophonica.herokuapp.com" }));
 app.use(cors());
 
-var mailchimp = new Mailchimp("6c64f888b6a56a882eef8b34df7b44a5-us18");
+var mailchimp = new Mailchimp("MAILCHIMP_API");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,12 +17,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
   service: "mailgun",
   auth: {
-    user: "postmaster@sandbox62a5930ee544419cb4514ccbfc122fdc.mailgun.org",
-    pass: "986dea58ba41f1d9f6efa04c567c6324-0afbfc6c-5ce4abaa"
+    user: "MAILGUN_USER",
+    pass: "MAILGUN_PASS"
   }
 });
 
-app.post("/inquire", function(req, res) {
+app.post("/inquire", function (req, res) {
   const mailOptions = {
     from: req.body.email,
     to: "holophonica.studios@gmail.com",
@@ -37,7 +37,7 @@ app.post("/inquire", function(req, res) {
       req.body.text +
       "</h5>"
   };
-  transporter.sendMail(mailOptions, function(error, info) {
+  transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
       res.send(error);
@@ -48,11 +48,11 @@ app.post("/inquire", function(req, res) {
   });
 });
 
-app.post("/subscribe", function(req, res) {
+app.post("/subscribe", function (req, res) {
   const { firstname, lastname, mail } = req.body;
 
   mailchimp
-    .post("/lists/d6f83f0bc0/members", {
+    .post("MAILCHIMP_PATH", {
       email_address: mail,
       status: "subscribed",
       merge_fields: {
@@ -60,17 +60,17 @@ app.post("/subscribe", function(req, res) {
         LNAME: lastname
       }
     })
-    .then(function(result) {
+    .then(function (result) {
       res.send(result);
     })
-    .catch(function(err) {
+    .catch(function (err) {
       res.send(err);
     });
 });
 
 app.use(express.static(path.join(__dirname, "./dist")));
 
-app.get("*", function(request, response) {
+app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./dist/index.html"));
 });
 
