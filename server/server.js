@@ -16,12 +16,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const transporter = nodemailer.createTransport({
-    service: "mailgun",
+    // service: "mailgun",
+    // auth: {
+    //     user: "postmaster@sandbox62a5930ee544419cb4514ccbfc122fdc.mailgun.org",
+    //     pass: "986dea58ba41f1d9f6efa04c567c6324-0afbfc6c-5ce4abaa" // naturally, replace both with your real credentials or an application-specific password
+    // }
+    host: "smtp.holophonica.com",
+    port: 587,
     auth: {
-        user: "postmaster@sandbox62a5930ee544419cb4514ccbfc122fdc.mailgun.org",
-        pass: "986dea58ba41f1d9f6efa04c567c6324-0afbfc6c-5ce4abaa" // naturally, replace both with your real credentials or an application-specific password
-    }
-});
+        user: "inquiry@holophonica.com",
+        pass: "Chicco93"
+    });
 
 app.post("/inquire", function (req, res) {
     const mailOptions = {
