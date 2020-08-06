@@ -26,7 +26,8 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: "inquiry@holophonica.com",
         pass: "Chicco93"
-    });
+    }
+});
 
 app.post("/inquire", function (req, res) {
     const mailOptions = {
