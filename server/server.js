@@ -6,9 +6,9 @@ const nodemailer = require("nodemailer");
 
 const app = express();
 
-var mailchimp = new Mailchimp('6c64f888b6a56a882eef8b34df7b44a5-us18');
+var mailchimp = new Mailchimp(process.env.MAILCHIMP_API);
 
-app.use(cors({ origin: "http://localhost:8080" }));
+app.use(cors({ origin: process.env.ORIGIN }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -21,8 +21,8 @@ db.sequelize.sync({ force: true }).then(() => {
 const transporter = nodemailer.createTransport({
     service: "mailgun",
     auth: {
-        user: "postmaster@sandbox62a5930ee544419cb4514ccbfc122fdc.mailgun.org",
-        pass: "986dea58ba41f1d9f6efa04c567c6324-0afbfc6c-5ce4abaa" // naturally, replace both with your real credentials or an application-specific password
+        user: process.env.MAILGUN_USER,
+        pass: process.env.MAILGUN_PASS
     }
 });
 
@@ -53,7 +53,7 @@ app.post('/subscribe', function (req, res) {
     // console.log(firstname, lastname, mail)
     // res.sendStatus(200);
     //UNCOMMENT IN PRODUCTION
-    mailchimp.post('/lists/d6f83f0bc0/members', {
+    mailchimp.post(process.env.MAILCHIMP_PATH, {
         email_address: mail,
         status: 'subscribed',
         merge_fields: {
