@@ -9,17 +9,17 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "./dist")));
 
-var mailchimp = new Mailchimp('MAILCHIMP_API');
+var mailchimp = new Mailchimp(process.env.MAILCHIMP_API);
 
-app.use(cors({ origin: "ORIGIN" }));
+app.use(cors({ origin: process.env.ORIGIN }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const transporter = nodemailer.createTransport({
     service: "mailgun",
     auth: {
-        user: "MAILGUN_USER",
-        pass: "MAILGUN_PASS"
+        user: process.env.MAILGUN_USER,
+        pass: process.env.MAILGUN_PASS
     }
 });
 
@@ -45,7 +45,7 @@ app.post('/subscribe', function (req, res) {
 
     const { firstname, lastname, mail } = req.body;
 
-    mailchimp.post('MAILCHIMP_PATH', {
+    mailchimp.post(process.env.MAILCHIMP_PATH, {
         email_address: mail,
         status: 'subscribed',
         merge_fields: {
